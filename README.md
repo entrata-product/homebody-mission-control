@@ -6,7 +6,7 @@ New to this operating model? Read the canonical playbook at [Entrata-Collab/oper
 
 **Mission:** One surface for Homebody and HBG. Every hot client thread has an owner and a next step.
 
-**Cadence:** Twice weekly. Set by Catherine Wong and Caleb Harris on 2026-09-24, on the ELI+ war room pattern.
+**Cadence:** Twice weekly. We are setting this up because of elevated client concerns going into and coming out of Summit.
 
 **Strategy sibling:** The [Homebody Quarter Brief](https://github.com/Entrata-Collab/rxp) stays the strategic surface (bets, measurement, quarter narrative). This repo is the operating surface for customer heat and cross-team delivery. Do not copy the quarter bets into tracks here.
 

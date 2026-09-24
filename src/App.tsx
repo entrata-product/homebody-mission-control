@@ -160,7 +160,7 @@ export default function App() {
             <section className="rounded-xl border border-[#E5E7EB] bg-white p-5">
               <h2 className="text-sm font-semibold">Why this exists</h2>
               <p className="mt-2 text-sm leading-6 text-[#4A4A4A]">
-                Catherine called for a twice-weekly war room on the ELI+ pattern. Summit customer feedback on HBG, plus heat across Product, Engineering, CS, and Insurance Ops, was outrunning the meetings. Cal agreed: do it so the team solves faster, and so the response stays with the people who own the work.
+                We are setting this up because of elevated client concerns going into and coming out of Summit. Homebody and Homebody Guaranty need one place where those concerns have an owner and a next step.
               </p>
               <p className="mt-3 text-sm leading-6 text-[#4A4A4A]">
                 This is that surface. The standing huddle runs against it. If a track is not here, it is not in the war room.

@@ -4,7 +4,7 @@
 
 ## What this program is
 
-A twice-weekly war room for Homebody, including Homebody Guaranty (HBG). It exists because Summit customer feedback and live client heat were moving across Product, Engineering, Customer Success, and Insurance Ops faster than a status meeting can hold.
+A twice-weekly war room for Homebody, including Homebody Guaranty (HBG). We are setting it up because of elevated client concerns going into and coming out of Summit.
 
 HBG is a Homebody product. It is a lane on this surface, not a second Mission Control.
 
