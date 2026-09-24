@@ -1,6 +1,6 @@
-# Homebody Mission Control
+# Homebody War Room
 
-This repo is the **Mission Control** for Homebody and Homebody Guaranty (HBG). HBG is a Homebody product, so it lives here. There is no separate HBG war room.
+This repo is the **Homebody War Room** for Homebody and Homebody Guaranty (HBG). HBG is a Homebody product, so it lives here. There is no separate HBG war room.
 
 New to this operating model? Read the canonical playbook at [Entrata-Collab/operating-playbooks — `mission-control.md`](https://github.com/Entrata-Collab/operating-playbooks/blob/main/mission-control.md).
 

@@ -115,7 +115,7 @@ export default function App() {
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-[15px] font-bold tracking-tight">
                 Homebody
-                <span className="font-medium text-[#737373]"> · Mission Control</span>
+                <span className="font-medium text-[#737373]"> · War Room</span>
               </span>
               <span className="hidden h-4 w-px bg-[#E5E7EB] sm:block" />
               <span className="rounded-full bg-[#BCF0C8] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#004B37]">

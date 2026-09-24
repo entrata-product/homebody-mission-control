@@ -1,4 +1,4 @@
-# Homebody Mission Control — strategy
+# Homebody War Room — strategy
 
 > Status: starting slate, 2026-09-24. Confirm at the first huddle.
 
