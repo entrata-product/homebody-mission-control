@@ -1,0 +1,55 @@
+{
+  "asOf": "2026-09-24",
+  "source": "Group DM with Catherine Wong, Caleb Harris, and Zack Melton, 2026-09-24.",
+  "sponsors": [
+    { "name": "Catherine Wong", "role": "Sponsor" },
+    { "name": "Caleb Harris", "role": "Sponsor" }
+  ],
+  "roster": [
+    {
+      "name": "Zack Melton",
+      "title": "Product, Homebody",
+      "seat": "Standing",
+      "note": "DRI for this surface."
+    },
+    {
+      "name": "Jae Lee",
+      "title": "Principal Product Manager",
+      "seat": "Standing",
+      "note": "HBG strategy. Scope calls on renewals vs. transfers."
+    },
+    {
+      "name": "Alyssa Schroeder",
+      "title": "Dir, Customer Success Homebody",
+      "seat": "Standing",
+      "note": "Customer heat and CS visibility."
+    },
+    {
+      "name": "Levi Howa",
+      "title": "Sr Dir, Engineering",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Blake Webster",
+      "title": "SVP, Customer Success & Professional Services",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Josh Tebbs",
+      "title": "Dir, Insurance Operations",
+      "seat": "Standing",
+      "note": "Cal confirmed Josh as the person running the agency under Chris Finken."
+    },
+    {
+      "name": "Chris Finken",
+      "title": "SVP, Revenue Marketing",
+      "seat": "Proposed",
+      "note": "Cal: include for now, in lieu of a head of insurance."
+    }
+  ],
+  "openSeats": [
+    "CSMs with hot clients. Cal named the seat. Names get added when a client is hot."
+  ]
+}

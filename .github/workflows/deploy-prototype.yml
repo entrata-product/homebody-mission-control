@@ -1,0 +1,27 @@
+name: Deploy prototype
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+# The publish workflow references a reusable workflow that only resolves from
+# inside entrata-product. This file dispatches it on the mirror only.
+# Same pattern as Entrata-Collab/leasing-ai-war-room.
+
+jobs:
+  dispatch:
+    if: github.repository_owner == 'entrata-product'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger publish workflow
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run deploy-prototype-publish.yml \
+            --repo "${{ github.repository }}" \
+            --ref "${{ github.ref_name }}"

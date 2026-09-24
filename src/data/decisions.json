@@ -1,0 +1,30 @@
+{
+  "decisions": [
+    {
+      "date": "2026-09-24",
+      "title": "One Mission Control for Homebody and HBG",
+      "detail": "HBG (Homebody Guaranty) falls under Homebody. This surface covers both. There is no separate HBG war room.",
+      "owner": "Zack Melton"
+    },
+    {
+      "date": "2026-09-24",
+      "title": "Twice-weekly war room",
+      "detail": "Catherine proposed a twice-weekly War Room / Mission Control, on the ELI+ pattern, because of Summit customer feedback and cross-department heat. Cal agreed: it helps the team solve faster and keeps the response from being driven by emotion.",
+      "owner": "Catherine Wong, Caleb Harris"
+    },
+    {
+      "date": "2026-09-24",
+      "title": "HBG transfers are off the renewals critical path",
+      "detail": "Jae: transfers should be improved, and they should not sit on the renewals critical path. Renewals stay on the critical path. Transfers get a separate epic.",
+      "owner": "Jae Lee",
+      "source": "#tmp-hbg-renewal-charges, 2026-09-24"
+    },
+    {
+      "date": "2026-09-24",
+      "title": "HBG renewal is not DA auto-renewal",
+      "detail": "A renewal lease interval must exist. Month-to-month, including rolling to month-to-month because move-out has not been performed, does not qualify. Do not copy how Deposit Alternative auto-renewal works today.",
+      "owner": "Dan Bullock and insurance ops",
+      "source": "#leap-entrata, 2026-09-24"
+    }
+  ]
+}

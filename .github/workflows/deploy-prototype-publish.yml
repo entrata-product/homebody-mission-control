@@ -1,0 +1,19 @@
+name: Deploy prototype (publish)
+
+# workflow_dispatch only. The reusable workflow ref only resolves from
+# inside entrata-product. See deploy-prototype.yml.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  publish:
+    if: github.repository_owner == 'entrata-product'
+    uses: entrata-product/entrata-labs/.github/workflows/labs-entrata-labs-slug-publish.yml@main
+    secrets: inherit
+    with:
+      build_command: VITE_LABS_DEPLOY=true npm run build
