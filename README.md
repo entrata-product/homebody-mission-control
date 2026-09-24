@@ -10,7 +10,7 @@ New to this operating model? Read the canonical playbook at [Entrata-Collab/oper
 
 **Strategy sibling:** The [Homebody Quarter Brief](https://github.com/Entrata-Collab/rxp) stays the strategic surface (bets, measurement, quarter narrative). This repo is the operating surface for customer heat and cross-team delivery. Do not copy the quarter bets into tracks here.
 
-**Live surface:** https://entrata-labs.dev-eg.entrata.io/homebody-mission-control/ (VPN). A push to `main` publishes there within a few minutes.
+**Live surface:** https://entrata-labs.dev-eg.entrata.io/homebody-mission-control/ (VPN). It is also on the [Entrata Labs hub](https://entrata-labs.dev-eg.entrata.io/).
 
 **Source repo:** https://github.com/Entrata-Collab/homebody-mission-control
 
@@ -46,7 +46,7 @@ git commit -m "update hbg renewals: eligibility list confirmed"
 git push
 ```
 
-Push to `main` publishes to Entrata Labs. Same direct-publish pattern as the [Homebody Quarter Brief](https://github.com/Entrata-Collab/rxp).
+This repo is the working copy. Labs publishes from [entrata-product/homebody-mission-control](https://github.com/entrata-product/homebody-mission-control). After you push here, push the same `main` to that remote so the live page updates.
 
 ---
 

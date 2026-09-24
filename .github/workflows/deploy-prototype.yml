@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   publish:
-    if: github.repository_owner == 'Entrata-Collab' || github.repository_owner == 'entrata-product'
+    if: github.repository_owner == 'entrata-product'
     runs-on: entrata-product-runner
     environment: dev
     env:
