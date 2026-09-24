@@ -1,5 +1,13 @@
 name: Deploy prototype
 
+# Publishes this repo directly to Entrata Labs from the Entrata-Collab org.
+#
+# Cross-org reusable-workflow access from Entrata-Collab to entrata-product is
+# not available, so the publish steps are inlined. Same pattern as
+# Entrata-Collab/rxp. The ARC runner and AWS role are reachable from this org.
+#
+# Slug = lowercase repo name -> https://entrata-labs.dev-eg.entrata.io/homebody-mission-control/
+
 on:
   push:
     branches: [main]
@@ -8,20 +16,84 @@ on:
 permissions:
   contents: read
   actions: write
-
-# The publish workflow references a reusable workflow that only resolves from
-# inside entrata-product. This file dispatches it on the mirror only.
-# Same pattern as Entrata-Collab/leasing-ai-war-room.
+  id-token: write
 
 jobs:
-  dispatch:
-    if: github.repository_owner == 'entrata-product'
-    runs-on: ubuntu-latest
+  publish:
+    if: github.repository_owner == 'Entrata-Collab' || github.repository_owner == 'entrata-product'
+    runs-on: entrata-product-runner
+    environment: dev
+    env:
+      NODE_VERSION: "20"
+      AWS_REGION: us-east-1
+      ACCOUNT_ID: "388604198110"
+      ROLE_ARN: arn:aws:iam::388604198110:role/arc-runner-entrata-labs
+      ARTIFACT_PATH: dist
+      BUILD_COMMAND: VITE_LABS_DEPLOY=true npm run build
     steps:
-      - name: Trigger publish workflow
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Resolve slug (folder under entrata-labs/)
         run: |
-          gh workflow run deploy-prototype-publish.yml \
-            --repo "${{ github.repository }}" \
-            --ref "${{ github.ref_name }}"
+          SLUG="$(echo '${{ github.event.repository.name }}' | tr '[:upper:]' '[:lower:]')"
+          echo "LABS_SLUG=$SLUG" >> "$GITHUB_ENV"
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/cache@v4
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json', '**/package-lock.json', '**/pnpm-lock.yaml', '**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Ensure Rollup Linux binary is available
+        run: npm ci --ignore-scripts --no-save --no-package-lock @rollup/rollup-linux-x64-gnu || true
+
+      - name: Build
+        run: ${{ env.BUILD_COMMAND }}
+
+      - name: Configure AWS credentials (ARC assume-role; no session tags)
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ env.ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+          role-duration-seconds: 900
+          role-chaining: true
+          role-skip-session-tagging: true
+          mask-aws-account-id: true
+
+      - name: Install AWS CLI v2
+        run: |
+          if command -v aws >/dev/null 2>&1; then
+            aws --version
+            exit 0
+          fi
+          ARCH_RAW="$(uname -m)"
+          case "$ARCH_RAW" in
+            x86_64|amd64) AWSCLI_ARCH=x86_64 ;;
+            aarch64|arm64) AWSCLI_ARCH=aarch64 ;;
+            *) echo "Unsupported machine: $ARCH_RAW"; exit 1 ;;
+          esac
+          curl -sSL "https://awscli.amazonaws.com/awscli-exe-linux-${AWSCLI_ARCH}.zip" -o /tmp/awscliv2.zip
+          unzip -q /tmp/awscliv2.zip -d /tmp
+          /tmp/aws/install -i "$HOME/aws-cli" -b "$HOME/aws-cli-bin"
+          echo "$HOME/aws-cli-bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/aws-cli-bin:$PATH"
+          aws --version
+
+      - name: Sync to S3 (entrata-labs/{slug}/)
+        run: |
+          AWS_BIN="aws"
+          if [ -x "$HOME/aws-cli-bin/aws" ]; then AWS_BIN="$HOME/aws-cli-bin/aws"; fi
+          S3_BUCKET="${{ env.ACCOUNT_ID }}-prototype/entrata-labs/${{ env.LABS_SLUG }}"
+          "$AWS_BIN" s3 sync --region "${{ env.AWS_REGION }}" --delete "./${{ env.ARTIFACT_PATH }}/" "s3://${S3_BUCKET}/"
