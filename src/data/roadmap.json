@@ -55,7 +55,7 @@
     { "keys": "DEV-308803", "title": "Property & Resident Picker on Add Bonus Points", "desc": "Scoped targeting when awarding bonus points", "lane": "rewards", "release": "R4" },
     { "keys": "DEV-325010", "title": "Bulk Resident Selection and Bonus Point Awards", "desc": "Multi-select residents for batch awards", "lane": "rewards", "release": "R4", "platform": "Web" },
     { "keys": "DEV-329237", "title": "Rewards Award Groups", "desc": "Named staff groups with elevated award limits and approval authority — lets senior managers bypass approval queues for large retention bonuses", "lane": "rewards", "release": "R4" },
-    { "keys": "DEV-316710", "title": "Paid Events Support", "desc": "Event pricing and payment collection", "lane": "rewards", "release": "R4", "platform": "Web" },
+    { "keys": "DEV-316710", "title": "Paid Events Support", "desc": "Event pricing and payment collection", "lane": "app", "release": "R4", "platform": "Web" },
     { "keys": "DEV-339888", "title": "Bonus Point Award Email Notifications", "desc": "Email residents when bonus points are awarded", "lane": "rewards", "release": "R4" },
 
     { "keys": "DEV-341597", "title": "Granular Post-Move-Out Access", "desc": "Per-feature access control after lease end", "lane": "app", "release": "R1", "platform": "Web + Mobile" },
