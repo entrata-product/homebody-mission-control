@@ -1,0 +1,77 @@
+{
+  "asOf": "Sep 25, 2026",
+  "releases": [
+    { "id": "R3", "label": "R3 — Oct 6, 2026" },
+    { "id": "R4", "label": "R4 — Dec 15, 2026" },
+    { "id": "R1", "label": "R1 — TBD" }
+  ],
+  "lanes": [
+    { "id": "app", "label": "Homebody App" },
+    { "id": "rewards", "label": "Rewards" },
+    { "id": "access_connect", "label": "Access Connect" },
+    { "id": "insurance", "label": "Insurance (Jae)" }
+  ],
+  "items": [
+    { "keys": "DEV-267753 / DEV-267788", "title": "Passwordless Login", "desc": "Email-based single-use codes replace password entry", "lane": "app", "release": "R3", "platform": "Web + Mobile" },
+    { "keys": "DEV-267797", "title": "Account Deletion — UI", "desc": "Self-service account deletion from settings", "lane": "app", "release": "R3", "platform": "Web" },
+    { "keys": "DEV-307590", "title": "Account Deletion — Backend & Data Policy", "desc": "Data retention policy and purge logic", "lane": "app", "release": "R3" },
+    { "keys": "DEV-322071", "title": "Admin Portal Nav Consolidation", "desc": "Merge Admin Portal sidebar into Entrata 3.0 top nav", "lane": "app", "release": "R3", "platform": "Web" },
+    { "keys": "DEV-309294", "title": "Checklists in Admin Portal", "desc": "Staff-managed move-in/move-out task lists", "lane": "app", "release": "R3", "platform": "Web" },
+    { "keys": "DEV-296828 / DEV-296829", "title": "Iterable In-App Messaging SDK", "desc": "In-app message targeting via Iterable", "lane": "app", "release": "R3", "platform": "Web + Mobile" },
+    { "keys": "DEV-301257", "title": "RP Decommission Prep", "desc": "Technical groundwork for Resident Portal sunset", "lane": "app", "release": "R3", "platform": "Web" },
+    { "keys": "DEV-254739", "title": "Flex — Embedded Onboarding", "desc": "In-app deposit alternative enrollment", "lane": "app", "release": "R3", "platform": "Mobile" },
+    { "keys": "DEV-254751", "title": "ResidentInsure: Plaid ACH", "desc": "Plaid-powered ACH for insurance payments", "lane": "app", "release": "R3", "platform": "Mobile" },
+    { "keys": "DEV-273256", "title": "Custom Documents", "desc": "Property-uploaded docs visible in the app", "lane": "app", "release": "R3", "platform": "Mobile" },
+    { "keys": "DEV-292225", "title": "Offers Granular Control", "desc": "Per-property offer visibility toggling", "lane": "app", "release": "R3", "platform": "Mobile" },
+    { "keys": "DEV-292304", "title": "Resident Utility Implementation", "desc": "Utility billing surfaced in resident app", "lane": "app", "release": "R3", "platform": "Mobile" },
+    { "keys": "DEV-231775", "title": "Marketing Opt-out Settings", "desc": "Resident-managed marketing communication prefs", "lane": "app", "release": "R3", "platform": "Mobile" },
+    { "keys": "DEV-302012", "title": "Canadian Payment PAD Integration", "desc": "Pre-authorized debit for Canadian properties", "lane": "app", "release": "R3", "platform": "Mobile" },
+    { "keys": "DEV-302080", "title": "Stripe — Add Payment Method", "desc": "Stripe-based payment method registration", "lane": "app", "release": "R3", "platform": "Mobile" },
+
+    { "keys": "DEV-319795", "title": "Granular Permissions for Admin Portal Rewards", "desc": "Role-based access for Rewards admin", "lane": "rewards", "release": "R3" },
+    { "keys": "DEV-288679", "title": "Admin Portal Analytics Tab", "desc": "Rewards engagement and spend analytics", "lane": "rewards", "release": "R3" },
+    { "keys": "DEV-308225", "title": "Granular \"View Community\" Permission", "desc": "Community tab visibility by role", "lane": "rewards", "release": "R3" },
+    { "keys": "DEV-307726", "title": "Autopay Incentive Eligibility", "desc": "Skip autopay points in month 1 (Trinity ask)", "lane": "rewards", "release": "R3" },
+    { "keys": "DEV-307730", "title": "Per-Reason Bonus Points Rules", "desc": "Per-reason approval thresholds and spending rules", "lane": "rewards", "release": "R3" },
+    { "keys": "DEV-291509 / DEV-291518", "title": "Refer-a-Friend — Smart Link & Attribution", "desc": "Smart link sharing and cross-property attribution", "lane": "rewards", "release": "R3", "platform": "Web + Mobile" },
+    { "keys": "DEV-339845", "title": "Granular Permissions — Resident Apps & Settings", "desc": "Role-based access for Resident Apps and Settings tabs", "lane": "rewards", "release": "R3" },
+
+    { "keys": "BRIVO", "title": "Brivo Integration", "desc": "Smart lock access via Brivo credentials", "lane": "access_connect", "release": "R3" },
+
+    { "keys": "HBG-RENEW", "title": "HBG Renewals", "desc": "Auto-renewal flow for Homebody Guaranty. ETA Oct 13.", "lane": "insurance", "release": "R3" },
+    { "keys": "HBG-ELIG", "title": "HBG Renewal Eligibility & Block List", "desc": "Eligibility criteria and exclusion rules for renewals", "lane": "insurance", "release": "R3" },
+
+    { "keys": "DEV-341694", "title": "Auto-Apply Core Property Migration", "desc": "Automatically applies Homebody settings on migration, eliminating manual configuration steps", "lane": "app", "release": "R4", "platform": "Web" },
+    { "keys": "DEV-334274", "title": "Resident Hub Tile Pinning — Configuration", "desc": "Admin config for pinning tiles to resident home screen", "lane": "app", "release": "R4", "platform": "Web" },
+    { "keys": "DEV-334979 / DEV-334980", "title": "Resident Hub Tile Pinning", "desc": "Pinned tiles on resident home screen", "lane": "app", "release": "R4", "platform": "Web + Mobile" },
+    { "keys": "DEV-336970 / DEV-336971", "title": "Checklist Deep-Link Navigation", "desc": "Checklist items link directly to relevant app sections", "lane": "app", "release": "R4", "platform": "Web + Mobile" },
+    { "keys": "DEV-336972 / DEV-336973", "title": "Checklist Completion Tracking", "desc": "Progress tracking and completion state for checklist items", "lane": "app", "release": "R4", "platform": "Web + Mobile" },
+    { "keys": "DEV-336974 / DEV-336975", "title": "Conditional Checklist Items", "desc": "Show/hide items based on lease or unit attributes", "lane": "app", "release": "R4", "platform": "Web + Mobile" },
+    { "keys": "DEV-336976 / DEV-336977", "title": "Video Content in Checklists", "desc": "Embedded video within checklist items", "lane": "app", "release": "R4", "platform": "Web + Mobile" },
+    { "keys": "DEV-332092", "title": "CA AB 414 Security Deposit Refund Opt-In", "desc": "Electronic refund opt-in per California AB 414", "lane": "app", "release": "R4", "platform": "Mobile" },
+    { "keys": "DEV-341595", "title": "Staff Resident Login Link", "desc": "Staff-generated login link for resident onboarding", "lane": "app", "release": "R4", "platform": "Mobile" },
+
+    { "keys": "DEV-308795", "title": "Per-Property Bonus Points Reasons", "desc": "Custom bonus point reasons per property", "lane": "rewards", "release": "R4" },
+    { "keys": "DEV-308803", "title": "Property & Resident Picker on Add Bonus Points", "desc": "Scoped targeting when awarding bonus points", "lane": "rewards", "release": "R4" },
+    { "keys": "DEV-325010", "title": "Bulk Resident Selection and Bonus Point Awards", "desc": "Multi-select residents for batch awards", "lane": "rewards", "release": "R4", "platform": "Web" },
+    { "keys": "DEV-329237", "title": "Rewards Award Groups", "desc": "Named staff groups with elevated award limits and approval authority — lets senior managers bypass approval queues for large retention bonuses", "lane": "rewards", "release": "R4" },
+    { "keys": "DEV-316710", "title": "Paid Events Support", "desc": "Event pricing and payment collection", "lane": "rewards", "release": "R4", "platform": "Web" },
+    { "keys": "DEV-339888", "title": "Bonus Point Award Email Notifications", "desc": "Email residents when bonus points are awarded", "lane": "rewards", "release": "R4" },
+
+    { "keys": "DEV-341597", "title": "Granular Post-Move-Out Access", "desc": "Per-feature access control after lease end", "lane": "app", "release": "R1", "platform": "Web + Mobile" },
+    { "keys": "DEV-179698", "title": "PetScreening Unleashed MVP", "desc": "Enhanced PetScreening integration with pet wellness bundle", "lane": "app", "release": "R1" },
+    { "keys": "DEV-302096", "title": "Plaid ACH: Homebody Unleashed", "desc": "Plaid ACH for PetScreening Unleashed payments", "lane": "app", "release": "R1", "platform": "Mobile" },
+
+    { "keys": "DEV-341594", "title": "Property-Level Budget Threshold", "desc": "Per-property bonus point spending caps (Trinity)", "lane": "rewards", "release": "R1" },
+    { "keys": "DEV-340258", "title": "Resident Eligibility & Exclusion Rules", "desc": "Ban list for corporate, employee, and eviction residents", "lane": "rewards", "release": "R1" },
+    { "keys": "DEV-341592", "title": "Portfolio-Level Custom Promo Codes", "desc": "Portfolio-level custom incentive promo codes", "lane": "rewards", "release": "R1" },
+    { "keys": "DEV-341641", "title": "Configurable Renewal Offer Window", "desc": "Configurable window for lease renewal offers", "lane": "rewards", "release": "R1" },
+
+    { "keys": "LUXERONE", "title": "Luxer One Integration", "desc": "Smart locker integration — Trinity 67K-unit ask, existing API partner", "lane": "access_connect", "release": "R1" },
+    { "keys": "PARCELPENDING", "title": "Parcel Pending Integration", "desc": "Package locker integration — existing API partner", "lane": "access_connect", "release": "R1" },
+    { "keys": "DOORKING", "title": "DoorKing Integration", "desc": "Gate/access integration — partnership status TBD", "lane": "access_connect", "release": "R1" },
+
+    { "keys": "HBG-XFER", "title": "HBG Transfers", "desc": "Policy transfers between units/properties", "lane": "insurance", "release": "R1" },
+    { "keys": "DEV-298646", "title": "3DS Insurance: Homebody App", "desc": "3D Secure insurance payments in app", "lane": "insurance", "release": "R1", "platform": "Mobile" }
+  ]
+}

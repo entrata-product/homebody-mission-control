@@ -2,6 +2,7 @@ import { useMemo, useState } from "react"
 import tracksFile from "./data/tracks.json"
 import teamFile from "./data/team.json"
 import decisionsFile from "./data/decisions.json"
+import { Roadmap } from "./components/Roadmap"
 
 type Heat = "burning" | "active" | "steady" | "idle"
 type Status = "not_started" | "in_progress" | "blocked" | "complete"
@@ -82,7 +83,7 @@ const laneLabel: Record<Lane, string> = {
   homebody: "Homebody",
 }
 
-type Tab = "briefing" | "tracks" | "decisions" | "contribute"
+type Tab = "briefing" | "tracks" | "decisions" | "roadmap" | "contribute"
 
 export default function App() {
   const [tab, setTab] = useState<Tab>("briefing")
@@ -139,6 +140,7 @@ export default function App() {
               ["briefing", "Briefing"],
               ["tracks", "Tracks"],
               ["decisions", "Decisions"],
+              ["roadmap", "Roadmap"],
               ["contribute", "How to update"],
             ] as const
           ).map(([id, label]) => (
@@ -331,6 +333,8 @@ export default function App() {
             ))}
           </ol>
         )}
+
+        {tab === "roadmap" && <Roadmap />}
 
         {tab === "contribute" && <Contribute />}
       </main>
