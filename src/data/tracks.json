@@ -1,18 +1,99 @@
 {
-  "asOf": "2026-09-24",
-  "sourceNote": "Starting slate taken from Slack on 2026-09-24. Track owners confirm or correct this at the first huddle. If a fact is not in your track, it is not claimed here.",
+  "asOf": "2026-09-28",
+  "sourceNote": "Program tracks confirmed with Cal on 2026-09-28. Each track is a Homebody workstream. Sub-items and daily updates live on the parent track.",
   "tracks": [
     {
-      "id": "hbg-renewals",
-      "lane": "hbg",
-      "title": "HBG renewals",
-      "owners": ["Dan Bullock", "Jae Lee"],
+      "number": 1,
+      "id": "homebody-app-migration",
+      "title": "Homebody App Migration",
+      "owners": ["Zack Melton"],
+      "description": "Move all Resident Portal users to Homebody, across every vertical. Full migration deadline is Dec 10, 2026. Cohort 1 (60 clients) is in flight; ultimate target is 3M monthly active users on Homebody.",
       "heat": "burning",
       "status": "in_progress",
-      "eta": "2026-10-13",
-      "summary": "Clients are hot on HBG renewals. The team needs a locked picture of what is being built, and that it matches what clients need, by October 13. Asset is escalated; Cal is escalating to Chase.",
-      "nextStep": "Robert Jones meets Dan Bullock to lock the final renewal requirements. Zack asked for that meeting on 2026-09-24.",
+      "eta": "2026-12-10",
+      "summary": "Cohort 1 (60 clients) migrating. Full RP → Homebody migration deadline is Dec 10.",
+      "nextStep": "Complete Cohort 1 (60 clients) migration.",
+      "successMeasure": "3M monthly active users on Homebody",
+      "note": null,
+      "noteTone": null,
       "updates": [
+        {
+          "date": "2026-09-28",
+          "text": "Track opened at program-tracks refactor. Scope: all verticals, all Resident Portal residents. Full migration deadline Dec 10, 2026. Cohort 1 (60 clients) in flight. Target: 3M MAU on Homebody.",
+          "source": "Cal 2026-09-28 Mission Control update"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "homebody-guaranty",
+      "title": "Homebody Guaranty (HBG)",
+      "owners": ["Dan Bullock", "Jae Lee"],
+      "description": "HBG renewals, eligibility, transfers, enrollment exceptions, and client go-lives. Currently absorbing all HBG customer heat — Priess, Asset, Landmark, and Cardinal are the active escalations, and the renewals critical path is due Oct 13.",
+      "heat": "burning",
+      "status": "in_progress",
+      "eta": "Renewals locked by 2026-10-13",
+      "summary": "Renewals and eligibility on the Oct 13 critical path. Transfers explicitly off critical path. Four active client escalations: Priess, Asset, Landmark, Cardinal.",
+      "nextStep": "Robert Jones × Dan Bullock meeting to lock final renewal requirements.",
+      "successMeasure": "The four escalated clients de-escalated (Priess, Asset, Landmark, Cardinal)",
+      "note": "Active client escalations: Priess, Asset, Landmark, Cardinal.",
+      "noteTone": "alert",
+      "workstreams": [
+        {
+          "id": "hbg-renewals",
+          "title": "HBG renewals",
+          "owners": ["Dan Bullock", "Jae Lee"],
+          "status": "in_progress",
+          "eta": "2026-10-13",
+          "nextStep": "Robert Jones meets Dan Bullock to lock final renewal requirements."
+        },
+        {
+          "id": "hbg-renewal-eligibility",
+          "title": "HBG renewal eligibility (block list)",
+          "owners": ["Dan Bullock"],
+          "status": "in_progress",
+          "eta": "2026-10-13",
+          "nextStep": "Confirm block list with insurance ops. Dan asked #leap-entrata for scenarios that should not renew."
+        },
+        {
+          "id": "hbg-transfers",
+          "title": "HBG transfers",
+          "owners": ["Jae Lee"],
+          "status": "not_started",
+          "eta": null,
+          "nextStep": "Open a separate epic for HBG transfer behavior. Off the renewals critical path per Jae."
+        },
+        {
+          "id": "landmark-redland",
+          "title": "Landmark — The Redland Apartments enrollment exceptions",
+          "owners": ["Alyssa Schroeder"],
+          "status": "in_progress",
+          "eta": null,
+          "nextStep": "Alyssa confirms who owns the answer and whether a manual enroll or reinstate is possible. Tickets #1098815 and #1079454."
+        },
+        {
+          "id": "landmark-leaseup-ach",
+          "title": "Landmark lease-up ACH — HBG and MP Contents",
+          "owners": ["Tanner Clegg"],
+          "status": "in_progress",
+          "eta": null,
+          "nextStep": "Tanner confirms whether he needs rates, and coverage amounts for HBG."
+        },
+        {
+          "id": "meridian-bellamy",
+          "title": "Meridian — Bellamy at Dahlonega go-live",
+          "owners": ["Tanner Clegg"],
+          "status": "in_progress",
+          "eta": null,
+          "nextStep": "Confirm whether Bellamy at Dahlonega is scheduled for HBG training. (Status TBD as of 2026-09-28.)"
+        }
+      ],
+      "updates": [
+        {
+          "date": "2026-09-28",
+          "text": "Current active client escalations: Priess, Asset, Landmark, Cardinal. (Priess and Cardinal are new since 09-24 slate; no workstreams yet.)",
+          "source": "Cal 2026-09-28 Mission Control update"
+        },
         {
           "date": "2026-09-24",
           "text": "Cal: Asset is escalated on HBG renewals, escalating to Chase.",
@@ -27,124 +108,53 @@
           "date": "2026-09-24",
           "text": "Jae: take transfers off this critical path so the team can focus on renewals. Start a separate epic for HBG transfers.",
           "source": "#tmp-hbg-renewal-charges"
-        }
-      ]
-    },
-    {
-      "id": "hbg-renewal-eligibility",
-      "lane": "hbg",
-      "title": "HBG renewal eligibility",
-      "owners": ["Dan Bullock"],
-      "heat": "burning",
-      "status": "in_progress",
-      "eta": "2026-10-13",
-      "summary": "Rules for when a renewal lease does not get an HBG policy. The working list is still being confirmed with insurance ops. This is a warning to the property, plus a block, not a silent skip.",
-      "nextStep": "Confirm the block list with insurance ops. Dan asked #leap-entrata for scenarios that should not renew.",
-      "updates": [
-        {
-          "date": "2026-09-24",
-          "text": "Dan's working block list: property settings disabled; a claim in Open or Closed Paid (other closed statuses still allow renewal); a duplicate policy on another lease before the renewal lease is created. The property should see a warning that the renewal lease is not eligible for HBG and may need a guarantor.",
-          "source": "#leap-entrata"
         },
         {
           "date": "2026-09-24",
-          "text": "Fraud and student validation are known gaps. They are not in the block list because there is no systemic way to resolve them today.",
-          "source": "#leap-entrata, Dan Bullock"
+          "text": "Dan's working block list: property settings disabled; a claim in Open or Closed Paid; a duplicate policy on another lease before the renewal lease is created.",
+          "source": "#leap-entrata"
         },
         {
           "date": "2026-09-24",
           "text": "HBG auto-renewal must not work like DA auto-renewal. A renewal lease interval must exist. No month-to-month, including a roll to month-to-month because move-out has not been performed.",
           "source": "#leap-entrata"
-        }
-      ]
-    },
-    {
-      "id": "hbg-transfers",
-      "lane": "hbg",
-      "title": "HBG transfers",
-      "owners": ["Jae Lee"],
-      "heat": "active",
-      "status": "not_started",
-      "eta": null,
-      "summary": "Transfers need a better model than what exists today. They are explicitly off the renewals critical path so renewals can finish.",
-      "nextStep": "Open a separate epic for HBG transfer behavior. Do not pull it back onto the October 13 renewals path unless Robert disagrees.",
-      "updates": [
+        },
         {
           "date": "2026-09-24",
-          "text": "Jae agreed transfers should be updated, and asked to keep them off the renewals critical path. He asked Robert Jones to say if he disagrees.",
-          "source": "#tmp-hbg-renewal-charges"
-        }
-      ]
-    },
-    {
-      "id": "landmark-redland",
-      "lane": "hbg",
-      "title": "Landmark — The Redland Apartments enrollment exceptions",
-      "owners": ["Alyssa Schroeder"],
-      "heat": "burning",
-      "status": "in_progress",
-      "eta": null,
-      "summary": "Landmark asked whether three residents at The Redland Apartments can be manually enrolled or reinstated in HBG after the lease term has already started. LEAP told them a policy cannot be initiated after the lease start date. Alyssa is on the thread for visibility. Owner of the answer is not locked yet.",
-      "nextStep": "Alyssa confirms who owns the answer and whether a manual enroll or reinstate is possible. Tickets #1098815 and #1079454.",
-      "updates": [
-        {
-          "date": "2026-09-24",
-          "text": "Brad Siddoway raised the ask in #insurance-ops-rnd-collab. The three cases are a renewal transfer that likely missed enrollment during migration, a standard renewal that had a prior policy and was not enrolled on renewal, and a renewal transfer with a signed guarantor waiver addendum that could not be added during renewal. Resident names are intentionally not stored here.",
+          "text": "Landmark — Brad Siddoway raised three Redland enrollment exceptions in #insurance-ops-rnd-collab (renewal transfer missed enrollment during migration; standard renewal with prior policy not re-enrolled; renewal transfer with signed guarantor waiver addendum).",
           "source": "#insurance-ops-rnd-collab"
-        }
-      ]
-    },
-    {
-      "id": "landmark-leaseup-ach",
-      "lane": "hbg",
-      "title": "Landmark lease-up ACH — HBG and MP Contents",
-      "owners": ["Tanner Clegg"],
-      "heat": "active",
-      "status": "in_progress",
-      "eta": null,
-      "summary": "ACH information is in for Master Policy Contents-only and HBG on eight Landmark lease-up properties that went live in August. Coverage amounts for HBG are still an open question.",
-      "nextStep": "Tanner confirms whether he needs rates, and the coverage amounts for HBG.",
-      "updates": [
+        },
         {
           "date": "2026-09-24",
-          "text": "Laura Dessens: ACH is in for The Station at Oxford, The Standard at Boulder, The Standard at West Lafayette, The Mark Tampa, The Walk at Shop Road, The Retreat at Boone, The Retreat at Westerly, and The Mark Charleston.",
+          "text": "Landmark lease-up ACH in for 8 properties: The Station at Oxford, The Standard at Boulder, The Standard at West Lafayette, The Mark Tampa, The Walk at Shop Road, The Retreat at Boone, The Retreat at Westerly, The Mark Charleston.",
           "source": "#cproj-landmark-properties-athens-ga"
-        }
-      ]
-    },
-    {
-      "id": "meridian-bellamy",
-      "lane": "hbg",
-      "title": "Meridian — Bellamy at Dahlonega go-live",
-      "owners": ["Tanner Clegg"],
-      "heat": "active",
-      "status": "in_progress",
-      "eta": "2026-09-24",
-      "summary": "HBG went live for Bellamy at Dahlonega on 2026-09-24. Screening setup is done. Training for the property is an open question.",
-      "nextStep": "Confirm whether Bellamy at Dahlonega is scheduled for HBG training.",
-      "updates": [
+        },
         {
           "date": "2026-09-24",
-          "text": "Tanner turned HBG on. Kaela Anspach completed screening setup. Tanner asked whether they are set to get HBG training.",
+          "text": "Meridian — HBG went live for Bellamy at Dahlonega. Screening setup completed by Kaela Anspach. Tanner asked whether they are scheduled for HBG training.",
           "source": "#cproj-meridian-management-group-mmg"
         }
       ]
     },
     {
-      "id": "homebody-intake",
-      "lane": "homebody",
-      "title": "Homebody track intake",
-      "owners": ["Zack Melton"],
-      "heat": "idle",
-      "status": "not_started",
-      "eta": null,
-      "summary": "Homebody work that is not HBG lands here. HBG is a Homebody product and stays in the HBG lane. This track is the placeholder until owners add their own tracks at the first huddle.",
-      "nextStep": "At the first huddle, each owner adds the Homebody work they are actually carrying. Delete this placeholder once real tracks exist.",
+      "number": 3,
+      "id": "homebody-insurance-conversion",
+      "title": "Homebody Insurance Conversion",
+      "owners": ["Zack Melton", "Jae Lee"],
+      "description": "Homebody Insurance conversion rates have decreased. Active incident to identify the root cause and drive rates back up. Success is measured by October conversion rates rising.",
+      "heat": "burning",
+      "status": "in_progress",
+      "eta": "urgent — October recovery",
+      "summary": "Active conversion-rate incident. Diagnose the funnel drop and remediate.",
+      "nextStep": "Continue diagnosis and remediation under incident #1547.",
+      "successMeasure": "October Homebody Insurance conversion rates increase",
+      "note": "Active incident: #1547.",
+      "noteTone": "alert",
       "updates": [
         {
-          "date": "2026-09-24",
-          "text": "Opened with the war room. No additional Homebody customer-heat items were written into this slate beyond the HBG threads above.",
-          "source": "Initial slate"
+          "date": "2026-09-28",
+          "text": "Track opened as active conversion-rate incident. Zack Melton and Jae Lee leading. Active work under incident #1547. Success measure: October conversion rates increase.",
+          "source": "Cal 2026-09-28 Mission Control update"
         }
       ]
     }
