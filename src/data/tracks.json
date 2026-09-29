@@ -1,12 +1,14 @@
 {
-  "asOf": "2026-09-28",
+  "asOf": "2026-09-29",
   "sourceNote": "Program tracks confirmed with Cal on 2026-09-28. Each track is a Homebody workstream. Sub-items and daily updates live on the parent track.",
   "tracks": [
     {
       "number": 1,
       "id": "homebody-app-migration",
       "title": "Homebody App Migration",
-      "owners": ["Zack Melton"],
+      "owners": [
+        "Zack Melton"
+      ],
       "description": "Move all Resident Portal users to Homebody, across every vertical. Full migration deadline is Dec 10, 2026. Cohort 1 (60 clients) is in flight; ultimate target is 3M monthly active users on Homebody.",
       "heat": "burning",
       "status": "in_progress",
@@ -28,7 +30,10 @@
       "number": 2,
       "id": "homebody-guaranty",
       "title": "Homebody Guaranty (HBG)",
-      "owners": ["Dan Bullock", "Jae Lee"],
+      "owners": [
+        "Dan Bullock",
+        "Jae Lee"
+      ],
       "description": "HBG renewals, eligibility, transfers, enrollment exceptions, and client go-lives. Currently absorbing all HBG customer heat — Priess, Asset, Landmark, and Cardinal are the active escalations, and the renewals critical path is due Oct 13.",
       "heat": "burning",
       "status": "in_progress",
@@ -42,7 +47,10 @@
         {
           "id": "hbg-renewals",
           "title": "HBG renewals",
-          "owners": ["Dan Bullock", "Jae Lee"],
+          "owners": [
+            "Dan Bullock",
+            "Jae Lee"
+          ],
           "status": "in_progress",
           "eta": "2026-10-13",
           "nextStep": "Robert Jones meets Dan Bullock to lock final renewal requirements."
@@ -50,7 +58,9 @@
         {
           "id": "hbg-renewal-eligibility",
           "title": "HBG renewal eligibility (block list)",
-          "owners": ["Dan Bullock"],
+          "owners": [
+            "Dan Bullock"
+          ],
           "status": "in_progress",
           "eta": "2026-10-13",
           "nextStep": "Confirm block list with insurance ops. Dan asked #leap-entrata for scenarios that should not renew."
@@ -58,7 +68,9 @@
         {
           "id": "hbg-transfers",
           "title": "HBG transfers",
-          "owners": ["Jae Lee"],
+          "owners": [
+            "Jae Lee"
+          ],
           "status": "not_started",
           "eta": null,
           "nextStep": "Open a separate epic for HBG transfer behavior. Off the renewals critical path per Jae."
@@ -66,7 +78,9 @@
         {
           "id": "landmark-redland",
           "title": "Landmark — The Redland Apartments enrollment exceptions",
-          "owners": ["Alyssa Schroeder"],
+          "owners": [
+            "Alyssa Schroeder"
+          ],
           "status": "in_progress",
           "eta": null,
           "nextStep": "Alyssa confirms who owns the answer and whether a manual enroll or reinstate is possible. Tickets #1098815 and #1079454."
@@ -74,7 +88,9 @@
         {
           "id": "landmark-leaseup-ach",
           "title": "Landmark lease-up ACH — HBG and MP Contents",
-          "owners": ["Tanner Clegg"],
+          "owners": [
+            "Tanner Clegg"
+          ],
           "status": "in_progress",
           "eta": null,
           "nextStep": "Tanner confirms whether he needs rates, and coverage amounts for HBG."
@@ -82,7 +98,9 @@
         {
           "id": "meridian-bellamy",
           "title": "Meridian — Bellamy at Dahlonega go-live",
-          "owners": ["Tanner Clegg"],
+          "owners": [
+            "Tanner Clegg"
+          ],
           "status": "in_progress",
           "eta": null,
           "nextStep": "Confirm whether Bellamy at Dahlonega is scheduled for HBG training. (Status TBD as of 2026-09-28.)"
@@ -140,7 +158,10 @@
       "number": 3,
       "id": "homebody-insurance-conversion",
       "title": "Homebody Insurance Conversion",
-      "owners": ["Zack Melton", "Jae Lee"],
+      "owners": [
+        "Zack Melton",
+        "Jae Lee"
+      ],
       "description": "Homebody Insurance conversion rates have decreased. Active incident to identify the root cause and drive rates back up. Success is measured by October conversion rates rising.",
       "heat": "burning",
       "status": "in_progress",
@@ -155,6 +176,31 @@
           "date": "2026-09-28",
           "text": "Track opened as active conversion-rate incident. Zack Melton and Jae Lee leading. Active work under incident #1547. Success measure: October conversion rates increase.",
           "source": "Cal 2026-09-28 Mission Control update"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "homebody-rewards-trinity",
+      "title": "Homebody Rewards / Trinity",
+      "owners": [
+        "Zack Melton",
+        "Britton"
+      ],
+      "description": "Homebody Rewards program and the Trinity Property Consultants relationship ($2M+ annual enterprise opportunity, 56,000 units). The Rewards offering was recently switched; client adoption is minimal and Trinity is asking for more features. Two decisions are open: what we do with Trinity, and whether Rewards is sold in 2027.",
+      "heat": "active",
+      "status": "in_progress",
+      "eta": "2026-10-15 — decision needed as part of AOP",
+      "summary": "Medium heat, trending up. Rewards offering switched; minimal client adoption; Trinity pushing for more features and clarity on direction.",
+      "nextStep": "Decide: (1) what we do with Trinity, and (2) whether we sell Rewards in 2027. Both feed the Oct 15 AOP deadline.",
+      "successMeasure": "Rewards revenue increasing",
+      "note": "Trinity is frustrated with the current offering and wants to know where we're headed.",
+      "noteTone": "alert",
+      "updates": [
+        {
+          "date": "2026-09-29",
+          "text": "Track opened. Owners Zack Melton and Britton. Rewards offering switched with minimal client adoption; Trinity asking for more features and frustrated with current offering. Decisions needed by Oct 15 (AOP): what to do with Trinity, and whether Rewards is sold in 2027. Success measure: Rewards revenue increasing.",
+          "source": "Cal 2026-09-29 Mission Control update"
         }
       ]
     }
