@@ -1,0 +1,52 @@
+name: Mirror to entrata-product
+
+# ------------------------------------------------------------------
+# Purpose
+# ------------------------------------------------------------------
+# Every push to `main` on Entrata-Collab/homebody-mission-control
+# auto-mirrors to entrata-product/homebody-mission-control, which
+# triggers the labs deploy workflow. Same pattern as LAWR.
+#
+# Setup (one-time, requires admin on this repo):
+#   1) Create a GitHub Personal Access Token (fine-grained) with:
+#        - Repository access: entrata-product/homebody-mission-control
+#        - Repository permissions: Contents = Read and write
+#      (An existing MIRROR_PAT used for LAWR works fine if it has
+#      access to this repo added.)
+#   2) In Entrata-Collab/homebody-mission-control:
+#        Settings → Secrets and variables → Actions → New repository secret
+#        Name:  MIRROR_PAT
+#        Value: (the PAT from step 1)
+#   3) Push any commit (or manually trigger this workflow) — the mirror
+#      fires and the deploy pipeline downstream on entrata-product runs.
+#
+# Until the secret is configured, this workflow skips with a warning
+# rather than failing. That way it can be committed ahead of the
+# secret being set without red-cross runs.
+# ------------------------------------------------------------------
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    if: github.repository_owner == 'Entrata-Collab'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Push to entrata-product/homebody-mission-control
+        env:
+          MIRROR_PAT: ${{ secrets.MIRROR_PAT }}
+        run: |
+          if [ -z "$MIRROR_PAT" ]; then
+            echo "::warning::MIRROR_PAT secret not configured — skipping mirror. See workflow header for one-time setup steps."
+            exit 0
+          fi
+          git remote add mirror "https://x-access-token:${MIRROR_PAT}@github.com/entrata-product/homebody-mission-control.git"
+          git push mirror main --force
