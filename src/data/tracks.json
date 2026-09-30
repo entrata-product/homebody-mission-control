@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-29",
+  "asOf": "2026-09-30",
   "sourceNote": "Program tracks confirmed with Cal on 2026-09-28. Each track is a Homebody workstream. Sub-items and daily updates live on the parent track.",
   "tracks": [
     {
@@ -34,14 +34,14 @@
         "Dan Bullock",
         "Jae Lee"
       ],
-      "description": "HBG renewals, eligibility, transfers, enrollment exceptions, and client go-lives. Currently absorbing all HBG customer heat — Priess, Asset, Landmark, and Cardinal are the active escalations, and the renewals critical path is due Oct 13.",
+      "description": "HBG renewals, eligibility, transfers, enrollment exceptions, and client go-lives. Currently absorbing all HBG customer heat — Priess, Asset, Landmark, Cardinal, and Yugo are the active escalations, and the renewals critical path is due Oct 13.",
       "heat": "burning",
       "status": "in_progress",
       "eta": "Renewals locked by 2026-10-13",
-      "summary": "Renewals and eligibility on the Oct 13 critical path. Transfers explicitly off critical path. Four active client escalations: Priess, Asset, Landmark, Cardinal.",
+      "summary": "Renewals and eligibility on the Oct 13 critical path. Transfers explicitly off critical path. Five active client escalations: Priess, Asset, Landmark, Cardinal, Yugo.",
       "nextStep": "Robert Jones × Dan Bullock meeting to lock final renewal requirements.",
-      "successMeasure": "The four escalated clients de-escalated (Priess, Asset, Landmark, Cardinal)",
-      "note": "Active client escalations: Priess, Asset, Landmark, Cardinal.",
+      "successMeasure": "The five escalated clients de-escalated (Priess, Asset, Landmark, Cardinal, Yugo)",
+      "note": "Active client escalations: Priess, Asset, Landmark, Cardinal, Yugo.",
       "noteTone": "alert",
       "workstreams": [
         {
@@ -107,6 +107,11 @@
         }
       ],
       "updates": [
+        {
+          "date": "2026-09-30",
+          "text": "Yugo added to the active HBG client escalation list.",
+          "source": "Alyssa 2026-09-30"
+        },
         {
           "date": "2026-09-28",
           "text": "Current active client escalations: Priess, Asset, Landmark, Cardinal. (Priess and Cardinal are new since 09-24 slate; no workstreams yet.)",
