@@ -14,117 +14,79 @@
   "roster": [
     {
       "name": "Zack Melton",
-      "title": "Product, Homebody",
-      "seat": "Standing",
-      "note": "DRI for this surface."
+      "seat": "Standing"
     },
     {
       "name": "Jae Lee",
-      "title": "Principal Product Manager",
-      "seat": "Standing",
-      "note": "HBG strategy. Scope calls on renewals vs. transfers."
+      "seat": "Standing"
     },
     {
       "name": "Alyssa Schroeder",
-      "title": "Dir, Customer Success Homebody",
-      "seat": "Standing",
-      "note": "Customer heat and CS visibility."
+      "seat": "Standing"
     },
     {
       "name": "Levi Howa",
-      "title": "Sr Dir, Engineering",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Blake Webster",
-      "title": "SVP, Customer Success & Professional Services",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Josh Tebbs",
-      "title": "Dir, Insurance Operations",
-      "seat": "Standing",
-      "note": "Cal confirmed Josh as the person running the agency under Chris Finken."
+      "seat": "Standing"
     },
     {
       "name": "Britton Pederson",
-      "title": "",
-      "seat": "Standing",
-      "note": "Co-owner, Track 4 Homebody Rewards / Trinity."
+      "seat": "Standing"
     },
     {
       "name": "Joe Wilson",
-      "title": "Product Manager, Resident Experience",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Alex Buchanan",
-      "title": "Sales",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Erika Bronson",
-      "title": "",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Justin Stokes",
-      "title": "",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Manish Ranjan",
-      "title": "",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Wyatt Moore",
-      "title": "",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Andre Alves",
-      "title": "",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Christian Allred",
-      "title": "",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Jody Crockett",
-      "title": "",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Kyle Whittle",
-      "title": "",
-      "seat": "Standing",
-      "note": ""
+      "seat": "Standing"
     },
     {
       "name": "Chris Finken",
-      "title": "SVP, Revenue Marketing",
-      "seat": "Optional",
-      "note": "Optional on the standing invite."
+      "seat": "Optional"
     },
     {
       "name": "Nico Dato",
-      "title": "",
-      "seat": "Optional",
-      "note": ""
+      "seat": "Optional"
     }
   ],
   "openSeats": [

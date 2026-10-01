@@ -47,9 +47,7 @@ type Decision = {
 
 type RosterMember = {
   name: string
-  title: string
   seat: string
-  note: string
 }
 
 const tracks = (tracksFile.tracks as Track[]).slice().sort((a, b) => a.number - b.number)
@@ -211,17 +209,15 @@ export default function App() {
               <p className="mt-1 text-xs text-[#737373]">
                 Standing roster from Cal on {teamFile.asOf}. Sponsors: {teamFile.sponsors.map((person) => person.name).join(" and ")}.
               </p>
-              <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+              <ul className="mt-3 flex flex-wrap gap-1.5">
                 {roster.map((person) => (
-                  <li key={person.name} className="rounded-lg border border-[#E5E7EB] bg-white px-4 py-3">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-sm font-semibold">{person.name}</span>
-                      <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${person.seat === "Standing" ? "bg-[#BCF0C8] text-[#004B37]" : "bg-[#FFE797] text-[#000000]"}`}>
-                        {person.seat}
-                      </span>
-                    </div>
-                    <p className="mt-1 text-xs text-[#4A4A4A]">{person.title}</p>
-                    {person.note ? <p className="mt-1 text-xs text-[#737373]">{person.note}</p> : null}
+                  <li
+                    key={person.name}
+                    title={person.seat}
+                    className={`rounded-full border px-2.5 py-1 text-xs font-medium ${person.seat === "Standing" ? "border-[#BCF0C8] bg-[#F0FBF3] text-[#004B37]" : "border-[#FFE797] bg-[#FFFBEA] text-[#4A4A4A]"}`}
+                  >
+                    {person.name}
+                    {person.seat !== "Standing" ? <span className="ml-1 text-[10px] text-[#737373]">({person.seat.toLowerCase()})</span> : null}
                   </li>
                 ))}
               </ul>
