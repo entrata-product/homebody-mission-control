@@ -1,18 +1,30 @@
 {
   "asOf": "2026-10-01",
-  "sourceNote": "State of the union tiles. Rollout numbers are from the Domo Homebody rollout card (Cal screenshot, 2026-10-01). Bug counts are live Jira queries run 2026-10-01 (project DEV, issuetype Bug, statusCategory != Done). Tiles with a null value have no source yet and show who owns the number. Countdown and age tiles are computed from dates at render time and never go stale.",
+  "sourceNote": "State of the union tiles. Rollout numbers are from the Domo Homebody rollout card (Cal screenshot, 2026-10-01). Bug counts are live Jira queries run 2026-10-01 (project DEV, issuetype Bug, statusCategory != Done, Auto-Triage excluded). Per-track bug buckets are non-overlapping and sum to the total: an issue is assigned to the first matching bucket in order HBG -> Insurance -> Rewards -> App -> Other. Tiles with a null value have no source yet and show who owns the number. Countdown and age tiles are computed from dates at render time.",
   "overall": [
+    {
+      "label": "Open bugs, total",
+      "value": "90",
+      "sub": "84 P1/P2 · sum of track buckets",
+      "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · components HB-B2B, HB-B2C, HB-Deposit Alternative, HB-Resident Growth, RXP-Capricorn, RXP-Capricorn-Mobile, HBS-App, HBS-Web"
+    },
     {
       "label": "Bugs opened, 7d",
       "value": "35",
-      "sub": "all Homebody components",
-      "source": "Jira 2026-10-01 · HB-B2B, HB-B2C, HB-Resident Growth, HB-Deposit Alternative, RXP-Capricorn, RXP-Capricorn-Mobile, HBS-App, HBS-Web · excl. Auto-Triage"
+      "sub": "same component set",
+      "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · created >= -7d"
     },
     {
       "label": "Bugs closed, 7d",
       "value": "24",
-      "sub": "all Homebody components",
-      "source": "Jira 2026-10-01 · same component set · excl. Auto-Triage"
+      "sub": "same component set",
+      "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · resolved >= -7d"
+    },
+    {
+      "label": "Open bugs, other HB",
+      "value": "3",
+      "sub": "HB-Resident Growth only",
+      "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · HB-Resident Growth, not in any track bucket"
     }
   ],
   "groups": [
@@ -49,9 +61,9 @@
         },
         {
           "label": "Open bugs",
-          "value": "15",
-          "sub": "14 P1/P2 · 1 P1",
-          "source": "Jira 2026-10-01 · RXP-Capricorn, RXP-Capricorn-Mobile, HBS-App, HBS-Web"
+          "value": "12",
+          "sub": "11 P1/P2",
+          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · RXP-Capricorn, RXP-Capricorn-Mobile, HBS-App, HBS-Web · excl. HBG/Insurance components and Rewards"
         },
         {
           "label": "Days to Dec 10 deadline",
@@ -75,9 +87,9 @@
         },
         {
           "label": "Open bugs",
-          "value": "30",
-          "sub": "27 P1/P2 · 5 P1",
-          "source": "Jira 2026-10-01 · HB-Deposit Alternative"
+          "value": "25",
+          "sub": "24 P1/P2",
+          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · HB-Deposit Alternative"
         },
         {
           "label": "Renewals eligible / processed",
@@ -107,7 +119,7 @@
           "label": "Open bugs",
           "value": "47",
           "sub": "43 P1/P2",
-          "source": "Jira 2026-10-01 · HB-B2B, HB-B2C · excl. Auto-Triage · includes non-insurance B2B items"
+          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · HB-B2B, HB-B2C · includes non-insurance B2B items"
         }
       ]
     },
@@ -133,9 +145,9 @@
         },
         {
           "label": "Open bugs",
-          "value": "5",
-          "sub": "incl. duplicate reward events for Trinity",
-          "source": "Jira 2026-10-01 · summary ~ \"Rewards\""
+          "value": "3",
+          "sub": "summary ~ \"Rewards\" · incl. Trinity duplicate reward events",
+          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · summary ~ Rewards, Homebody web/app components"
         }
       ]
     }
