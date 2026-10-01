@@ -163,8 +163,6 @@ export default function App() {
 
         {tab === "briefing" && (
           <div className="space-y-6">
-            <StateOfTheUnion data={kpisFile} />
-
             <section className="rounded-xl border border-[#E5E7EB] bg-white p-5">
               <h2 className="text-sm font-semibold">Why this exists</h2>
               <p className="mt-2 text-sm leading-6 text-[#4A4A4A]">
@@ -231,6 +229,8 @@ export default function App() {
                 ))}
               </ul>
             </section>
+
+            <StateOfTheUnion data={kpisFile} />
           </div>
         )}
 
