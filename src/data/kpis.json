@@ -1,0 +1,143 @@
+{
+  "asOf": "2026-10-01",
+  "sourceNote": "State of the union tiles. Rollout numbers are from the Domo Homebody rollout card (Cal screenshot, 2026-10-01). Bug counts are live Jira queries run 2026-10-01 (project DEV, issuetype Bug, statusCategory != Done). Tiles with a null value have no source yet and show who owns the number. Countdown and age tiles are computed from dates at render time and never go stale.",
+  "overall": [
+    {
+      "label": "Bugs opened, 7d",
+      "value": "35",
+      "sub": "all Homebody components",
+      "source": "Jira 2026-10-01 · HB-B2B, HB-B2C, HB-Resident Growth, HB-Deposit Alternative, RXP-Capricorn, RXP-Capricorn-Mobile, HBS-App, HBS-Web · excl. Auto-Triage"
+    },
+    {
+      "label": "Bugs closed, 7d",
+      "value": "24",
+      "sub": "all Homebody components",
+      "source": "Jira 2026-10-01 · same component set · excl. Auto-Triage"
+    }
+  ],
+  "groups": [
+    {
+      "track": 1,
+      "title": "App Migration",
+      "tiles": [
+        {
+          "label": "Implemented clients",
+          "value": "56",
+          "sub": "of 91 contracted",
+          "progress": 0.615,
+          "source": "Domo rollout card, 2026-10-01"
+        },
+        {
+          "label": "Implemented units",
+          "value": "356K",
+          "sub": "of 512K contracted",
+          "progress": 0.695,
+          "source": "Domo rollout card, 2026-10-01"
+        },
+        {
+          "label": "Residents logged in, 30d",
+          "value": "225.5K",
+          "sub": "target 3M MAU",
+          "progress": 0.075,
+          "source": "Domo rollout card, 2026-10-01"
+        },
+        {
+          "label": "Cohort 1 migrated",
+          "value": null,
+          "sub": "of 60 clients",
+          "needs": "Zack Melton"
+        },
+        {
+          "label": "Open bugs",
+          "value": "15",
+          "sub": "14 P1/P2 · 1 P1",
+          "source": "Jira 2026-10-01 · RXP-Capricorn, RXP-Capricorn-Mobile, HBS-App, HBS-Web"
+        },
+        {
+          "label": "Days to Dec 10 deadline",
+          "countdownTo": "2026-12-10"
+        }
+      ]
+    },
+    {
+      "track": 2,
+      "title": "Homebody Guaranty",
+      "tiles": [
+        {
+          "label": "Active client escalations",
+          "value": "5",
+          "sub": "Priess, Asset, Landmark, Cardinal, Yugo",
+          "source": "tracks.json, Alyssa 2026-09-30"
+        },
+        {
+          "label": "Days to renewals lock",
+          "countdownTo": "2026-10-13"
+        },
+        {
+          "label": "Open bugs",
+          "value": "30",
+          "sub": "27 P1/P2 · 5 P1",
+          "source": "Jira 2026-10-01 · HB-Deposit Alternative"
+        },
+        {
+          "label": "Renewals eligible / processed",
+          "value": null,
+          "sub": "units on Oct 13 path",
+          "needs": "Dan Bullock / Jae Lee"
+        }
+      ]
+    },
+    {
+      "track": 3,
+      "title": "Insurance Conversion",
+      "tiles": [
+        {
+          "label": "Conversion rate, MTD",
+          "value": null,
+          "sub": "vs. last month · vs. target",
+          "needs": "Jae Lee"
+        },
+        {
+          "label": "Incident #1547 open",
+          "value": null,
+          "sub": "days",
+          "needs": "Zack Melton (open date)"
+        },
+        {
+          "label": "Open bugs",
+          "value": "47",
+          "sub": "43 P1/P2",
+          "source": "Jira 2026-10-01 · HB-B2B, HB-B2C · excl. Auto-Triage · includes non-insurance B2B items"
+        }
+      ]
+    },
+    {
+      "track": 4,
+      "title": "Rewards / Trinity",
+      "tiles": [
+        {
+          "label": "Rewards revenue, MTD",
+          "value": null,
+          "sub": "vs. prior month",
+          "needs": "Britton Pederson"
+        },
+        {
+          "label": "Clients live on new Rewards",
+          "value": null,
+          "sub": "",
+          "needs": "Britton Pederson"
+        },
+        {
+          "label": "Days to AOP decision",
+          "countdownTo": "2026-10-15"
+        },
+        {
+          "label": "Open bugs",
+          "value": "5",
+          "sub": "incl. duplicate reward events for Trinity",
+          "source": "Jira 2026-10-01 · summary ~ \"Rewards\""
+        }
+      ]
+    }
+  ]
+}

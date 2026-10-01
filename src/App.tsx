@@ -2,7 +2,9 @@ import { useState } from "react"
 import tracksFile from "./data/tracks.json"
 import teamFile from "./data/team.json"
 import decisionsFile from "./data/decisions.json"
+import kpisFile from "./data/kpis.json"
 import { Roadmap } from "./components/Roadmap"
+import { StateOfTheUnion } from "./components/StateOfTheUnion"
 
 type Heat = "burning" | "active" | "steady" | "idle"
 type Status = "not_started" | "in_progress" | "blocked" | "complete"
@@ -161,6 +163,8 @@ export default function App() {
 
         {tab === "briefing" && (
           <div className="space-y-6">
+            <StateOfTheUnion data={kpisFile} />
+
             <section className="rounded-xl border border-[#E5E7EB] bg-white p-5">
               <h2 className="text-sm font-semibold">Why this exists</h2>
               <p className="mt-2 text-sm leading-6 text-[#4A4A4A]">
