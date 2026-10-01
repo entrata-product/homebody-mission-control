@@ -171,7 +171,7 @@
       "status": "in_progress",
       "eta": null,
       "summary": "The system is consistently posting incorrect Master Policy and Contents charges to resident ledgers. There have also been one-off Homebody Guaranty billing issues.",
-      "nextStep": "Working session on HB billing issues: Josh Tebbs, Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, Dan Bullock. Levi Howa owns scheduling.",
+      "nextStep": "Working session on HB billing issues: JT (CTO), Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, Dan Bullock. Levi Howa owns scheduling.",
       "successMeasure": null,
       "note": "Action: billing working session to be scheduled — Levi Howa.",
       "noteTone": "neutral",
@@ -220,7 +220,7 @@
       "updates": [
         {
           "date": "2026-10-01",
-          "text": "Action item added: working session on HB billing issues with Josh Tebbs, Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, and Dan Bullock. Levi Howa to schedule. Cal's 180-day money-movement audit (368 tickets) is the pre-read.",
+          "text": "Action item added: working session on HB billing issues with JT (CTO), Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, and Dan Bullock. Levi Howa to schedule. Cal's 180-day money-movement audit (368 tickets) is the pre-read.",
           "source": "Cal 2026-10-01 Mission Control update"
         },
         {
