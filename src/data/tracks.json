@@ -257,6 +257,52 @@
           "source": "Alyssa 2026-10-01"
         }
       ]
+    },
+    {
+      "number": 6,
+      "id": "homebody-services-billing-issues",
+      "title": "Homebody Services Billing Issues",
+      "owners": [
+        "Product"
+      ],
+      "description": "The system is consistently posting incorrect Master Policy and Contents charges to resident ledgers. There have also been one-off issues with Homebody Guaranty.",
+      "heat": "burning",
+      "status": "in_progress",
+      "eta": null,
+      "summary": "The system is consistently posting incorrect Master Policy and Contents charges to resident ledgers. There have also been one-off Homebody Guaranty billing issues.",
+      "nextStep": "Unconfirmed.",
+      "successMeasure": null,
+      "note": null,
+      "noteTone": null,
+      "workstreams": [
+        {
+          "id": "inc1497-20260828-master-policy-double-billing-for-september",
+          "title": "INC 1497 — Master Policy double billing for September",
+          "owners": [
+            "Product"
+          ],
+          "status": "in_progress",
+          "eta": null,
+          "nextStep": "Confirm what checks and balances are in place to prevent recurrence of double billing across the majority of Master Policy records (~200k active policies)."
+        },
+        {
+          "id": "inc1551-20260930-trinity-insurance-billing-issues",
+          "title": "INC 1551 — Trinity insurance billing issues / incorrect LLIP charges",
+          "owners": [
+            "Product"
+          ],
+          "status": "in_progress",
+          "eta": null,
+          "nextStep": "Next step unconfirmed. Issue: incorrect logic for when to update a charge based on lease start/generation date. Related tickets: https://entrata.atlassian.net/browse/DEV-335619, https://entrata.atlassian.net/browse/DEV-297182, https://entrata.atlassian.net/browse/DEV-328123, https://entrata.atlassian.net/browse/DEV-327507."
+        }
+      ],
+      "updates": [
+        {
+          "date": "2026-10-01",
+          "text": "Created the Homebody Services Billing Issues track for recurring incorrect Master Policy and Contents ledger charges, plus one-off Homebody Guaranty billing issues. Added INC 1497 and INC 1551 as active workstreams.",
+          "source": "Alyssa 2026-10-01"
+        }
+      ]
     }
   ]
 }
