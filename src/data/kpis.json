@@ -101,30 +101,6 @@
     },
     {
       "track": 3,
-      "title": "Insurance Conversion",
-      "tiles": [
-        {
-          "label": "Conversion rate, MTD",
-          "value": null,
-          "sub": "vs. last month · vs. target",
-          "needs": "Jae Lee"
-        },
-        {
-          "label": "Incident #1547 open",
-          "value": null,
-          "sub": "days",
-          "needs": "Zack Melton (open date)"
-        },
-        {
-          "label": "Open bugs",
-          "value": "47",
-          "sub": "43 P1/P2",
-          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · HB-B2B, HB-B2C · includes non-insurance B2B items"
-        }
-      ]
-    },
-    {
-      "track": 4,
       "title": "Rewards / Trinity",
       "tiles": [
         {
@@ -148,6 +124,30 @@
           "value": "3",
           "sub": "summary ~ \"Rewards\" · incl. Trinity duplicate reward events",
           "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · summary ~ Rewards, Homebody web/app components"
+        }
+      ]
+    },
+    {
+      "track": 4,
+      "title": "Insurance Conversion",
+      "tiles": [
+        {
+          "label": "Conversion rate, MTD",
+          "value": null,
+          "sub": "vs. last month · vs. target",
+          "needs": "Jae Lee"
+        },
+        {
+          "label": "Incident #1547 open",
+          "value": null,
+          "sub": "days",
+          "needs": "Zack Melton (open date)"
+        },
+        {
+          "label": "Open bugs",
+          "value": "47",
+          "sub": "43 P1/P2",
+          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · HB-B2B, HB-B2C · includes non-insurance B2B items"
         }
       ]
     }
