@@ -1,9 +1,15 @@
 {
-  "asOf": "2026-09-24",
-  "source": "Group DM with Catherine Wong, Caleb Harris, and Zack Melton, 2026-09-24.",
+  "asOf": "2026-10-01",
+  "source": "Standing invite list for the Homebody War Room huddle (Catherine Wong, organizer), confirmed by Cal 2026-10-01. Original roster from group DM 2026-09-24.",
   "sponsors": [
-    { "name": "Catherine Wong", "role": "Sponsor" },
-    { "name": "Caleb Harris", "role": "Sponsor" }
+    {
+      "name": "Catherine Wong",
+      "role": "Sponsor"
+    },
+    {
+      "name": "Caleb Harris",
+      "role": "Sponsor"
+    }
   ],
   "roster": [
     {
@@ -43,10 +49,82 @@
       "note": "Cal confirmed Josh as the person running the agency under Chris Finken."
     },
     {
+      "name": "Britton Pederson",
+      "title": "",
+      "seat": "Standing",
+      "note": "Co-owner, Track 4 Homebody Rewards / Trinity."
+    },
+    {
+      "name": "Joe Wilson",
+      "title": "Product Manager, Resident Experience",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Alex Buchanan",
+      "title": "Sales",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Erika Bronson",
+      "title": "",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Justin Stokes",
+      "title": "",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Manish Ranjan",
+      "title": "",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Wyatt Moore",
+      "title": "",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Andre Alves",
+      "title": "",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Christian Allred",
+      "title": "",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Jody Crockett",
+      "title": "",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
+      "name": "Kyle Whittle",
+      "title": "",
+      "seat": "Standing",
+      "note": ""
+    },
+    {
       "name": "Chris Finken",
       "title": "SVP, Revenue Marketing",
-      "seat": "Proposed",
-      "note": "Cal: include for now, in lieu of a head of insurance."
+      "seat": "Optional",
+      "note": "Optional on the standing invite."
+    },
+    {
+      "name": "Nico Dato",
+      "title": "",
+      "seat": "Optional",
+      "note": ""
     }
   ],
   "openSeats": [

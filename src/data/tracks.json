@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-30",
+  "asOf": "2026-10-01",
   "sourceNote": "Program tracks confirmed with Cal on 2026-09-28. Each track is a Homebody workstream. Sub-items and daily updates live on the parent track.",
   "tracks": [
     {
@@ -190,7 +190,7 @@
       "title": "Homebody Rewards / Trinity",
       "owners": [
         "Zack Melton",
-        "Britton"
+        "Britton Pederson"
       ],
       "description": "Homebody Rewards program and the Trinity Property Consultants relationship ($2M+ annual enterprise opportunity, 56,000 units). The Rewards offering was recently switched; client adoption is minimal and Trinity is asking for more features. Two decisions are open: what we do with Trinity, and whether Rewards is sold in 2027.",
       "heat": "active",
@@ -204,7 +204,7 @@
       "updates": [
         {
           "date": "2026-09-29",
-          "text": "Track opened. Owners Zack Melton and Britton. Rewards offering switched with minimal client adoption; Trinity asking for more features and frustrated with current offering. Decisions needed by Oct 15 (AOP): what to do with Trinity, and whether Rewards is sold in 2027. Success measure: Rewards revenue increasing.",
+          "text": "Track opened. Owners Zack Melton and Britton Pederson. Rewards offering switched with minimal client adoption; Trinity asking for more features and frustrated with current offering. Decisions needed by Oct 15 (AOP): what to do with Trinity, and whether Rewards is sold in 2027. Success measure: Rewards revenue increasing.",
           "source": "Cal 2026-09-29 Mission Control update"
         }
       ]
