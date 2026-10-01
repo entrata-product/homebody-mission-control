@@ -161,105 +161,6 @@
     },
     {
       "number": 3,
-      "id": "homebody-rewards-trinity",
-      "title": "Homebody Rewards / Trinity",
-      "owners": [
-        "Zack Melton",
-        "Britton Pederson"
-      ],
-      "description": "Homebody Rewards program and the Trinity Property Consultants relationship ($2M+ annual enterprise opportunity, 56,000 units). The Rewards offering was recently switched; client adoption is minimal and Trinity is asking for more features. Two decisions are open: what we do with Trinity, and whether Rewards is sold in 2027.",
-      "heat": "active",
-      "status": "in_progress",
-      "eta": "2026-10-15 — decision needed as part of AOP",
-      "summary": "Medium heat, trending up. Rewards offering switched; minimal client adoption; Trinity pushing for more features and clarity on direction.",
-      "nextStep": "Decide: (1) what we do with Trinity, and (2) whether we sell Rewards in 2027. Both feed the Oct 15 AOP deadline.",
-      "successMeasure": "Rewards revenue increasing",
-      "note": "Trinity is frustrated with the current offering and wants to know where we're headed.",
-      "noteTone": "alert",
-      "updates": [
-        {
-          "date": "2026-09-29",
-          "text": "Track opened. Owners Zack Melton and Britton Pederson. Rewards offering switched with minimal client adoption; Trinity asking for more features and frustrated with current offering. Decisions needed by Oct 15 (AOP): what to do with Trinity, and whether Rewards is sold in 2027. Success measure: Rewards revenue increasing.",
-          "source": "Cal 2026-09-29 Mission Control update"
-        }
-      ]
-    },
-    {
-      "number": 4,
-      "id": "homebody-insurance-conversion",
-      "title": "Homebody Insurance Conversion",
-      "owners": [
-        "Zack Melton",
-        "Jae Lee"
-      ],
-      "description": "Homebody Insurance conversion rates have decreased. Active incident to identify the root cause and drive rates back up. Success is measured by October conversion rates rising.",
-      "heat": "active",
-      "status": "in_progress",
-      "eta": "urgent — October recovery",
-      "summary": "Active conversion-rate incident. Diagnose the funnel drop and remediate.",
-      "nextStep": "Continue diagnosis and remediation under incident #1547.",
-      "successMeasure": "October Homebody Insurance conversion rates increase",
-      "note": "Active incident: #1547.",
-      "noteTone": "alert",
-      "updates": [
-        {
-          "date": "2026-10-01",
-          "text": "Heat lowered from burning to active.",
-          "source": "Cal 2026-10-01 Mission Control update"
-        },
-        {
-          "date": "2026-09-28",
-          "text": "Track opened as active conversion-rate incident. Zack Melton and Jae Lee leading. Active work under incident #1547. Success measure: October conversion rates increase.",
-          "source": "Cal 2026-09-28 Mission Control update"
-        }
-      ]
-    },
-    {
-      "number": 5,
-      "id": "homebody-documentation",
-      "title": "Homebody Documentation",
-      "owners": [
-        "Product",
-        "Product Marketing",
-        "Technical Writing"
-      ],
-      "description": "Clients cannot find answers in the Help Center because documentation for Homebody services and the app is missing or vague. Sparse internal documentation leads to inconsistent answers and confusion when clients turn to their CSM or the Service team.",
-      "heat": "active",
-      "status": "in_progress",
-      "eta": null,
-      "summary": "Clients lack clear Help Center answers about Homebody services and the app; sparse internal documentation also leads to inconsistent guidance.",
-      "nextStep": "Connect with CS and Service team to understand gaps.",
-      "successMeasure": "Clients can find clear, accurate answers about Homebody services and the app, and internal teams can provide consistent guidance.",
-      "note": null,
-      "noteTone": null,
-      "workstreams": [
-        {
-          "id": "hbg-unit-transfer-external-documentation",
-          "title": "HBG Unit Transfer external documentation",
-          "owners": [],
-          "status": "complete",
-          "eta": "2026-09-28",
-          "nextStep": "Published 2026-09-28: https://entratasupport.zendesk.com/hc/en-us/articles/56520943372187-Understanding-Homebody-Guaranty-Coverage-During-a-Unit-Transfer"
-        },
-        {
-          "id": "hbg-renewal-process",
-          "title": "HBG Renewal Process",
-          "owners": [],
-          "status": "not_started",
-          "eta": null,
-          "nextStep": "Connect with CS and Service team to understand gaps."
-        }
-      ],
-      "updates": [
-        {
-          "date": "2026-10-01",
-          "text": "Created the Homebody Documentation track. HBG Unit Transfer external documentation completed 2026-09-28; HBG Renewal Process not started.",
-          "source": "Alyssa 2026-10-01"
-        }
-      ]
-    },
-    {
-      "number": 6,
       "id": "homebody-services-billing-issues",
       "title": "Homebody Services Billing Issues",
       "owners": [
@@ -300,6 +201,105 @@
         {
           "date": "2026-10-01",
           "text": "Created the Homebody Services Billing Issues track for recurring incorrect Master Policy and Contents ledger charges, plus one-off Homebody Guaranty billing issues. Added INC 1497 and INC 1551 as active workstreams.",
+          "source": "Alyssa 2026-10-01"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "homebody-rewards-trinity",
+      "title": "Homebody Rewards / Trinity",
+      "owners": [
+        "Zack Melton",
+        "Britton Pederson"
+      ],
+      "description": "Homebody Rewards program and the Trinity Property Consultants relationship ($2M+ annual enterprise opportunity, 56,000 units). The Rewards offering was recently switched; client adoption is minimal and Trinity is asking for more features. Two decisions are open: what we do with Trinity, and whether Rewards is sold in 2027.",
+      "heat": "active",
+      "status": "in_progress",
+      "eta": "2026-10-15 — decision needed as part of AOP",
+      "summary": "Medium heat, trending up. Rewards offering switched; minimal client adoption; Trinity pushing for more features and clarity on direction.",
+      "nextStep": "Decide: (1) what we do with Trinity, and (2) whether we sell Rewards in 2027. Both feed the Oct 15 AOP deadline.",
+      "successMeasure": "Rewards revenue increasing",
+      "note": "Trinity is frustrated with the current offering and wants to know where we're headed.",
+      "noteTone": "alert",
+      "updates": [
+        {
+          "date": "2026-09-29",
+          "text": "Track opened. Owners Zack Melton and Britton Pederson. Rewards offering switched with minimal client adoption; Trinity asking for more features and frustrated with current offering. Decisions needed by Oct 15 (AOP): what to do with Trinity, and whether Rewards is sold in 2027. Success measure: Rewards revenue increasing.",
+          "source": "Cal 2026-09-29 Mission Control update"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "homebody-insurance-conversion",
+      "title": "Homebody Insurance Conversion",
+      "owners": [
+        "Zack Melton",
+        "Jae Lee"
+      ],
+      "description": "Homebody Insurance conversion rates have decreased. Active incident to identify the root cause and drive rates back up. Success is measured by October conversion rates rising.",
+      "heat": "active",
+      "status": "in_progress",
+      "eta": "urgent — October recovery",
+      "summary": "Active conversion-rate incident. Diagnose the funnel drop and remediate.",
+      "nextStep": "Continue diagnosis and remediation under incident #1547.",
+      "successMeasure": "October Homebody Insurance conversion rates increase",
+      "note": "Active incident: #1547.",
+      "noteTone": "alert",
+      "updates": [
+        {
+          "date": "2026-10-01",
+          "text": "Heat lowered from burning to active.",
+          "source": "Cal 2026-10-01 Mission Control update"
+        },
+        {
+          "date": "2026-09-28",
+          "text": "Track opened as active conversion-rate incident. Zack Melton and Jae Lee leading. Active work under incident #1547. Success measure: October conversion rates increase.",
+          "source": "Cal 2026-09-28 Mission Control update"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "homebody-documentation",
+      "title": "Homebody Documentation",
+      "owners": [
+        "Product",
+        "Product Marketing",
+        "Technical Writing"
+      ],
+      "description": "Clients cannot find answers in the Help Center because documentation for Homebody services and the app is missing or vague. Sparse internal documentation leads to inconsistent answers and confusion when clients turn to their CSM or the Service team.",
+      "heat": "active",
+      "status": "in_progress",
+      "eta": null,
+      "summary": "Clients lack clear Help Center answers about Homebody services and the app; sparse internal documentation also leads to inconsistent guidance.",
+      "nextStep": "Connect with CS and Service team to understand gaps.",
+      "successMeasure": "Clients can find clear, accurate answers about Homebody services and the app, and internal teams can provide consistent guidance.",
+      "note": null,
+      "noteTone": null,
+      "workstreams": [
+        {
+          "id": "hbg-unit-transfer-external-documentation",
+          "title": "HBG Unit Transfer external documentation",
+          "owners": [],
+          "status": "complete",
+          "eta": "2026-09-28",
+          "nextStep": "Published 2026-09-28: https://entratasupport.zendesk.com/hc/en-us/articles/56520943372187-Understanding-Homebody-Guaranty-Coverage-During-a-Unit-Transfer"
+        },
+        {
+          "id": "hbg-renewal-process",
+          "title": "HBG Renewal Process",
+          "owners": [],
+          "status": "not_started",
+          "eta": null,
+          "nextStep": "Connect with CS and Service team to understand gaps."
+        }
+      ],
+      "updates": [
+        {
+          "date": "2026-10-01",
+          "text": "Created the Homebody Documentation track. HBG Unit Transfer external documentation completed 2026-09-28; HBG Renewal Process not started.",
           "source": "Alyssa 2026-10-01"
         }
       ]
