@@ -195,9 +195,34 @@
           "status": "in_progress",
           "eta": null,
           "nextStep": "Next step unconfirmed. Issue: incorrect logic for when to update a charge based on lease start/generation date. Related tickets: https://entrata.atlassian.net/browse/DEV-335619, https://entrata.atlassian.net/browse/DEV-297182, https://entrata.atlassian.net/browse/DEV-328123, https://entrata.atlassian.net/browse/DEV-327507."
+        },
+        {
+          "id": "inc1557-20261001-hbg-ledger-charges-that-dont-match-the-policy-amount",
+          "title": "INC 1557 — HBG ledger charges that don't match the policy amount",
+          "owners": [
+            "Product"
+          ],
+          "status": "in_progress",
+          "eta": null,
+          "nextStep": "Next step unconfirmed. Incident opened 2026-10-01 after a datafix caused incorrect charges on at least 80 ledgers."
+        },
+        {
+          "id": "dev-342481-unit-transfer-policy-duplicate-charges",
+          "title": "DEV-342481 — Unit-transfer policies received duplicate charges",
+          "owners": [
+            "Product"
+          ],
+          "status": "in_progress",
+          "eta": null,
+          "nextStep": "Next step unconfirmed. Policies were created successfully during https://entrata.atlassian.net/browse/DEV-342481, but some received duplicate charges. Data: https://docs.google.com/spreadsheets/d/14YtUhSlEozdhoP6J99S2nB0Uv4oqe31MRB2a4A2JYZk/edit?gid=1603972904#gid=1603972904."
         }
       ],
       "updates": [
+        {
+          "date": "2026-10-01",
+          "text": "Added INC 1557 for incorrect HBG ledger charges affecting at least 80 ledgers, and DEV-342481 for duplicate charges on some unit-transfer policies; linked the affected-data spreadsheet.",
+          "source": "Alyssa 2026-10-01"
+        },
         {
           "date": "2026-10-01",
           "text": "Created the Homebody Services Billing Issues track for recurring incorrect Master Policy and Contents ledger charges, plus one-off Homebody Guaranty billing issues. Added INC 1497 and INC 1551 as active workstreams.",
