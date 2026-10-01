@@ -213,6 +213,50 @@
           "source": "Cal 2026-09-29 Mission Control update"
         }
       ]
+    },
+    {
+      "number": 5,
+      "id": "homebody-documentation",
+      "title": "Homebody Documentation",
+      "owners": [
+        "Product",
+        "Product Marketing",
+        "Technical Writing"
+      ],
+      "description": "Clients cannot find answers in the Help Center because documentation for Homebody services and the app is missing or vague. Sparse internal documentation leads to inconsistent answers and confusion when clients turn to their CSM or the Service team.",
+      "heat": "active",
+      "status": "in_progress",
+      "eta": null,
+      "summary": "Clients lack clear Help Center answers about Homebody services and the app; sparse internal documentation also leads to inconsistent guidance.",
+      "nextStep": "Connect with CS and Service team to understand gaps.",
+      "successMeasure": "Clients can find clear, accurate answers about Homebody services and the app, and internal teams can provide consistent guidance.",
+      "note": null,
+      "noteTone": null,
+      "workstreams": [
+        {
+          "id": "hbg-unit-transfer-external-documentation",
+          "title": "HBG Unit Transfer external documentation",
+          "owners": [],
+          "status": "complete",
+          "eta": "2026-09-28",
+          "nextStep": "Published 2026-09-28: https://entratasupport.zendesk.com/hc/en-us/articles/56520943372187-Understanding-Homebody-Guaranty-Coverage-During-a-Unit-Transfer"
+        },
+        {
+          "id": "hbg-renewal-process",
+          "title": "HBG Renewal Process",
+          "owners": [],
+          "status": "not_started",
+          "eta": null,
+          "nextStep": "Connect with CS and Service team to understand gaps."
+        }
+      ],
+      "updates": [
+        {
+          "date": "2026-10-01",
+          "text": "Created the Homebody Documentation track. HBG Unit Transfer external documentation completed 2026-09-28; HBG Renewal Process not started.",
+          "source": "Alyssa 2026-10-01"
+        }
+      ]
     }
   ]
 }
