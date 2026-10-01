@@ -168,7 +168,7 @@
         "Jae Lee"
       ],
       "description": "Homebody Insurance conversion rates have decreased. Active incident to identify the root cause and drive rates back up. Success is measured by October conversion rates rising.",
-      "heat": "burning",
+      "heat": "active",
       "status": "in_progress",
       "eta": "urgent — October recovery",
       "summary": "Active conversion-rate incident. Diagnose the funnel drop and remediate.",
@@ -177,6 +177,11 @@
       "note": "Active incident: #1547.",
       "noteTone": "alert",
       "updates": [
+        {
+          "date": "2026-10-01",
+          "text": "Heat lowered from burning to active.",
+          "source": "Cal 2026-10-01 Mission Control update"
+        },
         {
           "date": "2026-09-28",
           "text": "Track opened as active conversion-rate incident. Zack Melton and Jae Lee leading. Active work under incident #1547. Success measure: October conversion rates increase.",
