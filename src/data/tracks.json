@@ -171,10 +171,10 @@
       "status": "in_progress",
       "eta": null,
       "summary": "The system is consistently posting incorrect Master Policy and Contents charges to resident ledgers. There have also been one-off Homebody Guaranty billing issues.",
-      "nextStep": "Unconfirmed.",
+      "nextStep": "Working session on HB billing issues: Josh Tebbs, Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, Dan Bullock. Levi Howa owns scheduling.",
       "successMeasure": null,
-      "note": null,
-      "noteTone": null,
+      "note": "Action: billing working session to be scheduled — Levi Howa.",
+      "noteTone": "neutral",
       "workstreams": [
         {
           "id": "inc1497-20260828-master-policy-double-billing-for-september",
@@ -218,6 +218,11 @@
         }
       ],
       "updates": [
+        {
+          "date": "2026-10-01",
+          "text": "Action item added: working session on HB billing issues with Josh Tebbs, Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, and Dan Bullock. Levi Howa to schedule. Cal's 180-day money-movement audit (368 tickets) is the pre-read.",
+          "source": "Cal 2026-10-01 Mission Control update"
+        },
         {
           "date": "2026-10-01",
           "text": "Added INC 1557 for incorrect HBG ledger charges affecting at least 80 ledgers, and DEV-342481 for duplicate charges on some unit-transfer policies; linked the affected-data spreadsheet.",
