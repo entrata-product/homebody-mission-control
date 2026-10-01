@@ -303,6 +303,66 @@
           "source": "Alyssa 2026-10-01"
         }
       ]
+    },
+    {
+      "number": 7,
+      "id": "ivs-settings",
+      "title": "IVS Settings",
+      "owners": [
+        "CS",
+        "Implementation"
+      ],
+      "description": "IVS was not correctly implemented due to human error over the last two years, and clients are paying for a service they are not receiving. Policies must be verified to reduce Entrata's potential liability if a loss occurs. A mass rollout is not feasible because clients would notice, residents could be force-placed, and the internal team cannot absorb the workload all at once.",
+      "heat": "active",
+      "status": "in_progress",
+      "eta": null,
+      "summary": "IVS was not correctly implemented over the last two years; clients are paying for a service they are not receiving.",
+      "nextStep": "Work with Finance to approve $142k in client credits before doing client outreach.",
+      "successMeasure": null,
+      "note": null,
+      "noteTone": null,
+      "workstreams": [
+        {
+          "id": "ivs-client-policy-data",
+          "title": "Client and policy data",
+          "owners": [
+            "CS",
+            "Implementation"
+          ],
+          "status": "in_progress",
+          "eta": null,
+          "nextStep": "Review the client and policy data: https://docs.google.com/spreadsheets/d/1XgDZa3cjitppzosS40O9QhPNOchkbb8tW4dOevAA7bg/edit?gid=675391462#gid=675391462"
+        },
+        {
+          "id": "ivs-policy-verification-risk",
+          "title": "Policy verification and liability risk",
+          "owners": [
+            "CS",
+            "Implementation"
+          ],
+          "status": "in_progress",
+          "eta": null,
+          "nextStep": "Verify policies; if an unverified policy has a loss, Entrata could be liable for it."
+        },
+        {
+          "id": "ivs-recent-issue-triage",
+          "title": "Issues under 30 days old and rollout capacity",
+          "owners": [
+            "CS",
+            "Implementation"
+          ],
+          "status": "in_progress",
+          "eta": null,
+          "nextStep": "Continue tracking issues under 30 days old. Avoid turning everything on at once: clients would notice, residents could be force-placed, and the internal team cannot absorb the workload all at once."
+        }
+      ],
+      "updates": [
+        {
+          "date": "2026-10-01",
+          "text": "Created the IVS Settings track for clients paying for a service they are not receiving due to incorrect implementation. Finance approval for $142k in client credits is the next step before outreach.",
+          "source": "Alyssa 2026-10-01"
+        }
+      ]
     }
   ]
 }
