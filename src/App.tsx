@@ -3,6 +3,7 @@ import tracksFile from "./data/tracks.json"
 import teamFile from "./data/team.json"
 import decisionsFile from "./data/decisions.json"
 import kpisFile from "./data/kpis.json"
+import actionsFile from "./data/actions.json"
 import { Roadmap } from "./components/Roadmap"
 import { StateOfTheUnion } from "./components/StateOfTheUnion"
 
@@ -55,6 +56,18 @@ type RosterMember = {
 const tracks = (tracksFile.tracks as Track[]).slice().sort((a, b) => a.number - b.number)
 const decisions = decisionsFile.decisions as Decision[]
 const roster = teamFile.roster as RosterMember[]
+
+type ActionItem = {
+  id: string
+  date: string
+  item: string
+  owner: string | null
+  track: number | null
+  due: string | null
+  status: "open" | "complete"
+}
+
+const openActions = (actionsFile.items as ActionItem[]).filter((action) => action.status === "open")
 
 const heatMeta: Record<Heat, { label: string; pill: string; card: string }> = {
   burning: {
@@ -204,6 +217,33 @@ export default function App() {
                   </li>
                 ))}
               </ul>
+            </section>
+
+            <section>
+              <h2 className="text-sm font-semibold">Open action items</h2>
+              <p className="mt-1 text-xs text-[#737373]">
+                {openActions.length === 0
+                  ? "Nothing open."
+                  : `${openActions.length} open. One owner per item. Edit src/data/actions.json to add or close.`}
+              </p>
+              {openActions.length > 0 ? (
+                <ul className="mt-3 divide-y divide-[#E5E7EB] rounded-xl border border-[#E5E7EB] bg-white">
+                  {openActions.map((action) => (
+                    <li key={action.id} className="flex flex-wrap items-start gap-x-3 gap-y-1 px-4 py-2.5">
+                      {action.track ? (
+                        <span className="mt-0.5 rounded-md bg-[#004B37] px-1.5 py-0.5 text-[10px] font-bold text-white">#{action.track}</span>
+                      ) : (
+                        <span className="mt-0.5 rounded-md bg-[#F3F4F6] px-1.5 py-0.5 text-[10px] font-bold text-[#737373]">—</span>
+                      )}
+                      <span className="min-w-0 flex-1 text-sm text-[#0A0A0A]">{action.item}</span>
+                      <span className={`text-xs ${action.owner ? "text-[#4A4A4A]" : "text-[#B45309]"}`}>
+                        {action.owner ?? "needs owner"}
+                        {action.due ? ` · due ${action.due}` : ""}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </section>
 
             <section>

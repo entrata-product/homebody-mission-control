@@ -1,0 +1,33 @@
+{
+  "asOf": "2026-10-01",
+  "sourceNote": "Open action items from the Homebody War Room huddle. Owner is the single person on the hook. Mark done by setting status to complete; keep the row for the record.",
+  "items": [
+    {
+      "id": "billing-working-session",
+      "date": "2026-10-01",
+      "item": "Schedule a working session on HB billing issues: JT (CTO), Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, Dan Bullock.",
+      "owner": "Levi Howa",
+      "track": 3,
+      "due": null,
+      "status": "open"
+    },
+    {
+      "id": "redshift-access-deaysia-finken",
+      "date": "2026-10-01",
+      "item": "Get DeAysia and Chris Finken Redshift access.",
+      "owner": null,
+      "track": null,
+      "due": null,
+      "status": "open"
+    },
+    {
+      "id": "ho4-vs-mp-pricing-update",
+      "date": "2026-10-01",
+      "item": "HO4 vs. Master Policy pricing update.",
+      "owner": "Nico Dato",
+      "track": 5,
+      "due": null,
+      "status": "open"
+    }
+  ]
+}
