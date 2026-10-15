@@ -1,0 +1,806 @@
+{
+  "asOf": "2026-10-15",
+  "model": "Homebody is a portfolio of offerings for residents. The Customer sponsors them (puts them on the property's menu, sets each as required or optional, sometimes pays Entrata a fee for the offering and earns a revenue share back when residents enroll), the Resident enrolls in them (required lines can be satisfied with an alternative rather than skipped), and a Fulfiller delivers them: a Homebody fulfillment team, an embedded partner, an integration partner, Homebody R&D, or the Customer's own vendor. Residents reach the offerings through three surfaces: Sign (Entrata's lease flow), Pay (Homebody's rent experience, which is absorbing the old Resident Portal), and Live (everything else the resident does in the app). Pay and Live are separate because Pay is a required moment every month unless autopay is on, while Live is optional: a resident may go a whole lease without submitting a maintenance ticket, reserve the clubhouse, check a policy, or file a claim. The app is the access mechanism, not the value; the offering is the value, and Fulfill is where it is delivered. Full reference: docs/homebody-model.md.",
+  "programMetrics": [
+    {
+      "label": "Residents logged in, 30d",
+      "value": "225.5K",
+      "target": "3M MAU",
+      "source": "Domo rollout card, 2026-10-01"
+    },
+    {
+      "label": "Active resident rate",
+      "value": null,
+      "needs": "Zack Melton",
+      "source": "Defined in the Homebody Quarter Brief (rxp). Not wired here yet."
+    },
+    {
+      "label": "Resident revenue per door",
+      "value": null,
+      "needs": "Zack Melton",
+      "source": "Defined in the Homebody Quarter Brief (rxp). Not wired here yet."
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Sponsor",
+      "meaning": "The Customer's role in Homebody. Puts an offering on a property's menu, sets it as required or optional, collects through the ledger, sometimes pays Entrata a fee for the offering, and Entrata shares revenue back when residents enroll, and pays outright for programs like Rewards.",
+      "precedent": "Plan sponsor in employer voluntary benefits: offers the menu, pays anywhere from none to all of the premium, collects by payroll deduction. The more the sponsor endorses, the more it owns the outcome."
+    },
+    {
+      "term": "Enroll / satisfy",
+      "meaning": "What the Resident does. Enrolls in an offering, or satisfies a required line another way: own HO4 or an outside policy IVS verifies instead of the Master Policy, a deposit instead of HBG. A required line cannot be skipped; only the way it is met changes.",
+      "precedent": "Elect, enroll, and waive-with-proof at open enrollment. Lease signing is open enrollment; renewal and transfer are qualifying events. Unlike benefits, the lease condition itself is not waivable."
+    },
+    {
+      "term": "Sell-in / sell-through",
+      "meaning": "Sell-in is winning sponsorship at a property. Sell-through is residents enrolling. Managing on sell-in alone is driving by the rear-view mirror.",
+      "precedent": "CPG: shipments to the retailer vs. what left the shelf."
+    },
+    {
+      "term": "Distribution",
+      "meaning": "Share of doors where an offering is sponsored. Replaces 'offered'. Weight by doors, not property count.",
+      "precedent": "CPG % ACV distribution: stores carrying you, weighted by store size. A SKU is 'authorized' when the retailer agrees to sell it."
+    },
+    {
+      "term": "Attach / enrollment rate",
+      "meaning": "Residents enrolled over residents eligible, at the moment the offer is presented. Attach for required lines at signing; enrollment rate for optional ones.",
+      "precedent": "Embedded insurance: attach rate is the year-one diagnostic and moves more with placement and wording than with price."
+    },
+    {
+      "term": "Velocity",
+      "meaning": "Enrollments per 100 sponsored doors. Distribution says where you are; velocity says whether you deserve to stay.",
+      "precedent": "CPG: units per store per week. Category reviews are a velocity conversation."
+    },
+    {
+      "term": "Fulfiller",
+      "meaning": "Who delivers the offering once a resident is enrolled: a Homebody team, an embedded partner, an integration partner, Homebody R&D, or the Customer's vendor.",
+      "precedent": "Instacart's shopper, DoorDash's Dasher, the carrier behind an embedded policy."
+    }
+  ],
+  "areas": [
+    {
+      "id": "sign",
+      "number": 1,
+      "layer": "Access",
+      "title": "Sign",
+      "subtitle": "Lease checkout · an Entrata surface",
+      "runBy": "Entrata",
+      "tagline": "Entrata facilitates signing, renewing, and transferring a lease for a unit. Homebody is a guest in that flow.",
+      "why": "During the lease event Entrata features the offerings the Customer sponsors. Some are required by the lease (proof of insurance, a deposit or HBG) and some are optional (added coverage, rent reporting, internet and utility setup). It is the highest-intent moment Homebody has and the only one where 'required' exists. Because the flow belongs to Entrata's leasing product, changes here are negotiated with that team, not shipped by Homebody alone.",
+      "owner": "Zack Melton",
+      "parts": [
+        "New lease signing",
+        "Renewal",
+        "Transfer",
+        "Move-in checklist",
+        "Required lines: proof of insurance (Master Policy by default, or own HO4 or outside policy), deposit or HBG",
+        "Optional: added coverage, rent reporting, internet and utilities, pet screening"
+      ],
+      "metric": {
+        "label": "Insurance attach rate at signing, MTD",
+        "value": null,
+        "needs": "Jae Lee"
+      }
+    },
+    {
+      "id": "pay",
+      "number": 2,
+      "layer": "Access",
+      "title": "Pay",
+      "subtitle": "Rent day · Homebody's surface",
+      "runBy": "Homebody",
+      "tagline": "Residents pay rent every month in the Homebody app, web or mobile. A required moment, twelve times a year, unless autopay is on. The old Resident Portal experience is being retired into it.",
+      "why": "This is the surface Homebody owns outright and the one with required recurring traffic: rent is due every month, so every resident without autopay is here twelve times a year. It features the optional offerings the Customer sponsors (additional insurance lines, a Chewy subscription, rent reporting enrollment) and it is where email and text nudges send people. Nothing can be offered to a resident who is not here, which is why Resident Portal migration is the first track.",
+      "owner": "Joe Wilson",
+      "parts": [
+        "Rent payment and autopay",
+        "Resident Portal to Homebody migration",
+        "Optional offerings the Customer sponsors",
+        "Proactive email and text offers"
+      ],
+      "metric": {
+        "label": "Residents logged in, 30d",
+        "value": "225.5K",
+        "target": "3M MAU",
+        "source": "Domo rollout card, 2026-10-01"
+      }
+    },
+    {
+      "id": "live",
+      "number": 3,
+      "layer": "Access",
+      "title": "Live",
+      "subtitle": "Everything else in the app · Homebody's surface",
+      "runBy": "Homebody",
+      "tagline": "Everything else the resident may or may not ever do in the app: check a policy document, file a claim, submit a maintenance ticket, earn Rewards, answer a survey, book the clubhouse, open the laundry app.",
+      "why": "Live is optional where Pay is required: no one has to file a claim, reserve the clubhouse, or submit a maintenance ticket, and many residents may not need to. It is the service desk for everything Homebody sold and the Customer's front door for its own services. A resident who files a claim, downloads a policy document, or checks on a policy after moving out is here. So is a resident earning points for paying on time, answering a Resident Pulse survey after a maintenance order, reserving a parking space, reading the bulletin board, or tapping through to the laundry app. Residents do not pay for most of this; the Sponsor pays for it or provides it. It is what makes the app a daily destination, which is what Pay depends on.",
+      "owner": "Joe Wilson",
+      "parts": [
+        "Policy documents, claims, and policy status (including after move-out)",
+        "Maintenance requests",
+        "Rewards (Britton Pederson)",
+        "Resident Pulse surveys after key events",
+        "Amenity, parking, and clubhouse reservations",
+        "Community bulletin board",
+        "Links to the Customer's own apps (laundry, parking)"
+      ],
+      "metric": {
+        "label": "Rewards revenue, MTD",
+        "value": null,
+        "needs": "Britton Pederson"
+      }
+    },
+    {
+      "id": "fulfill",
+      "number": 4,
+      "layer": "Fulfillment",
+      "title": "Fulfill",
+      "subtitle": "Service operations · Homebody teams",
+      "runBy": "Homebody",
+      "tagline": "Where offerings get delivered: Homebody teams, embedded partners, integration partners, the Customer's own vendors.",
+      "why": "Homebody sells offerings, not software, and fulfillment varies by offering. Insurance is fulfilled by a Homebody insurance agency (policies, claims, carriers, partnerships) with embedded carriers for specific lines. Rent credit reporting is fulfilled by a small team in Logan that came with the RentDynamics acquisition and reports to all three bureaus and handles opt-outs. Partner offers and Rewards redemption are fulfilled by embedded partners. Resident Pulse is fulfilled by Homebody R&D working with Entrata core. Laundry and parking links are fulfilled by the Customer's own vendor. Billing integrity, IVS verification, documentation for Customer staff, and rev share are fulfillment work too. When fulfillment fails the Customer is exposed, which is why most of today's client heat lives here and why these are service incidents, not bugs.",
+      "owner": "Chris Finken",
+      "parts": [
+        "Insurance agency: policies, claims, carriers, partnerships",
+        "Rent reporting team (Logan): three bureaus, opt-outs",
+        "Embedded and integration partners",
+        "Billing integrity on the Customer's ledger",
+        "Verification (IVS)",
+        "Documentation and support for Customer staff",
+        "Rev share and partner reconciliation",
+        "Per-property configuration"
+      ],
+      "metric": {
+        "label": "Open billing incidents",
+        "value": "4",
+        "source": "tracks.json, 2026-10-01"
+      }
+    }
+  ],
+  "offeringTypes": [
+    {
+      "id": "resident-paid",
+      "name": "Resident-paid service",
+      "consumes": "Resident",
+      "pays": "Resident enrolls and pays; the Sponsor sets it as required or optional, collects through the ledger, may pay Entrata a fee for the offering, and earns a revenue share when residents enroll",
+      "why": "Compliance or risk reduction (insurance), rev share (rent reporting), amenity value. Entrata earns on each. The voluntary-benefits pattern."
+    },
+    {
+      "id": "sponsor-paid",
+      "name": "Sponsor-paid program",
+      "consumes": "Resident uses it; the Sponsor gets the outcome",
+      "pays": "Sponsor",
+      "why": "Retention, resident behavior, insight. The employer-paid-benefit pattern."
+    },
+    {
+      "id": "sponsor-provided",
+      "name": "Sponsor-provided",
+      "consumes": "Resident",
+      "pays": "No one; it comes through Entrata",
+      "why": "Convenience. The app is the front door to things the Sponsor already provides."
+    }
+  ],
+  "fulfillers": [
+    {
+      "id": "team",
+      "name": "Homebody fulfillment team",
+      "meaning": "A Homebody operations group does the work every day.",
+      "examples": "Insurance agency (Josh Tebbs); rent reporting team in Logan"
+    },
+    {
+      "id": "embedded-partner",
+      "name": "Embedded partner",
+      "meaning": "Delivers under Entrata's paper. The resident experiences it as Homebody.",
+      "examples": "Carriers for specific insurance lines, PetScreening, Red Ventures, Chewy, Rewards redemption partners"
+    },
+    {
+      "id": "integration-partner",
+      "name": "Integration partner",
+      "meaning": "An integration Homebody built to extend product roadmap coverage.",
+      "examples": "Cobu"
+    },
+    {
+      "id": "homebody-rd",
+      "name": "Homebody R&D with Entrata core",
+      "meaning": "Software-fulfilled. The work is placing it in the right Entrata workflow and joining it to the triggering event in the unified data layer.",
+      "examples": "Resident Pulse"
+    },
+    {
+      "id": "customer-vendor",
+      "name": "Customer's vendor",
+      "meaning": "The Customer's own contract and app. Homebody links out.",
+      "examples": "Laundry app, parking vendor"
+    }
+  ],
+  "offerings": [
+    {
+      "id": "insurance",
+      "type": "resident-paid",
+      "name": "Insurance and Guaranty",
+      "surfaces": [
+        "sign",
+        "pay",
+        "live"
+      ],
+      "tags": [
+        "HBG",
+        "Master Policy",
+        "Master Policy Contents"
+      ],
+      "requirement": "Proof of coverage is a lease condition at most properties: the resident is enrolled in the Master Policy by default or satisfies it with an HO4 or an outside policy IVS verifies. Homebody Guaranty is required with the deposit as the alternative. Contents and additional lines are elective, at signing and again on Pay. Documents, status, and claims live on Live.",
+      "money": "Resident pays the premium; the Sponsor collects it on the ledger. Entrata and the Sponsor earn on it.",
+      "fulfiller": "team",
+      "fulfillment": "Homebody insurance agency: issuance, renewals, claims, carrier and partner relationships. Embedded carriers for specific lines.",
+      "contracts": "Customer to Entrata for the program; Entrata's agency to carriers; resident enrolled under the master policy or holding their own HO4. To confirm.",
+      "note": "The largest offering for Entrata and for Customers, and the most complex. Six of eight tracks touch it. Josh Tebbs runs the insurance agency and owns the lines; Jae Lee owns the Sign funnel (#5).",
+      "owner": "Josh Tebbs",
+      "economics": {
+        "revenue": {
+          "label": "Revenue, TTM",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "share": {
+          "label": "After rev share and carrier",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "role": "The largest offering and the one that carries the lease condition. Split by line below; the lines do not share economics or attention."
+      }
+    },
+    {
+      "id": "rent-reporting",
+      "type": "resident-paid",
+      "name": "Rent credit reporting",
+      "surfaces": [
+        "sign",
+        "pay"
+      ],
+      "requirement": "Optional for the resident: opt in at signing or on Pay. Some states (Maryland most recently) require the Customer to offer it.",
+      "money": "Resident pays a fee or it is bundled; the Customer earns a rev share. The easiest offering for a Customer to say yes to.",
+      "fulfiller": "team",
+      "fulfillment": "Rent reporting team in Logan (from the RentDynamics acquisition): reporting to all three bureaus, opt-outs, disputes.",
+      "contracts": "Customer to Entrata; resident consent at opt-in. To confirm.",
+      "note": "No track in this war room today.",
+      "owner": "Owner to confirm",
+      "economics": {
+        "revenue": {
+          "label": "Revenue, TTM",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "share": {
+          "label": "After the Customer's rev share",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "role": "The easiest yes for a Customer. Role in the portfolio to confirm."
+      }
+    },
+    {
+      "id": "partner-offers",
+      "type": "resident-paid",
+      "name": "Partner offers",
+      "surfaces": [
+        "sign",
+        "pay"
+      ],
+      "requirement": "Optional; the Sponsor turns it on by property. Internet and energy setup (Red Ventures) belongs at move-in; Chewy, Amenify, PetScreening belong on Pay and in outreach.",
+      "money": "Resident pays the partner; the partner pays Entrata a referral share.",
+      "fulfiller": "embedded-partner",
+      "fulfillment": "The partner delivers under Entrata's paper. Homebody refers and reconciles the share.",
+      "contracts": "Entrata to partner (referral and rev share); resident to partner for the service itself. To confirm.",
+      "note": "No track in this war room today.",
+      "owner": "Owner to confirm",
+      "economics": {
+        "revenue": {
+          "label": "Referral share earned, TTM",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "share": {
+          "label": "Of partner revenue",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "role": "To confirm."
+      }
+    },
+    {
+      "id": "rewards",
+      "type": "sponsor-paid",
+      "name": "Rewards",
+      "surfaces": [
+        "live",
+        "pay"
+      ],
+      "tags": [
+        "Rewards"
+      ],
+      "requirement": "The Sponsor's loyalty program. The Sponsor rewards residents for great behavior and picks which behaviors earn points: pay on time, autopay, renew, refer. The resident earns; the Sponsor pays.",
+      "money": "Sponsor pays Entrata for the SKU. Its economics are a Sponsor-side question, which is the Trinity thread.",
+      "fulfiller": "embedded-partner",
+      "fulfillment": "Homebody runs the points ledger and tracking; redemption partners fulfill the rewards. Fulfillment owner to confirm.",
+      "contracts": "Customer to Entrata for the SKU; Entrata to redemption partners. To confirm.",
+      "owner": "Britton Pederson",
+      "economics": {
+        "revenue": {
+          "label": "Rewards revenue, TTM",
+          "value": null,
+          "needs": "Britton Pederson"
+        },
+        "share": {
+          "label": "After redemption partners",
+          "value": null,
+          "needs": "Britton Pederson"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Britton Pederson"
+        },
+        "role": "Whether Rewards is sold in 2027 is an open decision (decisions.json: rewards-2027)."
+      }
+    },
+    {
+      "id": "resident-pulse",
+      "type": "sponsor-paid",
+      "name": "Resident Pulse",
+      "surfaces": [
+        "live"
+      ],
+      "requirement": "Satisfaction surveys after key events (maintenance order completed, move-in, renewal). The resident answers; the Sponsor gets the signal.",
+      "money": "Sponsor-side value. Pricing to confirm.",
+      "fulfiller": "homebody-rd",
+      "fulfillment": "Homebody R&D with Entrata core: inject the survey at the right point in the Entrata workflow and associate the event with the results in the unified data layer.",
+      "contracts": "Customer to Entrata. To confirm.",
+      "note": "The oddball in the portfolio: the Sponsor is the real consumer and fulfillment is a build, not an operation. It behaves like core Entrata software. No track today.",
+      "owner": "Owner to confirm",
+      "economics": {
+        "revenue": {
+          "label": "Revenue, TTM",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "share": {
+          "label": "No partner",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "role": "Customer-side value; pricing to confirm."
+      }
+    },
+    {
+      "id": "community",
+      "type": "sponsor-provided",
+      "name": "Community features",
+      "surfaces": [
+        "live"
+      ],
+      "requirement": "Amenity, parking, and clubhouse reservations and the community bulletin board, configured by the Sponsor and run by its staff.",
+      "money": "No direct Entrata revenue. It is why the resident opens the app between rent payments.",
+      "fulfiller": "integration-partner",
+      "fulfillment": "Entrata software plus Customer staff. Cobu is an integration partner here, built to extend roadmap coverage.",
+      "contracts": "Customer to Entrata (included); Customer to Cobu where used. To confirm.",
+      "note": "No track today.",
+      "owner": "Owner to confirm",
+      "economics": {
+        "revenue": {
+          "label": "Revenue",
+          "value": "None"
+        },
+        "share": {
+          "label": "",
+          "value": "n/a"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "role": "No direct revenue. Its value is app engagement, which Pay depends on."
+      }
+    },
+    {
+      "id": "linked-services",
+      "type": "sponsor-provided",
+      "name": "Linked services",
+      "surfaces": [
+        "live"
+      ],
+      "requirement": "The Sponsor's own apps and services that Homebody links to: laundry machine app, parking vendor, and similar.",
+      "money": "None through Entrata.",
+      "fulfiller": "customer-vendor",
+      "fulfillment": "The Customer's vendor. Homebody links out.",
+      "contracts": "Customer to vendor. None with Entrata.",
+      "note": "No track today.",
+      "owner": "Owner to confirm",
+      "economics": {
+        "revenue": {
+          "label": "Revenue",
+          "value": "None"
+        },
+        "share": {
+          "label": "",
+          "value": "n/a"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "role": "No revenue through Entrata."
+      }
+    }
+  ],
+  "lines": [
+    {
+      "id": "master-policy",
+      "offering": "insurance",
+      "name": "Master Policy",
+      "surfaces": [
+        "sign",
+        "live"
+      ],
+      "path": "Default enrollment",
+      "tags": [
+        "Master Policy"
+      ],
+      "requirement": "Default enrollment: satisfies the lease's proof-of-insurance condition unless the resident meets it with an HO4 or an outside policy. Enrolled at signing; the charge posts to the resident ledger.",
+      "fulfillment": "Homebody insurance agency. Billing on the Customer's ledger is Track #3.",
+      "owner": "Josh Tebbs",
+      "economics": {
+        "revenue": {
+          "label": "Revenue, TTM",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "share": {
+          "label": "After rev share and carrier",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Active policies",
+          "value": "~200K",
+          "source": "INC 1497, via Billing Integrity page"
+        },
+        "role": "The volume line: it satisfies the lease condition at scale. Role to confirm."
+      }
+    },
+    {
+      "id": "contents",
+      "offering": "insurance",
+      "name": "Contents",
+      "surfaces": [
+        "sign",
+        "pay",
+        "live"
+      ],
+      "path": "Elective",
+      "tags": [
+        "Master Policy Contents"
+      ],
+      "requirement": "Optional personal-property coverage added on top of the Master Policy, at signing or later on Pay.",
+      "fulfillment": "Homebody insurance agency.",
+      "owner": "Josh Tebbs",
+      "economics": {
+        "revenue": {
+          "label": "Revenue, TTM",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "share": {
+          "label": "After rev share and carrier",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "role": "The attach line on top of Master Policy. Role to confirm."
+      }
+    },
+    {
+      "id": "ho4",
+      "offering": "insurance",
+      "name": "HO4 renters policy",
+      "surfaces": [
+        "sign",
+        "pay",
+        "live"
+      ],
+      "path": "Alternative to Master Policy (Homebody-sold)",
+      "tags": [],
+      "requirement": "A full renters policy Homebody sells. At signing it is the alternative to the Master Policy that keeps the premium with Homebody. HO4 vs. Master Policy pricing is an open action item.",
+      "fulfillment": "Homebody insurance agency; carrier to confirm.",
+      "owner": "Josh Tebbs",
+      "economics": {
+        "revenue": {
+          "label": "Revenue, TTM",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "share": {
+          "label": "After rev share and carrier",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "role": "To confirm."
+      }
+    },
+    {
+      "id": "outside-policy",
+      "offering": "insurance",
+      "name": "Outside policy, verified by IVS",
+      "surfaces": [
+        "sign",
+        "live"
+      ],
+      "path": "Alternative to Master Policy (outside carrier)",
+      "tags": [],
+      "requirement": "The resident meets the coverage requirement with their own policy from another carrier. IVS verifies it against the lease requirement. When verification fails and a loss occurs, the Sponsor is exposed.",
+      "fulfillment": "IVS (verification), Track #7. No policy is issued.",
+      "owner": "Josh Tebbs",
+      "economics": {
+        "revenue": {
+          "label": "Revenue",
+          "value": "None",
+          "source": "Verification only"
+        },
+        "share": {
+          "label": "",
+          "value": "n/a"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "extra": [
+          {
+            "label": "Client credits from IVS failures",
+            "value": "$142K",
+            "source": "decisions.json: ivs-credits"
+          }
+        ],
+        "role": "Not a revenue line; a liability line. The lease condition is why it exists."
+      }
+    },
+    {
+      "id": "hbg",
+      "offering": "insurance",
+      "name": "Homebody Guaranty (HBG)",
+      "surfaces": [
+        "sign",
+        "live"
+      ],
+      "path": "Required, deposit is the alternative",
+      "tags": [
+        "HBG"
+      ],
+      "requirement": "Replaces the required security deposit at signing. Renewal rules (#2), transfers (#8), client documentation (#6), and ledger charges (#3) are all open.",
+      "fulfillment": "Homebody insurance agency: issuance, renewals, transfers, claims against the guaranty.",
+      "owner": "Josh Tebbs",
+      "economics": {
+        "revenue": {
+          "label": "Revenue, TTM",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "share": {
+          "label": "After rev share and carrier",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "extra": [
+          {
+            "label": "Claims paid against the guaranty, TTM",
+            "value": null,
+            "needs": "Josh Tebbs"
+          }
+        ],
+        "role": "Deposit replacement is one reason Customers adopt Homebody at all, which would justify the attention if it holds. Strategic role, and revenue net of claims, to confirm."
+      }
+    },
+    {
+      "id": "deposit-alternative",
+      "offering": "insurance",
+      "name": "Deposit Alternative (DA)",
+      "surfaces": [
+        "sign",
+        "live"
+      ],
+      "path": "To confirm",
+      "tags": [],
+      "requirement": "The earlier deposit-replacement product. Policies are still in the field (cancelled when Greystar properties transferred), and HBG renewal rules deliberately do not copy DA auto-renewal. Whether it is still sold, and how it relates to HBG, to confirm.",
+      "fulfillment": "Homebody insurance agency. To confirm.",
+      "owner": "Josh Tebbs",
+      "economics": {
+        "revenue": {
+          "label": "Revenue, TTM",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "share": {
+          "label": "After rev share and carrier",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "role": "To confirm."
+      }
+    },
+    {
+      "id": "additional-lines",
+      "offering": "insurance",
+      "name": "Additional lines",
+      "surfaces": [
+        "pay",
+        "live"
+      ],
+      "path": "Elective",
+      "tags": [],
+      "requirement": "Other coverage offered on Pay where the Sponsor turns it on. Which lines exist, and which are embedded carriers: to confirm.",
+      "fulfillment": "Embedded carriers under Entrata's paper. To confirm.",
+      "owner": "Josh Tebbs",
+      "economics": {
+        "revenue": {
+          "label": "Revenue, TTM",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "share": {
+          "label": "After rev share and carrier",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "distribution": {
+          "label": "Distribution: doors sponsored",
+          "value": null,
+          "needs": "Owner to confirm"
+        },
+        "enrolled": {
+          "label": "Enrolled",
+          "value": null,
+          "needs": "Josh Tebbs"
+        },
+        "role": "To confirm."
+      }
+    }
+  ],
+  "patterns": [
+    {
+      "id": "software",
+      "name": "Software to the Customer",
+      "buyer": "Customer (owner or PMC)",
+      "user": "Customer. Buyer and user are the same people.",
+      "delivered": "Software",
+      "fulfillment": "None beyond implementation and training.",
+      "examples": "Core Entrata: leasing, accounting, operations",
+      "note": "Buyer is user; Entrata fulfills by shipping software. Contracting, training, support, and roadmap follow one path. This is the pattern the company is built for."
+    },
+    {
+      "id": "service-to-customer",
+      "name": "Service to the Customer",
+      "buyer": "Customer",
+      "user": "Customer, mostly. The resident receives a bill.",
+      "delivered": "A service. Software exists mainly to make the service team efficient.",
+      "fulfillment": "An Entrata operations team does the work every month.",
+      "examples": "Utilities",
+      "note": "Heavy fulfillment, little software. Struggles when run with software metrics and software staffing."
+    },
+    {
+      "id": "service-to-resident",
+      "name": "Service to the Resident, sponsored by the Customer",
+      "buyer": "The Customer as Sponsor: puts it on the menu, sets required or optional, collects on the ledger, sometimes pays Entrata a fee for the offering, and Entrata shares revenue back when residents enroll.",
+      "user": "Resident. Enrolls, or meets a required line with an alternative; the app is how they reach it and where they complain about it.",
+      "delivered": "Offerings: resident-paid services (insurance, rent reporting, partner offers), Sponsor-paid programs (Rewards, Resident Pulse), and Sponsor-provided links.",
+      "fulfillment": "Varies by offering: a Homebody team, an embedded partner, an integration partner, Homebody R&D, or the Customer's own vendor.",
+      "examples": "Homebody. ResidentVerify is a cousin: the Customer buys screening, but the user asking about status is a prospect.",
+      "note": "Sponsor, Resident, and Fulfiller are three different parties. The app is not the value. Failures show up as client escalations, not bug reports."
+    }
+  ]
+}

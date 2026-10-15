@@ -1,14 +1,14 @@
 {
   "asOf": "2026-10-01",
   "source": "Standing invite list for the Homebody War Room huddle (Catherine Wong, organizer), confirmed by Cal 2026-10-01. Original roster from group DM 2026-09-24.",
-  "sponsors": [
+  "conveners": [
     {
       "name": "Catherine Wong",
-      "role": "Sponsor"
+      "role": "Convener"
     },
     {
       "name": "Caleb Harris",
-      "role": "Sponsor"
+      "role": "Convener"
     }
   ],
   "roster": [

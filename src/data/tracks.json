@@ -1,136 +1,115 @@
 {
-  "asOf": "2026-10-01",
-  "sourceNote": "Program tracks confirmed with Cal on 2026-09-28. Each track is a Homebody workstream. Sub-items and daily updates live on the parent track.",
+  "asOf": "2026-10-15",
+  "sourceNote": "A track is a finite deliverable with exactly one named owner, a date, a measure of done, and a page where the work lives. Function names are not owners; write 'Owner to confirm' until a person is named. Reshaped 2026-10-15 from the 2026-09-28 area-based slate.",
   "tracks": [
     {
       "number": 1,
-      "id": "homebody-app-migration",
-      "title": "Homebody App Migration",
-      "owners": [
-        "Zack Melton"
-      ],
-      "description": "Move all Resident Portal users to Homebody, across every vertical. Full migration deadline is Dec 10, 2026. Cohort 1 (60 clients) is in flight; ultimate target is 3M monthly active users on Homebody.",
-      "heat": "burning",
+      "id": "cohort-1-migrated",
+      "area": "pay",
+      "offerings": [],
+      "lines": [],
+      "deliverable": "All Customers migrated from Resident Portal to Homebody by Dec 10, 2026",
+      "owner": "Christian Allred",
+      "due": "2026-12-10",
+      "measure": "Every Customer still on Resident Portal is live on Homebody by Dec 10, 2026; every wave after Cohort 1 has a client list and a schedule; the exception path for CSMs and Sales is written and linked; 3M MAU is the program target",
+      "page": "migration",
+      "clients": [],
       "status": "in_progress",
-      "eta": "2026-12-10",
-      "summary": "Cohort 1 (60 clients) migrating. Full RP → Homebody migration deadline is Dec 10.",
-      "nextStep": "Complete Cohort 1 (60 clients) migration.",
-      "successMeasure": "3M monthly active users on Homebody",
+      "heat": "burning",
+      "summary": "The goal is all Customers on the Homebody app by Dec 10. Cohort 1 (60 clients, list from Christian 2026-10-15) is the first wave. The remaining waves, their schedules, the count still on Resident Portal, and how a CSM or Sales asks for an exception are not in the repo yet.",
+      "nextStep": "Christian: publish the remaining waves and schedules after Cohort 1, the count of Customers still on Resident Portal, and the exception process for CSMs and Sales on the App Migration page.",
       "note": null,
       "noteTone": null,
       "updates": [
         {
+          "date": "2026-10-15",
+          "text": "Deliverable restated: all Customers migrated by Dec 10, not Cohort 1 alone. Cohort 1 is the first wave. Remaining waves, schedules, and the exception path are now the open items.",
+          "source": "Catherine Wong, 2026-10-15",
+          "by": "Catherine Wong"
+        },
+        {
+          "date": "2026-10-15",
+          "text": "Cohort 1 client list received from Christian and linked on the App Migration page. Count migrated still needed.",
+          "source": "Catherine Wong, 2026-10-15",
+          "by": "Catherine Wong"
+        },
+        {
+          "date": "2026-10-15",
+          "text": "Marketing's Cohort 1 email linked on the App Migration page. Catherine asked Christian for the Cohort 1 client list; the tile and tracker now name Christian, not Zack.",
+          "source": "Catherine Wong, 2026-10-15",
+          "by": "Catherine Wong"
+        },
+        {
+          "date": "2026-10-15",
+          "text": "Owner set to Christian Allred (page owner for App Migration). Page renamed App Migration.",
+          "source": "Catherine Wong, 2026-10-15",
+          "by": "Catherine Wong"
+        },
+        {
+          "date": "2026-10-15",
+          "text": "Reshaped from 'Homebody App Migration' area into a finite deliverable. Migration page created from the Domo rollout card numbers and the App-lane roadmap items.",
+          "source": "Mission Control restructure",
+          "by": "Catherine Wong"
+        },
+        {
           "date": "2026-09-28",
           "text": "Track opened at program-tracks refactor. Scope: all verticals, all Resident Portal residents. Full migration deadline Dec 10, 2026. Cohort 1 (60 clients) in flight. Target: 3M MAU on Homebody.",
-          "source": "Cal 2026-09-28 Mission Control update"
+          "source": "Cal 2026-09-28 Mission Control update",
+          "by": "Caleb Harris"
         }
       ]
     },
     {
       "number": 2,
-      "id": "homebody-guaranty",
-      "title": "Homebody Guaranty (HBG)",
-      "owners": [
-        "Dan Bullock",
-        "Jae Lee"
+      "id": "hbg-renewals-shipped",
+      "area": "sign",
+      "offerings": [
+        "insurance"
       ],
-      "description": "HBG renewals, eligibility, transfers, enrollment exceptions, and client go-lives. Currently absorbing all HBG customer heat — Priess, Asset, Landmark, Cardinal, and Yugo are the active escalations, and the renewals critical path is due Oct 13.",
-      "heat": "burning",
+      "lines": [
+        "hbg"
+      ],
+      "deliverable": "HBG renewal requirements locked and renewals shipped",
+      "owner": "Dan Bullock",
+      "due": null,
+      "measure": "Renewal rules confirmed with insurance ops and built as specified; the five escalated HBG clients (Priess, Asset, Landmark, Cardinal, Yugo) de-escalated",
+      "page": "hbg-renewals",
+      "clients": [
+        "priess",
+        "asset",
+        "landmark",
+        "cardinal",
+        "yugo"
+      ],
       "status": "in_progress",
-      "eta": "Renewals locked by 2026-10-13",
-      "summary": "Renewals and eligibility on the Oct 13 critical path. Transfers explicitly off critical path. Five active client escalations: Priess, Asset, Landmark, Cardinal, Yugo.",
-      "nextStep": "Robert Jones × Dan Bullock meeting to lock final renewal requirements.",
-      "successMeasure": "The five escalated clients de-escalated (Priess, Asset, Landmark, Cardinal, Yugo)",
-      "note": "Active client escalations: Priess, Asset, Landmark, Cardinal, Yugo.",
+      "heat": "burning",
+      "summary": "Renewals and eligibility were on an Oct 13 critical path. That date has passed with no update in the repo. Transfers are explicitly off this path.",
+      "nextStep": "Dan: set a new lock date and record whether the Robert Jones meeting happened and what it locked.",
+      "note": "Oct 13 lock date passed; new date needed.",
       "noteTone": "alert",
-      "workstreams": [
-        {
-          "id": "hbg-renewals",
-          "title": "HBG renewals",
-          "owners": [
-            "Dan Bullock",
-            "Jae Lee"
-          ],
-          "status": "in_progress",
-          "eta": "2026-10-13",
-          "nextStep": "Robert Jones meets Dan Bullock to lock final renewal requirements."
-        },
-        {
-          "id": "hbg-renewal-eligibility",
-          "title": "HBG renewal eligibility (block list)",
-          "owners": [
-            "Dan Bullock"
-          ],
-          "status": "in_progress",
-          "eta": "2026-10-13",
-          "nextStep": "Confirm block list with insurance ops. Dan asked #leap-entrata for scenarios that should not renew."
-        },
-        {
-          "id": "hbg-transfers",
-          "title": "HBG transfers",
-          "owners": [
-            "Jae Lee"
-          ],
-          "status": "not_started",
-          "eta": null,
-          "nextStep": "Open a separate epic for HBG transfer behavior. Off the renewals critical path per Jae."
-        },
-        {
-          "id": "landmark-redland",
-          "title": "Landmark — The Redland Apartments enrollment exceptions",
-          "owners": [
-            "Alyssa Schroeder"
-          ],
-          "status": "in_progress",
-          "eta": null,
-          "nextStep": "Alyssa confirms who owns the answer and whether a manual enroll or reinstate is possible. Tickets #1098815 and #1079454."
-        },
-        {
-          "id": "landmark-leaseup-ach",
-          "title": "Landmark lease-up ACH — HBG and MP Contents",
-          "owners": [
-            "Tanner Clegg"
-          ],
-          "status": "in_progress",
-          "eta": null,
-          "nextStep": "Tanner confirms whether he needs rates, and coverage amounts for HBG."
-        },
-        {
-          "id": "meridian-bellamy",
-          "title": "Meridian — Bellamy at Dahlonega go-live",
-          "owners": [
-            "Tanner Clegg"
-          ],
-          "status": "in_progress",
-          "eta": null,
-          "nextStep": "Confirm whether Bellamy at Dahlonega is scheduled for HBG training. (Status TBD as of 2026-09-28.)"
-        }
-      ],
       "updates": [
+        {
+          "date": "2026-10-15",
+          "text": "Split from the 'Homebody Guaranty (HBG)' area track. Client workstreams (Landmark Redland, Landmark lease-up ACH, Meridian Bellamy) moved to the Clients board. Transfers moved to Track 8. Oct 13 date passed with no update.",
+          "source": "Mission Control restructure",
+          "by": "Catherine Wong"
+        },
         {
           "date": "2026-09-30",
           "text": "Yugo added to the active HBG client escalation list.",
-          "source": "Alyssa 2026-09-30"
+          "source": "Alyssa 2026-09-30",
+          "by": "Alyssa Schroeder"
         },
         {
           "date": "2026-09-28",
           "text": "Current active client escalations: Priess, Asset, Landmark, Cardinal. (Priess and Cardinal are new since 09-24 slate; no workstreams yet.)",
-          "source": "Cal 2026-09-28 Mission Control update"
-        },
-        {
-          "date": "2026-09-24",
-          "text": "Cal: Asset is escalated on HBG renewals, escalating to Chase.",
-          "source": "Homebody product leadership DM"
+          "source": "Cal 2026-09-28 Mission Control update",
+          "by": "Caleb Harris"
         },
         {
           "date": "2026-09-24",
           "text": "Zack asked Robert Jones to meet Dan today. Pressure is to know exactly what is being built, and that it is what clients need, by October 13.",
           "source": "DM with Robert Jones"
-        },
-        {
-          "date": "2026-09-24",
-          "text": "Jae: take transfers off this critical path so the team can focus on renewals. Start a separate epic for HBG transfers.",
-          "source": "#tmp-hbg-renewal-charges"
         },
         {
           "date": "2026-09-24",
@@ -141,256 +120,277 @@
           "date": "2026-09-24",
           "text": "HBG auto-renewal must not work like DA auto-renewal. A renewal lease interval must exist. No month-to-month, including a roll to month-to-month because move-out has not been performed.",
           "source": "#leap-entrata"
-        },
-        {
-          "date": "2026-09-24",
-          "text": "Landmark — Brad Siddoway raised three Redland enrollment exceptions in #insurance-ops-rnd-collab (renewal transfer missed enrollment during migration; standard renewal with prior policy not re-enrolled; renewal transfer with signed guarantor waiver addendum).",
-          "source": "#insurance-ops-rnd-collab"
-        },
-        {
-          "date": "2026-09-24",
-          "text": "Landmark lease-up ACH in for 8 properties: The Station at Oxford, The Standard at Boulder, The Standard at West Lafayette, The Mark Tampa, The Walk at Shop Road, The Retreat at Boone, The Retreat at Westerly, The Mark Charleston.",
-          "source": "#cproj-landmark-properties-athens-ga"
-        },
-        {
-          "date": "2026-09-24",
-          "text": "Meridian — HBG went live for Bellamy at Dahlonega. Screening setup completed by Kaela Anspach. Tanner asked whether they are scheduled for HBG training.",
-          "source": "#cproj-meridian-management-group-mmg"
         }
       ]
     },
     {
       "number": 3,
-      "id": "homebody-services-billing-issues",
-      "title": "Homebody Services Billing Issues",
-      "owners": [
-        "Product"
+      "id": "billing-incidents-root-caused",
+      "area": "fulfill",
+      "offerings": [
+        "insurance"
       ],
-      "description": "The system is consistently posting incorrect Master Policy and Contents charges to resident ledgers. There have also been one-off issues with Homebody Guaranty.",
-      "heat": "burning",
+      "lines": [
+        "master-policy",
+        "contents",
+        "hbg"
+      ],
+      "deliverable": "Four Homebody Services billing incidents root-caused, fixed, with a recurrence check in place",
+      "owner": "Manish Ranjan",
+      "due": null,
+      "measure": "INC 1497, INC 1551, INC 1557, DEV-342481 each have a named root cause and a shipped fix; zero new duplicate-charge or mismatched-charge incidents for 30 days after",
+      "page": "billing-integrity",
+      "clients": [
+        "trinity"
+      ],
       "status": "in_progress",
-      "eta": null,
-      "summary": "The system is consistently posting incorrect Master Policy and Contents charges to resident ledgers. There have also been one-off Homebody Guaranty billing issues.",
-      "nextStep": "Working session on HB billing issues: JT (CTO), Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, Dan Bullock. Levi Howa owns scheduling.",
-      "successMeasure": null,
-      "note": "Action: billing working session to be scheduled — Levi Howa.",
-      "noteTone": "neutral",
-      "workstreams": [
-        {
-          "id": "inc1497-20260828-master-policy-double-billing-for-september",
-          "title": "INC 1497 — Master Policy double billing for September",
-          "owners": [
-            "Product"
-          ],
-          "status": "in_progress",
-          "eta": null,
-          "nextStep": "Confirm what checks and balances are in place to prevent recurrence of double billing across the majority of Master Policy records (~200k active policies)."
-        },
-        {
-          "id": "inc1551-20260930-trinity-insurance-billing-issues",
-          "title": "INC 1551 — Trinity insurance billing issues / incorrect LLIP charges",
-          "owners": [
-            "Product"
-          ],
-          "status": "in_progress",
-          "eta": null,
-          "nextStep": "Next step unconfirmed. Issue: incorrect logic for when to update a charge based on lease start/generation date. Related tickets: https://entrata.atlassian.net/browse/DEV-335619, https://entrata.atlassian.net/browse/DEV-297182, https://entrata.atlassian.net/browse/DEV-328123, https://entrata.atlassian.net/browse/DEV-327507."
-        },
-        {
-          "id": "inc1557-20261001-hbg-ledger-charges-that-dont-match-the-policy-amount",
-          "title": "INC 1557 — HBG ledger charges that don't match the policy amount",
-          "owners": [
-            "Product"
-          ],
-          "status": "in_progress",
-          "eta": null,
-          "nextStep": "Next step unconfirmed. Incident opened 2026-10-01 after a datafix caused incorrect charges on at least 80 ledgers."
-        },
-        {
-          "id": "dev-342481-unit-transfer-policy-duplicate-charges",
-          "title": "DEV-342481 — Unit-transfer policies received duplicate charges",
-          "owners": [
-            "Product"
-          ],
-          "status": "in_progress",
-          "eta": null,
-          "nextStep": "Next step unconfirmed. Policies were created successfully during https://entrata.atlassian.net/browse/DEV-342481, but some received duplicate charges. Data: https://docs.google.com/spreadsheets/d/14YtUhSlEozdhoP6J99S2nB0Uv4oqe31MRB2a4A2JYZk/edit?gid=1603972904#gid=1603972904."
-        }
-      ],
+      "heat": "burning",
+      "summary": "The system is consistently posting incorrect Master Policy and Contents charges to resident ledgers, plus one-off HBG billing issues. Manish Ranjan owns the fix and the Billing Integrity page.",
+      "nextStep": "Levi: schedule the billing working session (JT, Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, Dan Bullock).",
+      "note": "Working session not yet scheduled.",
+      "noteTone": "alert",
       "updates": [
+        {
+          "date": "2026-10-15",
+          "text": "Owner set to Manish Ranjan (page owner for Billing Integrity).",
+          "source": "Catherine Wong, 2026-10-15",
+          "by": "Catherine Wong"
+        },
+        {
+          "date": "2026-10-15",
+          "text": "Reshaped into a finite deliverable. Owner changed from 'Product' to 'Owner to confirm' so the gap is visible. Billing Integrity page created with the four incidents.",
+          "source": "Mission Control restructure",
+          "by": "Catherine Wong"
+        },
         {
           "date": "2026-10-01",
           "text": "Action item added: working session on HB billing issues with JT (CTO), Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, and Dan Bullock. Levi Howa to schedule. Cal's 180-day money-movement audit (368 tickets) is the pre-read.",
-          "source": "Cal 2026-10-01 Mission Control update"
+          "source": "Cal 2026-10-01 Mission Control update",
+          "by": "Caleb Harris"
         },
         {
           "date": "2026-10-01",
           "text": "Added INC 1557 for incorrect HBG ledger charges affecting at least 80 ledgers, and DEV-342481 for duplicate charges on some unit-transfer policies; linked the affected-data spreadsheet.",
-          "source": "Alyssa 2026-10-01"
+          "source": "Alyssa 2026-10-01",
+          "by": "Alyssa Schroeder"
         },
         {
           "date": "2026-10-01",
           "text": "Created the Homebody Services Billing Issues track for recurring incorrect Master Policy and Contents ledger charges, plus one-off Homebody Guaranty billing issues. Added INC 1497 and INC 1551 as active workstreams.",
-          "source": "Alyssa 2026-10-01"
+          "source": "Alyssa 2026-10-01",
+          "by": "Alyssa Schroeder"
         }
       ]
     },
     {
       "number": 4,
-      "id": "homebody-rewards-trinity",
-      "title": "Homebody Rewards / Trinity",
-      "owners": [
-        "Zack Melton",
-        "Britton Pederson"
+      "id": "rewards-2027-and-trinity-decided",
+      "area": "live",
+      "offerings": [
+        "rewards"
       ],
-      "description": "Homebody Rewards program and the Trinity Property Consultants relationship ($2M+ annual enterprise opportunity, 56,000 units). The Rewards offering was recently switched; client adoption is minimal and Trinity is asking for more features. Two decisions are open: what we do with Trinity, and whether Rewards is sold in 2027.",
-      "heat": "active",
+      "lines": [],
+      "deliverable": "Trinity direction and Rewards-in-2027 decided; Trinity asks mapped to committed roadmap items",
+      "owner": "Britton Pederson",
+      "due": "2026-10-15",
+      "measure": "Both decisions recorded in decisions.json (shown under Open action items) with an owner and a date; every Trinity ask has a roadmap key and a release, or an explicit no",
+      "page": "rewards",
+      "clients": [
+        "trinity"
+      ],
       "status": "in_progress",
-      "eta": "2026-10-15 — decision needed as part of AOP",
-      "summary": "Medium heat, trending up. Rewards offering switched; minimal client adoption; Trinity pushing for more features and clarity on direction.",
-      "nextStep": "Decide: (1) what we do with Trinity, and (2) whether we sell Rewards in 2027. Both feed the Oct 15 AOP deadline.",
-      "successMeasure": "Rewards revenue increasing",
+      "heat": "active",
+      "summary": "Rewards offering switched; minimal client adoption; Trinity ($2M+ annual, 56,000 units) pushing for more features and clarity on direction. Two decisions due with AOP today.",
+      "nextStep": "Britton: record the two decisions (flip them to decided in decisions.json), or record the new date if AOP slipped.",
       "note": "Trinity is frustrated with the current offering and wants to know where we're headed.",
       "noteTone": "alert",
       "updates": [
         {
+          "date": "2026-10-15",
+          "text": "Reshaped into a finite deliverable owned by Britton. Rewards page created with the Trinity asks already present in roadmap.json and the July economics diagnosis from the RXP Quarter Brief.",
+          "source": "Mission Control restructure",
+          "by": "Catherine Wong"
+        },
+        {
           "date": "2026-09-29",
           "text": "Track opened. Owners Zack Melton and Britton Pederson. Rewards offering switched with minimal client adoption; Trinity asking for more features and frustrated with current offering. Decisions needed by Oct 15 (AOP): what to do with Trinity, and whether Rewards is sold in 2027. Success measure: Rewards revenue increasing.",
-          "source": "Cal 2026-09-29 Mission Control update"
+          "source": "Cal 2026-09-29 Mission Control update",
+          "by": "Caleb Harris"
         }
       ]
     },
     {
       "number": 5,
-      "id": "homebody-insurance-conversion",
-      "title": "Homebody Insurance Conversion",
-      "owners": [
-        "Zack Melton",
-        "Jae Lee"
+      "id": "insurance-conversion-recovered",
+      "area": "sign",
+      "offerings": [
+        "insurance"
       ],
-      "description": "Homebody Insurance conversion rates have decreased. Active incident to identify the root cause and drive rates back up. Success is measured by October conversion rates rising.",
-      "heat": "active",
+      "lines": [
+        "master-policy",
+        "ho4"
+      ],
+      "deliverable": "Incident 1547 root-caused and October insurance conversion back at or above target",
+      "owner": "Jae Lee",
+      "due": "2026-10-31",
+      "measure": "October Homebody Insurance conversion rate at or above the pre-drop baseline, with the root cause written down",
+      "page": "insurance-funnel",
+      "clients": [],
       "status": "in_progress",
-      "eta": "urgent — October recovery",
-      "summary": "Active conversion-rate incident. Diagnose the funnel drop and remediate.",
-      "nextStep": "Continue diagnosis and remediation under incident #1547.",
-      "successMeasure": "October Homebody Insurance conversion rates increase",
-      "note": "Active incident: #1547.",
-      "noteTone": "alert",
+      "heat": "active",
+      "summary": "Incident #1547 (opened and closed 2026-09-28) caused the conversion drop in the lease checkout flow. Product's RCA is written and Engineering held a separate post-mortem. What remains is showing October conversion back at the pre-drop baseline.",
+      "nextStep": "Jae: post the MTD conversion rate vs last month and the pre-drop baseline on the Insurance Funnel page. Levi: link the Engineering post-mortem.",
+      "note": "Incident #1547 closed 2026-09-28; RCA linked.",
+      "noteTone": "neutral",
       "updates": [
+        {
+          "date": "2026-10-15",
+          "text": "Incident #1547 was opened and closed on 2026-09-28. Product RCA linked on the Insurance Funnel page. Engineering held a separate post-mortem; Levi Howa to link it.",
+          "source": "Catherine Wong, 2026-10-15",
+          "by": "Catherine Wong"
+        },
+        {
+          "date": "2026-10-15",
+          "text": "Reshaped into a finite deliverable owned by Jae and placed under the Aisles area, since conversion is a placement outcome. Insurance Funnel page created.",
+          "source": "Mission Control restructure",
+          "by": "Catherine Wong"
+        },
         {
           "date": "2026-10-01",
           "text": "Heat lowered from burning to active.",
-          "source": "Cal 2026-10-01 Mission Control update"
+          "source": "Cal 2026-10-01 Mission Control update",
+          "by": "Caleb Harris"
         },
         {
           "date": "2026-09-28",
           "text": "Track opened as active conversion-rate incident. Zack Melton and Jae Lee leading. Active work under incident #1547. Success measure: October conversion rates increase.",
-          "source": "Cal 2026-09-28 Mission Control update"
+          "source": "Cal 2026-09-28 Mission Control update",
+          "by": "Caleb Harris"
         }
       ]
     },
     {
       "number": 6,
-      "id": "homebody-documentation",
-      "title": "Homebody Documentation",
-      "owners": [
-        "Product",
-        "Product Marketing",
-        "Technical Writing"
+      "id": "hbg-renewal-article-published",
+      "area": "fulfill",
+      "offerings": [
+        "insurance"
       ],
-      "description": "Clients cannot find answers in the Help Center because documentation for Homebody services and the app is missing or vague. Sparse internal documentation leads to inconsistent answers and confusion when clients turn to their CSM or the Service team.",
+      "lines": [
+        "hbg"
+      ],
+      "deliverable": "HBG renewal process documented for clients and for CS and Service",
+      "owner": "Wyatt Moore",
+      "due": null,
+      "measure": "Help Center article on HBG renewals published; internal answer guide shared with CS and Service; the Unit Transfer article (done 2026-09-28) is the model",
+      "page": null,
+      "clients": [],
+      "status": "not_started",
       "heat": "active",
-      "status": "in_progress",
-      "eta": null,
-      "summary": "Clients lack clear Help Center answers about Homebody services and the app; sparse internal documentation also leads to inconsistent guidance.",
-      "nextStep": "Connect with CS and Service team to understand gaps.",
-      "successMeasure": "Clients can find clear, accurate answers about Homebody services and the app, and internal teams can provide consistent guidance.",
-      "note": null,
-      "noteTone": null,
-      "workstreams": [
-        {
-          "id": "hbg-unit-transfer-external-documentation",
-          "title": "HBG Unit Transfer external documentation",
-          "owners": [],
-          "status": "complete",
-          "eta": "2026-09-28",
-          "nextStep": "Published 2026-09-28: https://entratasupport.zendesk.com/hc/en-us/articles/56520943372187-Understanding-Homebody-Guaranty-Coverage-During-a-Unit-Transfer"
-        },
-        {
-          "id": "hbg-renewal-process",
-          "title": "HBG Renewal Process",
-          "owners": [],
-          "status": "not_started",
-          "eta": null,
-          "nextStep": "Connect with CS and Service team to understand gaps."
-        }
-      ],
+      "summary": "Clients cannot find Help Center answers about Homebody services; sparse internal documentation produces inconsistent guidance. Scoped down from 'all Homebody documentation' to the one article the renewals work needs.",
+      "nextStep": "Name a technical writer. Connect with CS and Service to list the questions the article must answer.",
+      "note": "Owner to confirm.",
+      "noteTone": "alert",
       "updates": [
         {
+          "date": "2026-10-15",
+          "text": "Owner named: Wyatt Moore.",
+          "source": "Catherine Wong, 2026-10-15",
+          "by": "Catherine Wong"
+        },
+        {
+          "date": "2026-10-15",
+          "text": "Scoped from the 'Homebody Documentation' area (owned by three functions) to one finite deliverable. The broader documentation gap stays as a part of the Fulfill surface.",
+          "source": "Mission Control restructure",
+          "by": "Catherine Wong"
+        },
+        {
           "date": "2026-10-01",
-          "text": "Created the Homebody Documentation track. HBG Unit Transfer external documentation completed 2026-09-28; HBG Renewal Process not started.",
-          "source": "Alyssa 2026-10-01"
+          "text": "Created the Homebody Documentation track. HBG Unit Transfer external documentation completed 2026-09-28 (https://entratasupport.zendesk.com/hc/en-us/articles/56520943372187-Understanding-Homebody-Guaranty-Coverage-During-a-Unit-Transfer); HBG Renewal Process not started.",
+          "source": "Alyssa 2026-10-01",
+          "by": "Alyssa Schroeder"
         }
       ]
     },
     {
       "number": 7,
-      "id": "ivs-settings",
-      "title": "IVS Settings",
-      "owners": [
-        "CS",
-        "Implementation"
+      "id": "ivs-credits-and-wave-1",
+      "area": "fulfill",
+      "offerings": [
+        "insurance"
       ],
-      "description": "IVS was not correctly implemented due to human error over the last two years, and clients are paying for a service they are not receiving. Policies must be verified to reduce Entrata's potential liability if a loss occurs. A mass rollout is not feasible because clients would notice, residents could be force-placed, and the internal team cannot absorb the workload all at once.",
-      "heat": "active",
+      "lines": [
+        "outside-policy"
+      ],
+      "deliverable": "IVS: $142k client credits approved by Finance and wave 1 client outreach complete",
+      "owner": "Chris Finken",
+      "due": null,
+      "measure": "Finance approval recorded as a decision; wave 1 clients notified and their IVS settings corrected; no resident force-placed as a result",
+      "page": "ivs",
+      "clients": [],
       "status": "in_progress",
-      "eta": null,
-      "summary": "IVS was not correctly implemented over the last two years; clients are paying for a service they are not receiving.",
-      "nextStep": "Work with Finance to approve $142k in client credits before doing client outreach.",
-      "successMeasure": null,
+      "heat": "active",
+      "summary": "IVS was not correctly implemented over the last two years; clients are paying for a service they are not receiving. Mass rollout is not feasible, so remediation runs in waves.",
+      "nextStep": "Chris: take the $142k credit request to Finance and record the outcome as a decision.",
       "note": null,
       "noteTone": null,
-      "workstreams": [
-        {
-          "id": "ivs-client-policy-data",
-          "title": "Client and policy data",
-          "owners": [
-            "CS",
-            "Implementation"
-          ],
-          "status": "in_progress",
-          "eta": null,
-          "nextStep": "Review the client and policy data: https://docs.google.com/spreadsheets/d/1XgDZa3cjitppzosS40O9QhPNOchkbb8tW4dOevAA7bg/edit?gid=675391462#gid=675391462"
-        },
-        {
-          "id": "ivs-policy-verification-risk",
-          "title": "Policy verification and liability risk",
-          "owners": [
-            "CS",
-            "Implementation"
-          ],
-          "status": "in_progress",
-          "eta": null,
-          "nextStep": "Verify policies; if an unverified policy has a loss, Entrata could be liable for it."
-        },
-        {
-          "id": "ivs-recent-issue-triage",
-          "title": "Issues under 30 days old and rollout capacity",
-          "owners": [
-            "CS",
-            "Implementation"
-          ],
-          "status": "in_progress",
-          "eta": null,
-          "nextStep": "Continue tracking issues under 30 days old. Avoid turning everything on at once: clients would notice, residents could be force-placed, and the internal team cannot absorb the workload all at once."
-        }
-      ],
       "updates": [
+        {
+          "date": "2026-10-15",
+          "text": "Owner set to Chris Finken (page owner for IVS Remediation).",
+          "source": "Catherine Wong, 2026-10-15",
+          "by": "Catherine Wong"
+        },
+        {
+          "date": "2026-10-15",
+          "text": "Reshaped into a finite deliverable (credits approved, wave 1 done). Owner changed from 'CS, Implementation' to 'Owner to confirm'. IVS page created.",
+          "source": "Mission Control restructure",
+          "by": "Catherine Wong"
+        },
         {
           "date": "2026-10-01",
           "text": "Created the IVS Settings track for clients paying for a service they are not receiving due to incorrect implementation. Finance approval for $142k in client credits is the next step before outreach.",
-          "source": "Alyssa 2026-10-01"
+          "source": "Alyssa 2026-10-01",
+          "by": "Alyssa Schroeder"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "hbg-transfers-epic-scoped",
+      "area": "sign",
+      "offerings": [
+        "insurance"
+      ],
+      "lines": [
+        "hbg"
+      ],
+      "deliverable": "HBG transfers epic opened and scoped, separate from renewals",
+      "owner": "Jae Lee",
+      "due": null,
+      "measure": "Jira epic exists with scope, acceptance criteria, and a target release",
+      "page": "hbg-renewals",
+      "clients": [
+        "landmark"
+      ],
+      "status": "not_started",
+      "heat": "steady",
+      "summary": "Transfers were taken off the renewals critical path on 2026-09-24 so the team can focus on renewals. They still need their own epic.",
+      "nextStep": "Jae: open the epic and link it here.",
+      "note": null,
+      "noteTone": null,
+      "updates": [
+        {
+          "date": "2026-10-15",
+          "text": "Split out of the HBG area track as its own deliverable.",
+          "source": "Mission Control restructure",
+          "by": "Catherine Wong"
+        },
+        {
+          "date": "2026-09-24",
+          "text": "Jae: take transfers off this critical path so the team can focus on renewals. Start a separate epic for HBG transfers.",
+          "source": "#tmp-hbg-renewal-charges",
+          "by": "Jae Lee"
         }
       ]
     }

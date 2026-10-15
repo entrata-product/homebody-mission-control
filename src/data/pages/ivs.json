@@ -1,0 +1,81 @@
+{
+  "id": "ivs",
+  "title": "IVS Remediation",
+  "track": 7,
+  "purpose": "Clients have been paying for insurance verification they were not receiving, for about two years, because of implementation error. Fix it in waves without force-placing residents or overloading the team.",
+  "asOf": "2026-10-01",
+  "sections": [
+    {
+      "type": "stats",
+      "title": "Exposure",
+      "tiles": [
+        {
+          "label": "Client credits pending",
+          "value": "$142K",
+          "sub": "needs Finance approval",
+          "source": "Alyssa 2026-10-01"
+        },
+        {
+          "label": "Clients affected",
+          "value": null,
+          "sub": "from the client and policy sheet",
+          "needs": "Owner to confirm"
+        },
+        {
+          "label": "Policies unverified",
+          "value": null,
+          "sub": "liability exposure if a loss occurs",
+          "needs": "Owner to confirm"
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "title": "Remediation",
+      "items": [
+        {
+          "text": "Finance approves $142k in client credits.",
+          "status": "open",
+          "owner": "Chris Finken",
+          "source": "Decision pending"
+        },
+        {
+          "text": "Review the client and policy data and summarize clients affected and policies unverified on this page.",
+          "status": "in_progress",
+          "owner": "Chris Finken"
+        },
+        {
+          "text": "Verify policies. If an unverified policy has a loss, Entrata could be liable for it.",
+          "status": "in_progress",
+          "owner": "Chris Finken"
+        },
+        {
+          "text": "Write the wave plan: which clients are turned on when, so clients are told first, no resident is force-placed, and the team can absorb the load.",
+          "status": "open",
+          "owner": "Chris Finken"
+        },
+        {
+          "text": "Keep tracking issues under 30 days old separately from the backlog.",
+          "status": "in_progress",
+          "owner": "Chris Finken"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Why not a mass rollout",
+      "tone": "neutral",
+      "body": "Clients would notice, residents could be force-placed, and the internal team cannot absorb the workload all at once. Credits and client outreach come first; settings are corrected in waves."
+    },
+    {
+      "type": "links",
+      "title": "Data",
+      "items": [
+        {
+          "label": "IVS client and policy data",
+          "href": "https://docs.google.com/spreadsheets/d/1XgDZa3cjitppzosS40O9QhPNOchkbb8tW4dOevAA7bg/edit?gid=675391462#gid=675391462"
+        }
+      ]
+    }
+  ]
+}

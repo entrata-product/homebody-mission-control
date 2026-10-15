@@ -1,6 +1,6 @@
 {
   "asOf": "2026-10-01",
-  "sourceNote": "Open action items from the Homebody War Room huddle. Owner is the single person on the hook. Mark done by setting status to complete; keep the row for the record.",
+  "sourceNote": "Open action items from the Homebody War Room huddle. Owner is the one person driving it to done. Mark done by setting status to complete; keep the row for the record.",
   "items": [
     {
       "id": "billing-working-session",
@@ -14,11 +14,11 @@
     {
       "id": "redshift-access-deaysia-finken",
       "date": "2026-10-01",
-      "item": "Get DeAysia and Chris Finken Redshift access.",
-      "owner": null,
-      "track": null,
+      "item": "Confirm DeAysia and Chris Finken have Redshift access. DeAysia confirmed 2026-10-15.",
+      "owner": "Catherine Wong",
+      "track": 5,
       "due": null,
-      "status": "open"
+      "status": "complete"
     },
     {
       "id": "ho4-vs-mp-pricing-update",

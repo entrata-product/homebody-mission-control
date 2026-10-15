@@ -1,0 +1,213 @@
+{
+  "id": "migration",
+  "title": "App Migration",
+  "track": 1,
+  "purpose": "All Customers off Resident Portal and on the Homebody app by Dec 10, 2026, in waves. Cohort 1 is the first wave. This page holds the waves, their schedules, how a CSM or Sales asks for an exception, and the path from 225K to 3M residents on Pay.",
+  "asOf": "2026-10-15",
+  "sections": [
+    {
+      "type": "stats",
+      "title": "Resident Portal to Homebody",
+      "tiles": [
+        {
+          "label": "Residents logged in, 30d",
+          "value": "225.5K",
+          "sub": "target 3M MAU",
+          "progress": 0.075,
+          "source": "Domo rollout card, 2026-10-01"
+        },
+        {
+          "label": "Customers still on Resident Portal",
+          "value": null,
+          "sub": "to migrate by Dec 10",
+          "needs": "Christian Allred"
+        },
+        {
+          "label": "Cohort 1 migrated",
+          "value": null,
+          "sub": "of 60 clients, wave 1; list received 2026-10-15",
+          "needs": "Christian Allred"
+        },
+        {
+          "label": "Waves scheduled",
+          "value": null,
+          "sub": "after Cohort 1",
+          "needs": "Christian Allred"
+        },
+        {
+          "label": "Open bugs, app",
+          "value": "12",
+          "sub": "11 P1/P2",
+          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · RXP-Capricorn, RXP-Capricorn-Mobile, HBS-App, HBS-Web · excl. HBG/Insurance components and Rewards"
+        },
+        {
+          "label": "Days to Dec 10 deadline",
+          "countdownTo": "2026-12-10"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Waves",
+      "tone": "needs",
+      "body": "Cohort 1 (60 clients) is wave 1; Christian's list is linked under References, and per-client status is not in the repo yet. The remaining waves are not defined here. Christian: add a table with one row per wave (clients, units, start, go-live, status) and, for Cohort 1, per-client status (scheduled, migrating, live, blocked). The 'Customers still on Resident Portal' tile is the denominator for the whole program."
+    },
+    {
+      "type": "checklist",
+      "title": "Migration plan",
+      "items": [
+        {
+          "text": "Cohort 1 client list published.",
+          "status": "done",
+          "owner": "Christian Allred",
+          "source": "Sheet linked under References, 2026-10-15"
+        },
+        {
+          "text": "Cohort 1 per-client status and count live on Homebody.",
+          "status": "open",
+          "owner": "Christian Allred"
+        },
+        {
+          "text": "Count of Customers still on Resident Portal (the denominator).",
+          "status": "open",
+          "owner": "Christian Allred"
+        },
+        {
+          "text": "Remaining waves defined: clients, units, start and go-live dates for each.",
+          "status": "open",
+          "owner": "Christian Allred"
+        },
+        {
+          "text": "Exception process written and linked: how a CSM or Sales requests an exception to the Dec 10 date, who approves, and what the Customer gets instead.",
+          "status": "open",
+          "owner": "Christian Allred"
+        },
+        {
+          "text": "Waves and exception process communicated to CSMs and Sales.",
+          "status": "open",
+          "owner": "Owner to confirm"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Greystar is already live on the Homebody app",
+      "tone": "neutral",
+      "body": "Greystar rolled out ahead of Cohort 1: GIG, GMS, and Student Living were live by September (596 properties, 166,969 units), with Senior Living (172 properties, 30,524 units) scheduled for the week of Sep 7. The first wave of 407 properties migrated in five days during June rent week. Use it as the reference for what a large-client migration looks like and what to tell Cohort 1 clients to expect. Highlights page is under References (GitHub sign-in required)."
+    },
+    {
+      "type": "stats",
+      "title": "Greystar reference numbers",
+      "tiles": [
+        {
+          "label": "Properties live",
+          "value": "596",
+          "sub": "166,969 units · GIG, GMS, Student",
+          "source": "Greystar × Homebody — Migration Status & Learnings, updated Sep 3, 2026"
+        },
+        {
+          "label": "Unique residents, Aug",
+          "value": "141.5K",
+          "sub": "up from 96.2K in July",
+          "source": "Greystar × Homebody — Migration Status & Learnings, updated Sep 3, 2026"
+        },
+        {
+          "label": "First-wave migration",
+          "value": "5 days",
+          "sub": "407 properties · 102,523 units · Jun rent week",
+          "source": "Greystar × Homebody — Migration Status & Learnings, updated Sep 3, 2026"
+        },
+        {
+          "label": "Login success",
+          "value": "98.42%+",
+          "sub": "every month with users; counts mistyped passwords",
+          "source": "Greystar × Homebody — Migration Status & Learnings, updated Sep 3, 2026"
+        },
+        {
+          "label": "Payments success",
+          "value": "99.33%+",
+          "sub": "every month with users",
+          "source": "Greystar × Homebody — Migration Status & Learnings, updated Sep 3, 2026"
+        },
+        {
+          "label": "Homebody product defects, Jul–Sep",
+          "value": "0",
+          "sub": "4 reports; all config, contract, data, or policy",
+          "source": "Greystar × Homebody — Migration Status & Learnings, updated Sep 3, 2026"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "What Greystar taught us, for every wave",
+      "headers": [
+        "When",
+        "What it looked like",
+        "What it was",
+        "Lesson for the waves"
+      ],
+      "rows": [
+        [
+          "Late Apr → May 4–6",
+          "Go-live dates were set in late April; property details (branding, links, media, app settings) for 407 properties arrived May 4–6, leaving Engineering about two weeks to build.",
+          "A client data dependency, not a build problem. Engineering built, validated, staged, and migrated with zero slip.",
+          "Collect each wave's clients' branding, links, media, and app settings at scheduling time, not two weeks before go-live."
+        ],
+        [
+          "Jul 22 · GMS",
+          "Amenity 'Confirm and Pay' screen was blank; residents could not pay for a reservation.",
+          "A security key left over from Greystar's previous custom resident app was still in the account after migration.",
+          "Add 'clear prior-app credentials and keys' to the migration checklist for any client coming off a custom app."
+        ],
+        [
+          "Jul 17 and 28 · GIG, GMS",
+          "'Forgot password' sent no email at two properties.",
+          "About 500 accounts sat on a lease attached to a property ID that does not exist, so there was no valid property to send from.",
+          "Validate lease-to-property integrity before go-live; bad property data looks like a login outage to residents."
+        ],
+        [
+          "Aug 17 · Grand Peaks → GMS",
+          "Deposit Alternative policies cancelled when properties transferred.",
+          "Expected policy on an operator change, not an outage.",
+          "Tell clients up front what happens to HBG and Deposit Alternative coverage when a property changes operator."
+        ],
+        [
+          "Sep 1–3 · Student Living",
+          "Residents saw 'Homebody is not available at this property.'",
+          "A temporary contract expired Aug 31 and the product was switched off overnight.",
+          "Check contract end dates against go-live and rent-week dates; a commercial flag reads as a product failure to the resident."
+        ]
+      ],
+      "note": "Each report arrived as a Homebody bug and none was one. Source: Greystar × Homebody — Migration Status & Learnings, updated Sep 3, 2026."
+    },
+    {
+      "type": "roadmap",
+      "title": "Roadmap items that unblock migration",
+      "keys": [
+        "DEV-341694",
+        "DEV-301257",
+        "DEV-341595",
+        "DEV-267753 / DEV-267788",
+        "DEV-322071"
+      ]
+    },
+    {
+      "type": "links",
+      "title": "References",
+      "items": [
+        {
+          "label": "Cohort 1 client list (Christian Allred)",
+          "href": "https://docs.google.com/spreadsheets/d/15yfc_qReMdLbvMP8Sy46IE8p7nwlKLFC9bitb5A_REA/edit?usp=sharing"
+        },
+        {
+          "label": "Cohort 1 email (Marketing)",
+          "href": "https://docs.google.com/document/d/1nawQwSH8gceBU0w7Ht-9XviVK7pD_43FAqbUwsFWm8A/edit?usp=sharing"
+        },
+        {
+          "label": "Greystar rollout highlights",
+          "href": "https://super-adventure-5vo4v36.pages.github.io/"
+        }
+      ]
+    }
+  ]
+}

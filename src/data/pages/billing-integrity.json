@@ -1,0 +1,139 @@
+{
+  "id": "billing-integrity",
+  "title": "Billing Integrity",
+  "track": 3,
+  "purpose": "Charges that post to a resident ledger for Master Policy, Contents, and HBG must match the policy. Four incidents say we've been struggling on this front. This page is the record of root cause, fix, and the check that stops it recurring.",
+  "asOf": "2026-10-01",
+  "sections": [
+    {
+      "type": "stats",
+      "title": "Scale",
+      "tiles": [
+        {
+          "label": "Open incidents",
+          "value": "4",
+          "sub": "INC 1497, 1551, 1557, DEV-342481",
+          "source": "tracks.json"
+        },
+        {
+          "label": "Master Policy records in scope",
+          "value": "~200K",
+          "sub": "active policies, INC 1497",
+          "source": "INC 1497"
+        },
+        {
+          "label": "Ledgers affected",
+          "value": "80+",
+          "sub": "INC 1557 datafix",
+          "source": "INC 1557, 2026-10-01"
+        },
+        {
+          "label": "Money-movement audit",
+          "value": "368",
+          "sub": "tickets, 180 days (pre-read)",
+          "source": "Cal Harris audit, 2026-10-01. No link in the repo yet."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Incidents",
+      "headers": [
+        "Incident",
+        "What happened",
+        "Root cause",
+        "Fix",
+        "Recurrence check",
+        "Owner"
+      ],
+      "rows": [
+        [
+          "INC 1497 (2026-08-28)",
+          "Master Policy double billing for September across the majority of ~200K active policies",
+          "Unconfirmed",
+          "Unconfirmed",
+          "Needed: what checks prevent a repeat",
+          "Owner to confirm"
+        ],
+        [
+          "INC 1551 (2026-09-30)",
+          "Trinity insurance billing, incorrect LLIP charges",
+          "Incorrect logic for when to update a charge based on lease start or generation date",
+          "Unconfirmed",
+          "Unconfirmed",
+          "Owner to confirm"
+        ],
+        [
+          "INC 1557 (2026-10-01)",
+          "HBG ledger charges that do not match the policy amount, at least 80 ledgers",
+          "A datafix caused incorrect charges",
+          "Unconfirmed",
+          "Unconfirmed",
+          "Owner to confirm"
+        ],
+        [
+          "DEV-342481",
+          "Unit-transfer policies created successfully but some received duplicate charges",
+          "Unconfirmed",
+          "Unconfirmed",
+          "Unconfirmed",
+          "Owner to confirm"
+        ]
+      ],
+      "note": "Every 'Unconfirmed' is a cell the owner fills. Replace the owner column with one engineer's name per row."
+    },
+    {
+      "type": "checklist",
+      "title": "Working session",
+      "items": [
+        {
+          "text": "Schedule the billing working session: JT (CTO), Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, Dan Bullock.",
+          "status": "open",
+          "owner": "Levi Howa",
+          "source": "Cal 2026-10-01"
+        },
+        {
+          "text": "Pre-read: Cal's 180-day money-movement audit, 368 tickets. Link needed: Cal, add it to this page's References.",
+          "status": "done",
+          "owner": "Caleb Harris"
+        },
+        {
+          "text": "Name one engineering owner for this track.",
+          "status": "done",
+          "owner": "Manish Ranjan",
+          "source": "Catherine Wong, 2026-10-15"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Tickets and data",
+      "items": [
+        {
+          "label": "DEV-335619",
+          "href": "https://entrata.atlassian.net/browse/DEV-335619"
+        },
+        {
+          "label": "DEV-297182",
+          "href": "https://entrata.atlassian.net/browse/DEV-297182"
+        },
+        {
+          "label": "DEV-328123",
+          "href": "https://entrata.atlassian.net/browse/DEV-328123"
+        },
+        {
+          "label": "DEV-327507",
+          "href": "https://entrata.atlassian.net/browse/DEV-327507"
+        },
+        {
+          "label": "DEV-342481",
+          "href": "https://entrata.atlassian.net/browse/DEV-342481"
+        },
+        {
+          "label": "DEV-342481 affected-data spreadsheet",
+          "href": "https://docs.google.com/spreadsheets/d/14YtUhSlEozdhoP6J99S2nB0Uv4oqe31MRB2a4A2JYZk/edit?gid=1603972904#gid=1603972904"
+        }
+      ]
+    }
+  ]
+}

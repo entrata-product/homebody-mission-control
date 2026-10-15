@@ -1,30 +1,85 @@
 {
+  "sourceNote": "Open items need a decision; each has an owner and a date. Decided items stay for the record. Flip status to 'decided' and keep the row.",
   "decisions": [
     {
+      "id": "trinity-direction",
+      "status": "open",
+      "date": "2026-09-29",
+      "due": "2026-10-15",
+      "title": "What we do with Trinity",
+      "detail": "Trinity ($2M+ annual, 56,000 units) is frustrated with the switched Rewards offering and wants to know where we're headed. Decide the direction with them as part of AOP.",
+      "owner": "Britton Pederson",
+      "source": "Cal 2026-09-29 Mission Control update",
+      "track": 4
+    },
+    {
+      "id": "rewards-2027",
+      "status": "open",
+      "date": "2026-09-29",
+      "due": "2026-10-15",
+      "title": "Whether Rewards is sold in 2027",
+      "detail": "Client adoption of the new Rewards offering is minimal. Decide whether it stays on the shelf for 2027 as part of AOP.",
+      "owner": "Britton Pederson",
+      "source": "Cal 2026-09-29 Mission Control update",
+      "track": 4
+    },
+    {
+      "id": "hbg-renewals-new-date",
+      "status": "open",
+      "date": "2026-10-15",
+      "due": null,
+      "title": "New lock date for HBG renewal requirements",
+      "detail": "The Oct 13 critical-path date passed with no update recorded. Set the new date and record what the Robert Jones meeting locked.",
+      "owner": "Dan Bullock",
+      "source": "Mission Control restructure, 2026-10-15",
+      "track": 2
+    },
+    {
+      "id": "ivs-credits",
+      "status": "open",
+      "date": "2026-10-01",
+      "due": null,
+      "title": "Finance approval of $142k in IVS client credits",
+      "detail": "Clients have been paying for IVS they were not receiving. Credits must be approved before client outreach begins. Chris takes the request to Finance and records the outcome here.",
+      "owner": "Chris Finken",
+      "source": "Alyssa 2026-10-01",
+      "track": 7
+    },
+    {
+      "id": "one-war-room",
+      "status": "decided",
       "date": "2026-09-24",
       "title": "One war room for Homebody and HBG",
       "detail": "HBG (Homebody Guaranty) falls under Homebody. This surface covers both. There is no separate HBG war room.",
       "owner": "Zack Melton"
     },
     {
+      "id": "why-this-exists",
+      "status": "decided",
       "date": "2026-09-24",
       "title": "Why this war room exists",
-      "detail": "Set up because of elevated client concerns going into and coming out of Summit. The huddle is twice weekly.",
+      "detail": "To drive Homebody revenue growth (target: +10% in Q1 2027, final number to be confirmed). Elevated client concerns going into and coming out of Summit were the trigger and remain the signal of friction against that goal, not the goal itself. The huddle is twice weekly. Reframed 2026-10-15.",
       "owner": "Homebody"
     },
     {
+      "id": "transfers-off-critical-path",
+      "status": "decided",
       "date": "2026-09-24",
       "title": "HBG transfers are off the renewals critical path",
       "detail": "Jae: transfers should be improved, and they should not sit on the renewals critical path. Renewals stay on the critical path. Transfers get a separate epic.",
       "owner": "Jae Lee",
-      "source": "#tmp-hbg-renewal-charges, 2026-09-24"
+      "source": "#tmp-hbg-renewal-charges, 2026-09-24",
+      "track": 8
     },
     {
+      "id": "hbg-renewal-not-da",
+      "status": "decided",
       "date": "2026-09-24",
       "title": "HBG renewal is not DA auto-renewal",
       "detail": "A renewal lease interval must exist. Month-to-month, including rolling to month-to-month because move-out has not been performed, does not qualify. Do not copy how Deposit Alternative auto-renewal works today.",
       "owner": "Dan Bullock and insurance ops",
-      "source": "#leap-entrata, 2026-09-24"
+      "source": "#leap-entrata, 2026-09-24",
+      "track": 2
     }
   ]
 }

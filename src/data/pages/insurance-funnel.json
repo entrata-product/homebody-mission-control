@@ -1,0 +1,92 @@
+{
+  "id": "insurance-funnel",
+  "title": "Insurance Funnel",
+  "track": 5,
+  "purpose": "Why insurance conversion dropped in lease checkout (incident #1547, opened and closed 2026-09-28) and whether October recovered. Scope: this is the Sign funnel only, the coverage choice at checkout (Master Policy or HO4) plus HBG at the deposit step. Contents, claims, renewals, outside-policy verification, and the Pay offers are other funnels. All insurance lines, their owner (Josh Tebbs), and their economics are on The model tab under Economics by line.",
+  "asOf": "2026-10-15",
+  "sections": [
+    {
+      "type": "stats",
+      "title": "Funnel",
+      "tiles": [
+        {
+          "label": "Conversion rate, MTD",
+          "value": null,
+          "sub": "vs last month · vs target",
+          "needs": "Jae Lee"
+        },
+        {
+          "label": "Incident #1547",
+          "value": "Closed",
+          "sub": "opened and closed 2026-09-28",
+          "source": "Catherine Wong, 2026-10-15"
+        },
+        {
+          "label": "Open bugs, insurance",
+          "value": "47",
+          "sub": "43 P1/P2",
+          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · HB-B2B, HB-B2C · includes non-insurance B2B items"
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "title": "Diagnosis and remediation",
+      "items": [
+        {
+          "text": "Post the MTD conversion rate against last month and the pre-drop baseline on this page.",
+          "status": "open",
+          "owner": "Jae Lee"
+        },
+        {
+          "text": "Root cause of the funnel drop written down (Product RCA for incident #1547).",
+          "status": "done",
+          "owner": "Jae Lee",
+          "source": "Product RCA, 2026-09-28"
+        },
+        {
+          "text": "Link the Engineering post-mortem for #1547 here.",
+          "status": "open",
+          "owner": "Levi Howa"
+        },
+        {
+          "text": "HO4 vs Master Policy pricing update.",
+          "status": "open",
+          "owner": "Nico Dato",
+          "source": "Open action, 2026-10-01"
+        },
+        {
+          "text": "Redshift access for DeAysia and Chris Finken so the funnel query can be run and refreshed.",
+          "status": "done",
+          "owner": "Catherine Wong",
+          "source": "DeAysia confirmed 2026-10-15"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Where insurance is offered",
+      "tone": "neutral",
+      "body": "Insurance is offered on Sign (lease checkout: sign, renew, transfer) and again on Pay (when a resident logs in to pay rent). Conversion should be read per surface; a drop on one with a flat rate on the other points at placement, not product."
+    },
+    {
+      "type": "roadmap",
+      "title": "Roadmap items touching the insurance purchase flow",
+      "keys": [
+        "DEV-254751",
+        "DEV-298646",
+        "DEV-254739"
+      ]
+    },
+    {
+      "type": "links",
+      "title": "References",
+      "items": [
+        {
+          "label": "Product RCA: incident #1547",
+          "href": "https://docs.google.com/document/d/1HEyKekKDEoyI3tOOrePgty1Ucut_NV1UJSY82lQcYw0/edit?usp=sharing"
+        }
+      ]
+    }
+  ]
+}

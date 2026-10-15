@@ -1,0 +1,81 @@
+{
+  "id": "rewards",
+  "title": "Rewards",
+  "track": 4,
+  "purpose": "The Trinity relationship and the Rewards-in-2027 decision. Rewards is the Customer's loyalty program: the Customer rewards residents for great behavior (pay on time, renew, refer), and Homebody fulfills the points, tracking, and redemption. Its economics are a Customer-side question.",
+  "asOf": "2026-10-01",
+  "sections": [
+    {
+      "type": "stats",
+      "title": "Where we stand",
+      "tiles": [
+        {
+          "label": "Rewards revenue, MTD",
+          "value": null,
+          "sub": "vs prior month",
+          "needs": "Britton Pederson"
+        },
+        {
+          "label": "Clients live on new Rewards",
+          "value": null,
+          "sub": "",
+          "needs": "Britton Pederson"
+        },
+        {
+          "label": "AOP decision",
+          "countdownTo": "2026-10-15"
+        },
+        {
+          "label": "Open bugs, Rewards",
+          "value": "3",
+          "sub": "incl. Trinity duplicate reward events",
+          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · summary ~ Rewards"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Why Trinity is frustrated",
+      "tone": "alert",
+      "body": "From Chase's diagnosis recorded in the RXP Quarter Brief (2026-07-02): the driver is Rewards economics. Roughly $2k in points nets about $1k in redemption with no channel control, and the 'pay for Rewards, get apps free' deal anchor means frustration lands on the whole migration. Actual product issues (login, payments) were resolved within an hour each. The offering was then switched; adoption of the new offering is minimal (Cal, 2026-09-29)."
+    },
+    {
+      "type": "roadmap",
+      "title": "Trinity asks already on the roadmap",
+      "keys": [
+        "DEV-307726",
+        "DEV-341594",
+        "LUXERONE",
+        "DEV-340258",
+        "DEV-329237"
+      ]
+    },
+    {
+      "type": "checklist",
+      "title": "Decisions due",
+      "items": [
+        {
+          "text": "What we do with Trinity.",
+          "status": "open",
+          "owner": "Britton Pederson",
+          "source": "AOP, Oct 15"
+        },
+        {
+          "text": "Whether Rewards is sold in 2027.",
+          "status": "open",
+          "owner": "Britton Pederson",
+          "source": "AOP, Oct 15"
+        },
+        {
+          "text": "Map every Trinity ask to a roadmap key and release, or an explicit no.",
+          "status": "in_progress",
+          "owner": "Britton Pederson"
+        }
+      ]
+    },
+    {
+      "type": "clients",
+      "title": "Client threads on Rewards"
+    }
+  ]
+}

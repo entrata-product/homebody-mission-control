@@ -1,0 +1,112 @@
+{
+  "id": "hbg-renewals",
+  "title": "HBG Renewals",
+  "track": 2,
+  "purpose": "What is being built for Homebody Guaranty renewals, whether it is what clients need, and when it ships. Transfers are tracked here too but are off the critical path.",
+  "asOf": "2026-10-01",
+  "sections": [
+    {
+      "type": "stats",
+      "title": "Where we stand",
+      "tiles": [
+        {
+          "label": "Active client escalations",
+          "value": "5",
+          "sub": "Priess, Asset, Landmark, Cardinal, Yugo",
+          "source": "clients.json"
+        },
+        {
+          "label": "Renewals lock date",
+          "countdownTo": "2026-10-13"
+        },
+        {
+          "label": "Open bugs, HBG",
+          "value": "25",
+          "sub": "24 P1/P2",
+          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · HB-Deposit Alternative"
+        },
+        {
+          "label": "Renewals eligible / processed",
+          "value": null,
+          "sub": "units on the renewal path",
+          "needs": "Dan Bullock"
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "title": "Renewal requirements",
+      "items": [
+        {
+          "text": "A renewal lease interval must exist for HBG to renew.",
+          "status": "done",
+          "source": "#leap-entrata, 2026-09-24"
+        },
+        {
+          "text": "No month-to-month, including a roll to month-to-month because move-out has not been performed.",
+          "status": "done",
+          "source": "#leap-entrata, 2026-09-24"
+        },
+        {
+          "text": "HBG auto-renewal does not copy Deposit Alternative auto-renewal.",
+          "status": "done",
+          "source": "Decision, 2026-09-24"
+        },
+        {
+          "text": "Block list: property settings disabled.",
+          "status": "in_progress",
+          "owner": "Dan Bullock",
+          "source": "#leap-entrata working list"
+        },
+        {
+          "text": "Block list: a claim in Open or Closed Paid.",
+          "status": "in_progress",
+          "owner": "Dan Bullock",
+          "source": "#leap-entrata working list"
+        },
+        {
+          "text": "Block list: a duplicate policy on another lease before the renewal lease is created.",
+          "status": "in_progress",
+          "owner": "Dan Bullock",
+          "source": "#leap-entrata working list"
+        },
+        {
+          "text": "Insurance ops confirms the scenarios that should not renew.",
+          "status": "open",
+          "owner": "Dan Bullock"
+        },
+        {
+          "text": "Robert Jones and Dan Bullock lock final renewal requirements.",
+          "status": "open",
+          "owner": "Dan Bullock",
+          "source": "Requested 2026-09-24; outcome not recorded"
+        }
+      ]
+    },
+    {
+      "type": "clients",
+      "title": "Client escalations on Insurance and Guaranty"
+    },
+    {
+      "type": "text",
+      "title": "Transfers",
+      "tone": "neutral",
+      "body": "Taken off the renewals critical path on 2026-09-24 so the team can focus on renewals. Jae owns opening a separate epic (Track 8). The Unit Transfer coverage article was published 2026-09-28 and is the model for the renewals article (Track 6)."
+    },
+    {
+      "type": "roadmap",
+      "title": "Roadmap items in the Insurance lane",
+      "lane": "insurance"
+    },
+    {
+      "type": "links",
+      "title": "References",
+      "items": [
+        {
+          "label": "Help Center: HBG coverage during a unit transfer",
+          "href": "https://entratasupport.zendesk.com/hc/en-us/articles/56520943372187-Understanding-Homebody-Guaranty-Coverage-During-a-Unit-Transfer"
+        }
+      ]
+    }
+  ]
+}
