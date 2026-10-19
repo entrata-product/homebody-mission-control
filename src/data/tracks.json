@@ -146,10 +146,22 @@
       "status": "in_progress",
       "heat": "burning",
       "summary": "The system is consistently posting incorrect Master Policy and Contents charges to resident ledgers, plus one-off HBG billing issues. Manish Ranjan owns the fix and the Billing Integrity page.",
-      "nextStep": "Levi: schedule the billing working session (JT, Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, Dan Bullock).",
-      "note": "Working session not yet scheduled.",
+      "nextStep": "Manish: run the dry-run charge check (DEV-346999) ahead of end-of-month billing while the automated check is built.",
+      "note": "Billing working session scheduled. End-of-month run relies on the manual dry-run check.",
       "noteTone": "alert",
       "updates": [
+        {
+          "date": "2026-10-19",
+          "text": "Short term: dry-run processes such as DEV-346999 (dry-run execution and scenario coverage for CMasterPolicyScript) pull the list of charges that will be created so they can be checked manually for obvious issues. This is the plan for end-of-month billing. Long term: an automated check that flags likely issues for Customer Success to dig into.",
+          "source": "Manish Ranjan, Slack 2026-10-19",
+          "by": "Manish Ranjan"
+        },
+        {
+          "date": "2026-10-19",
+          "text": "Billing working session scheduled.",
+          "source": "Levi Howa, 2026-10-19",
+          "by": "Levi Howa"
+        },
         {
           "date": "2026-10-15",
           "text": "Owner set to Manish Ranjan (page owner for Billing Integrity).",

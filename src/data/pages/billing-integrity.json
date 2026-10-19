@@ -3,7 +3,7 @@
   "title": "Billing Integrity",
   "track": 3,
   "purpose": "Charges that post to a resident ledger for Master Policy, Contents, and HBG must match the policy. Four incidents say we've been struggling on this front. This page is the record of root cause, fix, and the check that stops it recurring.",
-  "asOf": "2026-10-01",
+  "asOf": "2026-10-19",
   "sections": [
     {
       "type": "stats",
@@ -83,14 +83,19 @@
       "note": "Every 'Unconfirmed' is a cell the owner fills. Replace the owner column with one engineer's name per row."
     },
     {
+      "type": "text",
+      "title": "Recurrence check plan",
+      "body": "Short term: dry-run processes such as DEV-346999 (dry-run execution and scenario coverage for CMasterPolicyScript) pull the list of charges that will be created so they can be checked manually for obvious issues. This covers end-of-month billing for October. Long term: an automated check that does the checking and flags likely issues for Customer Success to dig into. Source: Manish Ranjan, Slack 2026-10-19."
+    },
+    {
       "type": "checklist",
       "title": "Working session",
       "items": [
         {
           "text": "Schedule the billing working session: JT (CTO), Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, Dan Bullock.",
-          "status": "open",
+          "status": "done",
           "owner": "Levi Howa",
-          "source": "Cal 2026-10-01"
+          "source": "Cal 2026-10-01; scheduled per Levi Howa, 2026-10-19"
         },
         {
           "text": "Pre-read: Cal's 180-day money-movement audit, 368 tickets. Link needed: Cal, add it to this page's References.",
@@ -109,6 +114,10 @@
       "type": "links",
       "title": "Tickets and data",
       "items": [
+        {
+          "label": "DEV-346999 (dry-run charge check)",
+          "href": "https://entrata.atlassian.net/browse/DEV-346999"
+        },
         {
           "label": "DEV-335619",
           "href": "https://entrata.atlassian.net/browse/DEV-335619"
