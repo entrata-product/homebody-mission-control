@@ -31,7 +31,7 @@
           "label": "Money-movement audit",
           "value": "368",
           "sub": "tickets, 180 days (pre-read)",
-          "source": "Cal Harris audit, 2026-10-01. No link in the repo yet."
+          "source": "Cal Harris audit, 2026-10-01. Linked under Tickets and data."
         }
       ]
     },
@@ -114,6 +114,10 @@
       "type": "links",
       "title": "Tickets and data",
       "items": [
+        {
+          "label": "Cal's 180-day money-movement audit (368 tickets, pre-read)",
+          "href": "https://github.com/Entrata-Collab/homebody-mission-control/blob/main/docs/money-movement-audit-2026-10-01.md"
+        },
         {
           "label": "DEV-346999 (dry-run charge check)",
           "href": "https://entrata.atlassian.net/browse/DEV-346999"
