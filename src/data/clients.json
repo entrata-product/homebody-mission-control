@@ -94,8 +94,8 @@
         "HBG"
       ],
       "heat": "burning",
-      "owner": "Owner to confirm",
-      "nextStep": "Unconfirmed. Escalation listed 2026-09-28 with no detail recorded. CSM to add what Cardinal is escalating and the ticket.",
+      "owner": "Jody Crockett",
+      "nextStep": "Follow up with Cardinal's accounting team on approval of the proposed payment flow (last update 2026-10-14). Tanner Clegg and Jae Lee: complete the Contents standalone migration by end of October. Tabatha Saldivar: lead the conversation about Legal's recommendation to switch Contents from in-lease to manual enrollment.",
       "due": null,
       "source": "Cal 2026-09-28 Mission Control update",
       "tracks": [
@@ -103,6 +103,12 @@
       ],
       "scale": null,
       "updates": [
+        {
+          "date": "2026-10-19",
+          "text": "Cardinal is satisfied with the HBG renewal releases and the help provided to correct edge-case ledgers and manually enroll renewal leases from before auto renewal. Open item 1 — Homebody revenue: Cardinal has not paid Entrata for Master Policy, HBG, or DA. The original payment approach communicated to Cardinal was not possible. Entrata proposed that it collect property and corporate funds, remit the total to Cardinal, and have Cardinal distribute it to properties. No response from Cardinal's accounting team as of 2026-10-14. Open item 2 — Contents standalone migration and enrollment: Cardinal has a mix of Master Policy records without liability amounts and true Contents policies because Contents was used before the policy was ready. Tanner Clegg and Jae Lee are working on the migration; ETA end of October. Entrata Legal recommends switching Contents from in-lease to manual enrollment. This may be unwelcome to Cardinal because in-lease enrollment was a major reason they signed; Tabatha Saldivar owns this conversation.",
+          "source": "Alyssa 2026-10-19",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-09-28",
           "text": "Added to the active HBG client escalation list. New since the 09-24 slate; no workstream recorded.",
