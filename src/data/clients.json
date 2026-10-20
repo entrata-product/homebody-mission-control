@@ -66,7 +66,7 @@
       ],
       "heat": "burning",
       "owner": "Alyssa Schroeder",
-      "nextStep": "Alyssa confirms who owns the answer on the three Redland enrollment exceptions and whether a manual enroll or reinstate is possible (tickets #1098815, #1079454). Tanner confirms whether he needs rates and coverage amounts for the 8-property lease-up ACH.",
+      "nextStep": "Waiting for Landmark to provide a time to meet and discuss how to resolve renewal leases signed before the auto-enroll feature.",
       "due": null,
       "source": "#insurance-ops-rnd-collab, #cproj-landmark-properties-athens-ga",
       "tracks": [
@@ -75,6 +75,12 @@
       ],
       "scale": "8 lease-up properties",
       "updates": [
+        {
+          "date": "2026-10-19",
+          "text": "Landmark has been on HBG auto renewals since 2026-10-16 and has reported no issues. Waiting for Landmark to provide a time to meet and discuss next steps for resolving renewal leases signed before the auto-enroll feature.",
+          "source": "Alyssa 2026-10-19",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-09-24",
           "text": "Brad Siddoway raised three Redland enrollment exceptions in #insurance-ops-rnd-collab (renewal transfer missed enrollment during migration; standard renewal with prior policy not re-enrolled; renewal transfer with signed guarantor waiver addendum).",
