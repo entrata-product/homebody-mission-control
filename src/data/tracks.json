@@ -81,11 +81,11 @@
         "cardinal",
         "yugo"
       ],
-      "status": "in_progress",
+      "status": "validation",
       "heat": "burning",
-      "summary": "Auto-renewal with full repricing has shipped and is turned on for Asset, Cardinal, Yugo, and Landmark (Priess planned to turn on 2026-10-20 per the Clients board). A merge field conflict issue was identified; resolution ETA Wed Oct 21.",
-      "nextStep": "Resolve the merge field conflict issue (ETA Wed Oct 21). Confirm Priess has turned auto-renewal on.",
-      "note": "Shipped and on for 4 of 5 escalated clients; merge field conflict fix due Oct 21.",
+      "summary": "Renewals are shipped and turned on for Asset, Cardinal, Yugo, and Landmark (Priess planned to turn on 2026-10-20 per the Clients board). The remaining work is validating renewal behavior with clients, including a merge field conflict found during rollout (resolution ETA Wed Oct 21), before the five escalated HBG clients can be de-escalated. Transfers are explicitly off this path.",
+      "nextStep": "Resolve the merge field conflict (ETA Wed Oct 21). Dan: validate renewal behavior with clients, confirm Priess has turned auto-renewal on, and record results toward de-escalating the five clients.",
+      "note": "Shipped, validating with clients. On for 4 of 5 escalated clients; merge field conflict fix due Oct 21.",
       "noteTone": "neutral",
       "updates": [
         {
@@ -93,6 +93,12 @@
           "text": "Auto-renewal shipped; turned on for Asset, Cardinal, Yugo, and Landmark. Identified a merge field conflict issue; resolution ETA Wed Oct 21.",
           "source": "Jae Lee, 2026-10-20",
           "by": "Jae Lee"
+        },
+        {
+          "date": "2026-10-20",
+          "text": "Renewals are shipped and done. Track moved to the new Shipped · validating status: the remaining work is validating behavior with clients, not building. Status added so the board does not read this as still in flight.",
+          "source": "Cal Harris, 2026-10-20",
+          "by": "Caleb Harris"
         },
         {
           "date": "2026-10-15",

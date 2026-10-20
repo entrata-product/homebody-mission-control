@@ -363,6 +363,7 @@
       "fulfiller": "embedded-partner",
       "fulfillment": "Homebody runs the points ledger and tracking; redemption partners fulfill the rewards. Fulfillment owner to confirm.",
       "contracts": "Customer to Entrata for the SKU; Entrata to redemption partners. To confirm.",
+      "note": "Cohort 1 signal: one client so far wants to hide the Rewards tab. Today only White-Label clients can hide it; waiting on Nico for guidance.",
       "owner": "Britton Pederson",
       "economics": {
         "revenue": {

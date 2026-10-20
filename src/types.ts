@@ -1,5 +1,5 @@
 export type Heat = "burning" | "active" | "steady" | "idle"
-export type Status = "not_started" | "in_progress" | "blocked" | "complete"
+export type Status = "not_started" | "in_progress" | "validation" | "blocked" | "complete"
 
 export type Update = { date: string; text: string; source: string; by?: string }
 
