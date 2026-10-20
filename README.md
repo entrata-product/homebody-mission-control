@@ -48,7 +48,7 @@ git commit -m "track 2: new lock date Oct 27, block list confirmed with insuranc
 git push
 ```
 
-This repo is the working copy. Labs publishes from [entrata-product/homebody-mission-control](https://github.com/entrata-product/homebody-mission-control). After you push here, push the same `main` to that remote so the live page updates.
+Pushing to `main` here is all you do. A mirror copies `main` to [entrata-product/homebody-mission-control](https://github.com/entrata-product/homebody-mission-control) and Labs publishes from there within a few minutes (wired by Stephen Dangerfield, 2026-10-20). You do not push to the mirror yourself. If the live page has not caught up after ten minutes, tell Stephen.
 
 ---
 
