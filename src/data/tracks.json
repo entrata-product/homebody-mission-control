@@ -1,6 +1,6 @@
 {
   "asOf": "2026-10-19",
-  "sourceNote": "A track is a finite outcome with exactly one named owner, a date, a measure of done, and a page where the work lives. Function names are not owners; write 'Owner to confirm' until a person is named. Reshaped 2026-10-15 from the 2026-09-28 area-based slate.",
+  "sourceNote": "A track is a finite deliverable with exactly one named owner, a date, a measure of done, and a page where the work lives. Function names are not owners; write 'Owner to confirm' until a person is named. Reshaped 2026-10-15 from the 2026-09-28 area-based slate.",
   "tracks": [
     {
       "number": 1,
@@ -8,7 +8,7 @@
       "area": "pay",
       "offerings": [],
       "lines": [],
-      "outcome": "All Customers migrated from Resident Portal to Homebody by Dec 10, 2026",
+      "deliverable": "All Customers migrated from Resident Portal to Homebody by Dec 10, 2026",
       "owner": "Christian Allred",
       "due": "2026-12-10",
       "measure": "Every Customer still on Resident Portal is live on Homebody by Dec 10, 2026; every wave after Cohort 1 has a client list and a schedule; the exception path for CSMs and Sales is written and linked; 3M MAU is the program target",
@@ -23,7 +23,7 @@
       "updates": [
         {
           "date": "2026-10-15",
-          "text": "Outcome restated: all Customers migrated by Dec 10, not Cohort 1 alone. Cohort 1 is the first wave. Remaining waves, schedules, and the exception path are now the open items.",
+          "text": "Deliverable restated: all Customers migrated by Dec 10, not Cohort 1 alone. Cohort 1 is the first wave. Remaining waves, schedules, and the exception path are now the open items.",
           "source": "Catherine Wong, 2026-10-15",
           "by": "Catherine Wong"
         },
@@ -47,7 +47,7 @@
         },
         {
           "date": "2026-10-15",
-          "text": "Reshaped from 'Homebody App Migration' area into a finite outcome. Migration page created from the Domo rollout card numbers and the App-lane roadmap items.",
+          "text": "Reshaped from 'Homebody App Migration' area into a finite deliverable. Migration page created from the Domo rollout card numbers and the App-lane roadmap items.",
           "source": "Mission Control restructure",
           "by": "Catherine Wong"
         },
@@ -69,11 +69,11 @@
       "lines": [
         "hbg"
       ],
-      "outcome": "HBG renewal requirements locked and renewals shipped",
+      "deliverable": "HBG renewal requirements locked and renewals shipped",
       "owner": "Dan Bullock",
       "due": null,
       "measure": "Renewal rules confirmed with insurance ops and built as specified; the five escalated HBG clients (Priess, Asset, Landmark, Cardinal, Yugo) de-escalated",
-      "page": "hbg-distribution",
+      "page": "hbg-renewals",
       "clients": [
         "priess",
         "asset",
@@ -81,25 +81,13 @@
         "cardinal",
         "yugo"
       ],
-      "status": "validation",
+      "status": "in_progress",
       "heat": "burning",
-      "summary": "Renewals are shipped and turned on for Asset, Cardinal, Yugo, and Landmark (Priess planned to turn on 2026-10-20 per the Clients board). The remaining work is validating renewal behavior with clients, including a merge field conflict found during rollout (resolution ETA Wed Oct 21), before the five escalated HBG clients can be de-escalated. Transfers are explicitly off this path.",
-      "nextStep": "Resolve the merge field conflict (ETA Wed Oct 21). Dan: validate renewal behavior with clients, confirm Priess has turned auto-renewal on, and record results toward de-escalating the five clients.",
-      "note": "Shipped, validating with clients. On for 4 of 5 escalated clients; merge field conflict fix due Oct 21.",
-      "noteTone": "neutral",
+      "summary": "Renewals and eligibility were on an Oct 13 critical path. That date has passed with no update in the repo. Transfers are explicitly off this path.",
+      "nextStep": "Dan: set a new lock date and record whether the Robert Jones meeting happened and what it locked.",
+      "note": "Oct 13 lock date passed; new date needed.",
+      "noteTone": "alert",
       "updates": [
-        {
-          "date": "2026-10-20",
-          "text": "Auto-renewal shipped; turned on for Asset, Cardinal, Yugo, and Landmark. Identified a merge field conflict issue; resolution ETA Wed Oct 21.",
-          "source": "Jae Lee, 2026-10-20",
-          "by": "Jae Lee"
-        },
-        {
-          "date": "2026-10-20",
-          "text": "Renewals are shipped and done. Track moved to the new Shipped · validating status: the remaining work is validating behavior with clients, not building. Status added so the board does not read this as still in flight.",
-          "source": "Cal Harris, 2026-10-20",
-          "by": "Caleb Harris"
-        },
         {
           "date": "2026-10-15",
           "text": "Split from the 'Homebody Guaranty (HBG)' area track. Client workstreams (Landmark Redland, Landmark lease-up ACH, Meridian Bellamy) moved to the Clients board. Transfers moved to Track 8. Oct 13 date passed with no update.",
@@ -147,7 +135,7 @@
         "contents",
         "hbg"
       ],
-      "outcome": "Four Homebody Services billing incidents root-caused, fixed, with a recurrence check in place",
+      "deliverable": "Four Homebody Services billing incidents root-caused, fixed, with a recurrence check in place",
       "owner": "Manish Ranjan",
       "due": null,
       "measure": "INC 1497, INC 1551, INC 1557, DEV-342481 each have a named root cause and a shipped fix; zero new duplicate-charge or mismatched-charge incidents for 30 days after",
@@ -158,22 +146,10 @@
       "status": "in_progress",
       "heat": "burning",
       "summary": "The system is consistently posting incorrect Master Policy and Contents charges to resident ledgers, plus one-off HBG billing issues. Manish Ranjan owns the fix and the Billing Integrity page.",
-      "nextStep": "Manish: run the dry-run charge check (DEV-346999) ahead of end-of-month billing while the automated check is built.",
-      "note": "Billing working session scheduled. End-of-month run relies on the manual dry-run check.",
+      "nextStep": "Levi: schedule the billing working session (JT, Manish Ranjan, Levi Howa, Zack Melton, Jae Lee, Cal Harris, Dan Bullock).",
+      "note": "Working session not yet scheduled.",
       "noteTone": "alert",
       "updates": [
-        {
-          "date": "2026-10-19",
-          "text": "Short term: dry-run processes such as DEV-346999 (dry-run execution and scenario coverage for CMasterPolicyScript) pull the list of charges that will be created so they can be checked manually for obvious issues. This is the plan for end-of-month billing. Long term: an automated check that flags likely issues for Customer Success to dig into.",
-          "source": "Manish Ranjan, Slack 2026-10-19",
-          "by": "Manish Ranjan"
-        },
-        {
-          "date": "2026-10-19",
-          "text": "Billing working session scheduled.",
-          "source": "Levi Howa, 2026-10-19",
-          "by": "Levi Howa"
-        },
         {
           "date": "2026-10-15",
           "text": "Owner set to Manish Ranjan (page owner for Billing Integrity).",
@@ -182,7 +158,7 @@
         },
         {
           "date": "2026-10-15",
-          "text": "Reshaped into a finite outcome. Owner changed from 'Product' to 'Owner to confirm' so the gap is visible. Billing Integrity page created with the four incidents.",
+          "text": "Reshaped into a finite deliverable. Owner changed from 'Product' to 'Owner to confirm' so the gap is visible. Billing Integrity page created with the four incidents.",
           "source": "Mission Control restructure",
           "by": "Catherine Wong"
         },
@@ -209,12 +185,12 @@
     {
       "number": 4,
       "id": "rewards-2027-and-trinity-decided",
-      "area": "fulfill",
+      "area": "live",
       "offerings": [
         "rewards"
       ],
       "lines": [],
-      "outcome": "Trinity direction and Rewards-in-2027 decided; Trinity asks mapped to committed roadmap items",
+      "deliverable": "Trinity direction and Rewards-in-2027 decided; Trinity asks mapped to committed roadmap items",
       "owner": "Britton Pederson",
       "due": "2026-10-15",
       "measure": "Both decisions recorded in decisions.json (shown under Open action items) with an owner and a date; every Trinity ask has a roadmap key and a release, or an explicit no",
@@ -224,20 +200,32 @@
       ],
       "status": "in_progress",
       "heat": "active",
-      "summary": "Rewards offering switched; minimal client adoption; Trinity ($2M+ annual, 56,000 units) pushing for more features and clarity on direction. Two decisions due with AOP today.",
-      "nextStep": "Britton: record the two decisions (flip them to decided in decisions.json), or record the new date if AOP slipped.",
-      "note": "Trinity is frustrated with the current offering and wants to know where we're headed.",
+      "summary": "Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing for Rewards is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected this month per Alex, and additional student operators are in the pipeline.",
+      "nextStep": "Confirm whether property-scoped approval permissions satisfy Trinity's regional approval needs. Confirm with Andrew whether DEV-347111 and DEV-329237, currently being scoped, are prerequisites for the broader Trinity Cares bonus-point rollout. Confirm the scope and timing of the planned October 28 training and November 2 rollout, and obtain Trinity's validation of the required workflows. Confirm delivery dates with Zack and Swapnil for any remaining rollout blockers.",
+      "note": "Continued Rewards sales in 2027 confirmed. Trinity delivery remains in progress. October 15 was the original track target; a revised completion date for the remaining Trinity milestones has not been confirmed.",
       "noteTone": "alert",
       "updates": [
         {
           "date": "2026-10-19",
-          "text": "Moved from Live to Fulfill. Rewards is an offering Homebody fulfills through partners; its direction and Trinity's roadmap asks are a Fulfiller-owner question, not a surface question. Live still features Rewards.",
-          "source": "Mission Control restructure",
-          "by": "Catherine Wong"
+          "text": "Continued Rewards sales in 2027 confirmed. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing for Rewards is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected this month per Alex, and additional student operators are in the pipeline.",
+          "source": "Britton Pederson, October 19 update; Landmark timing and pipeline per Alex",
+          "by": "Britton Pederson"
+        },
+        {
+          "date": "2026-10-19",
+          "text": "The approvals dashboard has shipped, per Zack. Rewards permissions remain on track for October 23. Property-scoped approval permissions are still in development. Trinity's successful validation and the analytics release scope have not yet been confirmed.",
+          "source": "Zack Melton's October 19 Slack reply and outstanding validation questions",
+          "by": "Britton Pederson"
+        },
+        {
+          "date": "2026-10-19",
+          "text": "Remaining Trinity milestones: Confirm whether property-scoped approval permissions satisfy Trinity's regional approval needs. Confirm with Andrew whether DEV-347111 and DEV-329237, currently being scoped, are prerequisites for the broader Trinity Cares bonus-point rollout. Confirm the scope and timing of the planned October 28 training and November 2 rollout, and obtain Trinity's validation of the required workflows. Confirm delivery dates with Zack and Swapnil for any remaining rollout blockers.",
+          "source": "October 7 Trinity call and Zack Melton's October 19 Slack reply",
+          "by": "Britton Pederson"
         },
         {
           "date": "2026-10-15",
-          "text": "Reshaped into a finite outcome owned by Britton. Rewards page created with the Trinity asks already present in roadmap.json and the July economics diagnosis from the RXP Quarter Brief.",
+          "text": "Reshaped into a finite deliverable owned by Britton. Rewards page created with the Trinity asks already present in roadmap.json and the July economics diagnosis from the RXP Quarter Brief.",
           "source": "Mission Control restructure",
           "by": "Catherine Wong"
         },
@@ -260,7 +248,7 @@
         "master-policy",
         "ho4"
       ],
-      "outcome": "Incident 1547 root-caused and October insurance conversion back at or above target",
+      "deliverable": "Incident 1547 root-caused and October insurance conversion back at or above target",
       "owner": "Jae Lee",
       "due": "2026-10-31",
       "measure": "October Homebody Insurance conversion rate at or above the pre-drop baseline, with the root cause written down",
@@ -269,16 +257,10 @@
       "status": "in_progress",
       "heat": "active",
       "summary": "Incident #1547 (opened and closed 2026-09-28) caused the conversion drop in the lease checkout flow. Product's RCA is written and Engineering held a separate post-mortem. What remains is showing October conversion back at the pre-drop baseline.",
-      "nextStep": "Levi: link the Engineering post-mortem for #1547. Conversion still below the pre-drop baseline (30% MTD vs 37.4% 12-mo avg pre-drop); watch whether it closes the gap before the Oct 31 due date.",
-      "note": "Incident #1547 closed 2026-09-28; RCA linked. MTD conversion 30%, up from 26% last month but below the 37.4% pre-drop baseline.",
+      "nextStep": "Jae: post the MTD conversion rate vs last month and the pre-drop baseline on the Insurance Funnel page. Levi: link the Engineering post-mortem.",
+      "note": "Incident #1547 closed 2026-09-28; RCA linked.",
       "noteTone": "neutral",
       "updates": [
-        {
-          "date": "2026-10-20",
-          "text": "MTD Homebody Insurance conversion rate is 30% (lease checkout), up from 26% last month. March was 35%. The 12-month average prior to the drop was 37.4%. October is trending up but still below the pre-drop baseline; posted to the Insurance Funnel page.",
-          "source": "Jae Lee, 2026-10-20",
-          "by": "Jae Lee"
-        },
         {
           "date": "2026-10-15",
           "text": "Incident #1547 was opened and closed on 2026-09-28. Product RCA linked on the Insurance Funnel page. Engineering held a separate post-mortem; Levi Howa to link it.",
@@ -287,7 +269,7 @@
         },
         {
           "date": "2026-10-15",
-          "text": "Reshaped into a finite outcome owned by Jae and placed under the Aisles area, since conversion is a placement outcome. Insurance Funnel page created.",
+          "text": "Reshaped into a finite deliverable owned by Jae and placed under the Aisles area, since conversion is a placement outcome. Insurance Funnel page created.",
           "source": "Mission Control restructure",
           "by": "Catherine Wong"
         },
@@ -315,11 +297,11 @@
       "lines": [
         "hbg"
       ],
-      "outcome": "HBG renewal process documented for clients and for CS and Service",
+      "deliverable": "HBG renewal process documented for clients and for CS and Service",
       "owner": "Wyatt Moore",
       "due": null,
       "measure": "Help Center article on HBG renewals published; internal answer guide shared with CS and Service; the Unit Transfer article (done 2026-09-28) is the model",
-      "page": "hbg-delivery",
+      "page": null,
       "clients": [],
       "status": "not_started",
       "heat": "active",
@@ -336,7 +318,7 @@
         },
         {
           "date": "2026-10-15",
-          "text": "Scoped from the 'Homebody Documentation' area (owned by three functions) to one finite outcome. The broader documentation gap stays as a part of the Fulfill surface.",
+          "text": "Scoped from the 'Homebody Documentation' area (owned by three functions) to one finite deliverable. The broader documentation gap stays as a part of the Fulfill surface.",
           "source": "Mission Control restructure",
           "by": "Catherine Wong"
         },
@@ -358,7 +340,7 @@
       "lines": [
         "outside-policy"
       ],
-      "outcome": "IVS: $142k client credits approved by Finance and wave 1 client outreach complete",
+      "deliverable": "IVS: $142k client credits approved by Finance and wave 1 client outreach complete",
       "owner": "Chris Finken",
       "due": null,
       "measure": "Finance approval recorded as a decision; wave 1 clients notified and their IVS settings corrected; no resident force-placed as a result",
@@ -379,7 +361,7 @@
         },
         {
           "date": "2026-10-15",
-          "text": "Reshaped into a finite outcome (credits approved, wave 1 done). Owner changed from 'CS, Implementation' to 'Owner to confirm'. IVS page created.",
+          "text": "Reshaped into a finite deliverable (credits approved, wave 1 done). Owner changed from 'CS, Implementation' to 'Owner to confirm'. IVS page created.",
           "source": "Mission Control restructure",
           "by": "Catherine Wong"
         },
@@ -401,30 +383,24 @@
       "lines": [
         "hbg"
       ],
-      "outcome": "HBG transfers epic opened and scoped, separate from renewals",
+      "deliverable": "HBG transfers epic opened and scoped, separate from renewals",
       "owner": "Jae Lee",
       "due": null,
       "measure": "Jira epic exists with scope, acceptance criteria, and a target release",
-      "page": "hbg-distribution",
+      "page": "hbg-renewals",
       "clients": [
         "landmark"
       ],
-      "status": "in_progress",
+      "status": "not_started",
       "heat": "steady",
-      "summary": "Transfers were taken off the renewals critical path on 2026-09-24 so the team can focus on renewals. Epic opened: DEV-350148 (HBG: Unit Transfer Enrollment Updates).",
-      "nextStep": "Scope, acceptance criteria, and a target release still need to be added to DEV-350148 (currently New, assigned Dan Bullock).",
-      "note": "Epic opened and linked: DEV-350148.",
-      "noteTone": "neutral",
+      "summary": "Transfers were taken off the renewals critical path on 2026-09-24 so the team can focus on renewals. They still need their own epic.",
+      "nextStep": "Jae: open the epic and link it here.",
+      "note": null,
+      "noteTone": null,
       "updates": [
         {
-          "date": "2026-10-20",
-          "text": "Epic opened: DEV-350148, \"HBG: Unit Transfer Enrollment Updates\" (status New, assigned Dan Bullock). Scope, acceptance criteria, and target release are not yet filled in.",
-          "source": "Jae Lee, 2026-10-20",
-          "by": "Jae Lee"
-        },
-        {
           "date": "2026-10-15",
-          "text": "Split out of the HBG area track as its own outcome.",
+          "text": "Split out of the HBG area track as its own deliverable.",
           "source": "Mission Control restructure",
           "by": "Catherine Wong"
         },
@@ -433,83 +409,6 @@
           "text": "Jae: take transfers off this critical path so the team can focus on renewals. Start a separate epic for HBG transfers.",
           "source": "#tmp-hbg-renewal-charges",
           "by": "Jae Lee"
-        }
-      ]
-    },
-    {
-      "number": 9,
-      "id": "hbg-delivery-get-well",
-      "area": "fulfill",
-      "offerings": [
-        "insurance"
-      ],
-      "lines": [
-        "hbg"
-      ],
-      "outcome": "HBG Delivery Get Well: charge, cancellation, and Leap-sync defects closed as product fixes, so refund requests stop arriving as R&D bugs",
-      "owner": "Owner to confirm",
-      "due": null,
-      "measure": "Owner to confirm. Proposed: cancellations reverse their own charges in product (DEV-286241, DEV-349261 shipped); a full month with no HBG refund-request ticket opened against R&D; HB Guaranty Reporting (DEV-138646) has a release",
-      "page": "hbg-delivery",
-      "clients": [
-        "cardinal",
-        "priess"
-      ],
-      "status": "not_started",
-      "heat": "active",
-      "summary": "The Delivery-arm counterpart to HBG Distribution Get Well. Of 200 HBG Jira issues touched in the last year, the largest bug cluster is scheduled charges and billing, followed by cancellations and refunds and by Leap sync. Most refund requests are closed by datafix. The product epics that would end that (reverse charges on cancel, reinstatement, cancel/rewrite) have sat in New since June.",
-      "nextStep": "Name the owner. The HBG line owner (Josh Tebbs) and the Delivery Coordinator (Chris Finken) are the natural candidates; the room decides.",
-      "note": "Owner needed",
-      "noteTone": "alert",
-      "updates": [
-        {
-          "date": "2026-10-19",
-          "text": "Opened as the Delivery-arm counterpart to HBG Distribution Get Well, from a review of 200 HBG Jira issues updated in the last 365 days and Leap's Guarantor Waiver Program guide.",
-          "source": "Jira 2026-10-19 (summary match, last 365d); Leap GWP 102 guide",
-          "by": "Catherine Wong"
-        }
-      ]
-    },
-    {
-      "number": 10,
-      "id": "hbg-distribution-get-well",
-      "area": "sign",
-      "offerings": [
-        "insurance"
-      ],
-      "lines": [
-        "hbg"
-      ],
-      "outcome": "HBG Distribution Get Well: residents enroll and re-enroll in HBG correctly on Sign. Application, renewal, transfer, and lease-document defects closed, and the escalated HBG clients de-escalated",
-      "owner": "Jae Lee",
-      "due": null,
-      "measure": "Jae Lee to confirm. Proposed: renewals (#2) and transfers (#8) shipped; the application and lease-document defects on this page closed; a full month with no new HBG Distribution escalation",
-      "page": "hbg-distribution",
-      "clients": [
-        "priess",
-        "asset",
-        "landmark",
-        "cardinal",
-        "yugo"
-      ],
-      "status": "in_progress",
-      "heat": "burning",
-      "summary": "The umbrella for the Sign side of HBG. Renewals (#2, Dan Bullock) are the critical path and are past their Oct 13 lock date; transfers (#8) now have an epic (DEV-350148). Application, screening, and lease-document defects sit on this page with no track of their own. A decline in HBG conversions has also surfaced and is not yet understood.",
-      "nextStep": "Jae: connecting with FP&A and Dan Bullock this week to dig into the HBG conversion decline and define investigation next steps. Still need to confirm the measure of done and whether application, screening, and lease-document defects need their own tracks or stay here.",
-      "note": "Newly flagged: a decline in HBG conversions, cause not yet understood.",
-      "noteTone": "alert",
-      "updates": [
-        {
-          "date": "2026-10-20",
-          "text": "Recently made aware of declines in HBG conversions; what the drop actually represents is not yet understood. Connecting with FP&A and Dan Bullock this week to scope the investigation.",
-          "source": "Jae Lee, 2026-10-20",
-          "by": "Jae Lee"
-        },
-        {
-          "date": "2026-10-19",
-          "text": "Opened as the umbrella for the Sign side of HBG so the page's outcome is the whole Distribution problem, not only transfers. #2 and #8 stay as the two outcomes inside it.",
-          "source": "Mission Control restructure",
-          "by": "Catherine Wong"
         }
       ]
     }
