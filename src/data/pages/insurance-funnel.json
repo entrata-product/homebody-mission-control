@@ -3,7 +3,7 @@
   "title": "Insurance Funnel",
   "track": 5,
   "purpose": "Why insurance conversion dropped in lease checkout (incident #1547, opened and closed 2026-09-28) and whether October recovered. Scope: this is the Sign funnel only, the coverage choice at checkout (Master Policy or HO4) plus HBG at the deposit step. Contents, claims, renewals, outside-policy verification, and the Pay offers are other funnels. All insurance lines, their owner (Josh Tebbs), and their economics are on The model tab under Economics by line.",
-  "asOf": "2026-10-15",
+  "asOf": "2026-10-20",
   "sections": [
     {
       "type": "stats",
@@ -11,9 +11,9 @@
       "tiles": [
         {
           "label": "Conversion rate, MTD",
-          "value": null,
-          "sub": "vs last month · vs target",
-          "needs": "Jae Lee"
+          "value": "30%",
+          "sub": "26% last month · 37.4% 12-mo avg pre-drop · 35% in March",
+          "source": "Jae Lee, 2026-10-20"
         },
         {
           "label": "Incident #1547",
@@ -35,8 +35,9 @@
       "items": [
         {
           "text": "Post the MTD conversion rate against last month and the pre-drop baseline on this page.",
-          "status": "open",
-          "owner": "Jae Lee"
+          "status": "done",
+          "owner": "Jae Lee",
+          "source": "Jae Lee, 2026-10-20: 30% MTD vs 26% last month vs 37.4% 12-mo avg pre-drop"
         },
         {
           "text": "Root cause of the funnel drop written down (Product RCA for incident #1547).",

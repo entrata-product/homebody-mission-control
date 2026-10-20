@@ -3,7 +3,7 @@
   "title": "HBG Distribution Get Well",
   "track": 10,
   "purpose": "The Distribution side of Homebody Guaranty: getting the resident enrolled and re-enrolled on Sign. Application and screening, renewal offers and repricing, transfers, and the lease documents that price the guaranty. Renewals (#2) are the critical path; transfers (#8) are tracked here too but off it. What the policy does after enrollment (charges, cancellations, Leap sync, claims, reporting) is HBG Delivery Get Well. Economics for the line live on Insurance Line Performance.",
-  "asOf": "2026-10-19",
+  "asOf": "2026-10-20",
   "sections": [
     {
       "type": "stats",
@@ -53,7 +53,7 @@
         ],
         [
           "Transfers",
-          "Small in Jira, loud in the room. New policy not created on unit transfer; double billing of transferring residents; fees not showing in renewal transfers. No epic yet (Track 8).",
+          "Small in Jira, loud in the room. New policy not created on unit transfer; double billing of transferring residents; fees not showing in renewal transfers. Epic opened (Track 8): DEV-350148.",
           "4 issues, 2 open. DEV-342481, DEV-331223, DEV-342530, DEV-348855.",
           "End the old unit's fee in the last month of occupancy, start the new unit's fee at occupancy, no overlap in one month, verify the old policy is inactive in the Leap portal.",
           "Jae Lee"
@@ -179,7 +179,7 @@
       "type": "text",
       "title": "Transfers",
       "tone": "neutral",
-      "body": "Taken off the renewals critical path on 2026-09-24 so the team can focus on renewals. Jae owns opening a separate epic (Track 8). The Unit Transfer coverage article was published 2026-09-28 and is the model for the renewals article (Track 6). A transfer that creates no new policy belongs here; a transfer that double-bills belongs to HBG Delivery Get Well."
+      "body": "Taken off the renewals critical path on 2026-09-24 so the team can focus on renewals. Epic opened 2026-10-20: DEV-350148, \"HBG: Unit Transfer Enrollment Updates\" (Track 8), still needs scope, acceptance criteria, and a target release. The Unit Transfer coverage article was published 2026-09-28 and is the model for the renewals article (Track 6). A transfer that creates no new policy belongs here; a transfer that double-bills belongs to HBG Delivery Get Well."
     },
     {
       "type": "roadmap",

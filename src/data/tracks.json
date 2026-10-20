@@ -257,10 +257,16 @@
       "status": "in_progress",
       "heat": "active",
       "summary": "Incident #1547 (opened and closed 2026-09-28) caused the conversion drop in the lease checkout flow. Product's RCA is written and Engineering held a separate post-mortem. What remains is showing October conversion back at the pre-drop baseline.",
-      "nextStep": "Jae: post the MTD conversion rate vs last month and the pre-drop baseline on the Insurance Funnel page. Levi: link the Engineering post-mortem.",
-      "note": "Incident #1547 closed 2026-09-28; RCA linked.",
+      "nextStep": "Levi: link the Engineering post-mortem for #1547. Conversion still below the pre-drop baseline (30% MTD vs 37.4% 12-mo avg pre-drop); watch whether it closes the gap before the Oct 31 due date.",
+      "note": "Incident #1547 closed 2026-09-28; RCA linked. MTD conversion 30%, up from 26% last month but below the 37.4% pre-drop baseline.",
       "noteTone": "neutral",
       "updates": [
+        {
+          "date": "2026-10-20",
+          "text": "MTD Homebody Insurance conversion rate is 30% (lease checkout), up from 26% last month. March was 35%. The 12-month average prior to the drop was 37.4%. October is trending up but still below the pre-drop baseline; posted to the Insurance Funnel page.",
+          "source": "Jae Lee, 2026-10-20",
+          "by": "Jae Lee"
+        },
         {
           "date": "2026-10-15",
           "text": "Incident #1547 was opened and closed on 2026-09-28. Product RCA linked on the Insurance Funnel page. Engineering held a separate post-mortem; Levi Howa to link it.",
@@ -391,13 +397,19 @@
       "clients": [
         "landmark"
       ],
-      "status": "not_started",
+      "status": "in_progress",
       "heat": "steady",
-      "summary": "Transfers were taken off the renewals critical path on 2026-09-24 so the team can focus on renewals. They still need their own epic.",
-      "nextStep": "Jae: open the epic and link it here.",
-      "note": null,
-      "noteTone": null,
+      "summary": "Transfers were taken off the renewals critical path on 2026-09-24 so the team can focus on renewals. Epic opened: DEV-350148 (HBG: Unit Transfer Enrollment Updates).",
+      "nextStep": "Scope, acceptance criteria, and a target release still need to be added to DEV-350148 (currently New, assigned Dan Bullock).",
+      "note": "Epic opened and linked: DEV-350148.",
+      "noteTone": "neutral",
       "updates": [
+        {
+          "date": "2026-10-20",
+          "text": "Epic opened: DEV-350148, \"HBG: Unit Transfer Enrollment Updates\" (status New, assigned Dan Bullock). Scope, acceptance criteria, and target release are not yet filled in.",
+          "source": "Jae Lee, 2026-10-20",
+          "by": "Jae Lee"
+        },
         {
           "date": "2026-10-15",
           "text": "Split out of the HBG area track as its own outcome.",
@@ -470,11 +482,17 @@
       ],
       "status": "in_progress",
       "heat": "burning",
-      "summary": "The umbrella for the Sign side of HBG. Renewals (#2, Dan Bullock) are the critical path and are past their Oct 13 lock date; transfers (#8) have no epic yet. Application, screening, and lease-document defects sit on this page with no track of their own.",
-      "nextStep": "Jae: confirm the measure of done and whether application, screening, and lease-document defects need their own tracks or stay here.",
-      "note": null,
-      "noteTone": null,
+      "summary": "The umbrella for the Sign side of HBG. Renewals (#2, Dan Bullock) are the critical path and are past their Oct 13 lock date; transfers (#8) now have an epic (DEV-350148). Application, screening, and lease-document defects sit on this page with no track of their own. A decline in HBG conversions has also surfaced and is not yet understood.",
+      "nextStep": "Jae: connecting with FP&A and Dan Bullock this week to dig into the HBG conversion decline and define investigation next steps. Still need to confirm the measure of done and whether application, screening, and lease-document defects need their own tracks or stay here.",
+      "note": "Newly flagged: a decline in HBG conversions, cause not yet understood.",
+      "noteTone": "alert",
       "updates": [
+        {
+          "date": "2026-10-20",
+          "text": "Recently made aware of declines in HBG conversions; what the drop actually represents is not yet understood. Connecting with FP&A and Dan Bullock this week to scope the investigation.",
+          "source": "Jae Lee, 2026-10-20",
+          "by": "Jae Lee"
+        },
         {
           "date": "2026-10-19",
           "text": "Opened as the umbrella for the Sign side of HBG so the page's outcome is the whole Distribution problem, not only transfers. #2 and #8 stay as the two outcomes inside it.",
