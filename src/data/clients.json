@@ -136,8 +136,8 @@
         "HBG"
       ],
       "heat": "burning",
-      "owner": "Owner to confirm",
-      "nextStep": "Unconfirmed. Added to the escalation list 2026-09-30 with no detail recorded. CSM to add the thread.",
+      "owner": "Jody Crockett",
+      "nextStep": "Meet with Yugo on 2026-10-20, review the individual lease issues and listed tickets, and agree on follow-up for the remaining one-off issues.",
       "due": null,
       "source": "Alyssa 2026-09-30",
       "tracks": [
@@ -145,6 +145,12 @@
       ],
       "scale": null,
       "updates": [
+        {
+          "date": "2026-10-19",
+          "text": "Yugo has been live with HBG auto renewals since 2026-10-14. The first weekly meeting since release is scheduled for 2026-10-20. Yugo has continued to raise issues found on individual leases. Ginger Mathews, Director of Business Systems, told Cal Harris that Yugo is happy with the Entrata team's attention and responsiveness, while its internal teams are still “bearing the burden” of the one-off issues. Related tickets and incident: DEV-349211 (https://entrata.atlassian.net/browse/DEV-349211); INC1557-20261001-hbg-ledger-charges-that-dont-match-the-policy-amount; DEV-339897 (https://entrata.atlassian.net/browse/DEV-339897); DEV-341562 (https://entrata.atlassian.net/browse/DEV-341562); DEV-346223 (https://entrata.atlassian.net/browse/DEV-346223); DEV-347155 (https://entrata.atlassian.net/browse/DEV-347155); DEV-347105 (https://entrata.atlassian.net/browse/DEV-347105).",
+          "source": "Alyssa 2026-10-19",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-09-30",
           "text": "Yugo added to the active HBG client escalation list.",
