@@ -83,11 +83,17 @@
       ],
       "status": "in_progress",
       "heat": "burning",
-      "summary": "Renewals and eligibility were on an Oct 13 critical path. That date has passed with no update in the repo. Transfers are explicitly off this path.",
-      "nextStep": "Dan: set a new lock date and record whether the Robert Jones meeting happened and what it locked.",
-      "note": "Oct 13 lock date passed; new date needed.",
-      "noteTone": "alert",
+      "summary": "Auto-renewal with full repricing has shipped and is turned on for Asset, Cardinal, Yugo, and Landmark (Priess planned to turn on 2026-10-20 per the Clients board). A merge field conflict issue was identified; resolution ETA Wed Oct 21.",
+      "nextStep": "Resolve the merge field conflict issue (ETA Wed Oct 21). Confirm Priess has turned auto-renewal on.",
+      "note": "Shipped and on for 4 of 5 escalated clients; merge field conflict fix due Oct 21.",
+      "noteTone": "neutral",
       "updates": [
+        {
+          "date": "2026-10-20",
+          "text": "Auto-renewal shipped; turned on for Asset, Cardinal, Yugo, and Landmark. Identified a merge field conflict issue; resolution ETA Wed Oct 21.",
+          "source": "Jae Lee, 2026-10-20",
+          "by": "Jae Lee"
+        },
         {
           "date": "2026-10-15",
           "text": "Split from the 'Homebody Guaranty (HBG)' area track. Client workstreams (Landmark Redland, Landmark lease-up ACH, Meridian Bellamy) moved to the Clients board. Transfers moved to Track 8. Oct 13 date passed with no update.",
