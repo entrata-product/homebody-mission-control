@@ -14,6 +14,7 @@ export const heatMeta: Record<Heat, { label: string; pill: string; card: string 
 export const statusLabel: Record<Status, string> = {
   not_started: "Not started",
   in_progress: "In progress",
+  validation: "Shipped · validating",
   blocked: "Blocked",
   complete: "Complete",
 }
@@ -21,6 +22,7 @@ export const statusLabel: Record<Status, string> = {
 export const statusPill: Record<Status, string> = {
   not_started: "bg-[#F2F2F2] text-[#7A7A7A]",
   in_progress: "bg-[#DBEAFE] text-[#1E40AF]",
+  validation: "bg-[#D1FAE5] text-[#065F46]",
   blocked: "bg-[#FFCCD5] text-[#8A2E28]",
   complete: "bg-[#E0E0E0] text-[#474747]",
 }

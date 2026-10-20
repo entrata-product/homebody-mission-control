@@ -81,13 +81,19 @@
         "cardinal",
         "yugo"
       ],
-      "status": "in_progress",
+      "status": "validation",
       "heat": "burning",
-      "summary": "Renewals and eligibility were on an Oct 13 critical path. That date has passed with no update in the repo. Transfers are explicitly off this path.",
-      "nextStep": "Dan: set a new lock date and record whether the Robert Jones meeting happened and what it locked.",
-      "note": "Oct 13 lock date passed; new date needed.",
-      "noteTone": "alert",
+      "summary": "Renewals are shipped. The remaining work is validating renewal behavior with clients; the five escalated HBG clients still need to be de-escalated before this is complete. Transfers are explicitly off this path.",
+      "nextStep": "Dan: validate renewal behavior with clients and record the results; de-escalate the five escalated HBG clients.",
+      "note": "Shipped. Validating with clients.",
+      "noteTone": "neutral",
       "updates": [
+        {
+          "date": "2026-10-20",
+          "text": "Renewals are shipped and done. Track moved to the new Shipped · validating status: the remaining work is validating behavior with clients, not building. Status added so the board does not read this as still in flight.",
+          "source": "Cal Harris, 2026-10-20",
+          "by": "Caleb Harris"
+        },
         {
           "date": "2026-10-15",
           "text": "Split from the 'Homebody Guaranty (HBG)' area track. Client workstreams (Landmark Redland, Landmark lease-up ACH, Meridian Bellamy) moved to the Clients board. Transfers moved to Track 8. Oct 13 date passed with no update.",
