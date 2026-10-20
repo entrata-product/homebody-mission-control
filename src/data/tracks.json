@@ -224,11 +224,29 @@
       ],
       "status": "in_progress",
       "heat": "active",
-      "summary": "Rewards offering switched; minimal client adoption; Trinity ($2M+ annual, 56,000 units) pushing for more features and clarity on direction. Two decisions due with AOP today.",
-      "nextStep": "Britton: record the two decisions (flip them to decided in decisions.json), or record the new date if AOP slipped.",
-      "note": "Trinity is frustrated with the current offering and wants to know where we're headed.",
+      "summary": "Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing for Rewards is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected this month per Alex, and additional student operators are in the pipeline.",
+      "nextStep": "Confirm whether property-scoped approval permissions satisfy Trinity's regional approval needs. Confirm with Andrew whether DEV-347111 and DEV-329237, currently being scoped, are prerequisites for the broader Trinity Cares bonus-point rollout. Confirm the scope and timing of the planned October 28 training and November 2 rollout, and obtain Trinity's validation of the required workflows. Confirm delivery dates with Zack and Swapnil for any remaining rollout blockers.",
+      "note": "Continued Rewards sales in 2027 confirmed. Trinity delivery remains in progress. October 15 was the original track target; a revised completion date for the remaining Trinity milestones has not been confirmed.",
       "noteTone": "alert",
       "updates": [
+        {
+          "date": "2026-10-19",
+          "text": "Continued Rewards sales in 2027 confirmed. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing for Rewards is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected this month per Alex, and additional student operators are in the pipeline.",
+          "source": "Britton Pederson, October 19 update; Landmark timing and pipeline per Alex",
+          "by": "Britton Pederson"
+        },
+        {
+          "date": "2026-10-19",
+          "text": "The approvals dashboard has shipped, per Zack. Rewards permissions remain on track for October 23. Property-scoped approval permissions are still in development. Trinity's successful validation and the analytics release scope have not yet been confirmed.",
+          "source": "Zack Melton's October 19 Slack reply and outstanding validation questions",
+          "by": "Britton Pederson"
+        },
+        {
+          "date": "2026-10-19",
+          "text": "Remaining Trinity milestones: Confirm whether property-scoped approval permissions satisfy Trinity's regional approval needs. Confirm with Andrew whether DEV-347111 and DEV-329237, currently being scoped, are prerequisites for the broader Trinity Cares bonus-point rollout. Confirm the scope and timing of the planned October 28 training and November 2 rollout, and obtain Trinity's validation of the required workflows. Confirm delivery dates with Zack and Swapnil for any remaining rollout blockers.",
+          "source": "October 7 Trinity call and Zack Melton's October 19 Slack reply",
+          "by": "Britton Pederson"
+        },
         {
           "date": "2026-10-19",
           "text": "Moved from Live to Fulfill. Rewards is an offering Homebody fulfills through partners; its direction and Trinity's roadmap asks are a Fulfiller-owner question, not a surface question. Live still features Rewards.",
