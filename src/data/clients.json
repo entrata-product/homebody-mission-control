@@ -168,8 +168,8 @@
         "Homebody App"
       ],
       "heat": "burning",
-      "owner": "Owner to confirm",
-      "nextStep": "Britton records the Trinity direction decision (AOP, Oct 15). Billing owner confirms the INC 1551 LLIP charge fix.",
+      "owner": "Jody Crockett",
+      "nextStep": "Roll out ten more properties on RXP on 2026-10-20 and continue coordinating Trinity's Rewards requests with Zack Melton and Britton Pederson.",
       "due": "2026-10-15",
       "source": "Cal 2026-09-29 Mission Control update; INC 1551",
       "tracks": [
@@ -178,6 +178,12 @@
       ],
       "scale": "$2M+ annual, 56,000 units",
       "updates": [
+        {
+          "date": "2026-10-19",
+          "text": "Insurance issues have largely been resolved. Ten more properties are scheduled to roll out on RXP on 2026-10-20. Rewards requests continue to come in, with Zack Melton and Britton Pederson closely involved.",
+          "source": "Alyssa 2026-10-19",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-09-30",
           "text": "INC 1551 opened: Trinity insurance billing issues, incorrect LLIP charges. Logic error on when to update a charge based on lease start or generation date. Related: DEV-335619, DEV-297182, DEV-328123, DEV-327507.",
