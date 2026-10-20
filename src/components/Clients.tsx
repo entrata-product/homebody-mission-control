@@ -102,7 +102,7 @@ function ClientCard({ client, open, onToggle, navigate }: { client: ClientRow; o
                 {client.tracks.map((n) => {
                   const t = trackByNumber(n)
                   return (
-                    <span key={n} title={t?.deliverable}>
+                    <span key={n} title={t?.outcome}>
                       <TrackNumber n={n} onClick={() => navigate({ tab: "tracks", track: n })} />
                     </span>
                   )

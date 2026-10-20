@@ -7,13 +7,14 @@ import { pages } from "./data"
 export type Route =
   | { tab: "tracks"; track?: number }
   | { tab: "clients"; client?: string }
+  | { tab: "insurance" }
   | { tab: "model" }
   | { tab: "contribute" }
   | { tab: "page"; id: string }
 
 export const defaultRoute: Route = { tab: "tracks" }
 
-const fixedTabs = new Set(["tracks", "clients", "model", "contribute"])
+const fixedTabs = new Set(["tracks", "clients", "insurance", "model", "contribute"])
 const pageIds = new Set(pages.map((p) => p.id))
 
 export function routeToHash(r: Route): string {
@@ -32,6 +33,7 @@ export function routeToHash(r: Route): string {
 export function hashToRoute(hash: string): Route {
   const [tab, arg] = hash.replace(/^#/, "").split("/")
   if (tab === "decisions") return { tab: "tracks" } // decisions now live in Open action items
+  if (tab === "hbg-renewals" || tab === "hbg-mechanics") return { tab: "page", id: "hbg-distribution" } // renamed 2026-10-19
   if (tab === "tracks") return arg && /^\d+$/.test(arg) ? { tab: "tracks", track: Number(arg) } : { tab: "tracks" }
   if (tab === "clients") return arg ? { tab: "clients", client: arg } : { tab: "clients" }
   if (tab === "page" && arg && pageIds.has(arg)) return { tab: "page", id: arg } // legacy #page/<id>

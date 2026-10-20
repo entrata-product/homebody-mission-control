@@ -1,9 +1,9 @@
-import type { ReactNode } from "react"
-import type { Area, Attention, Economics, Metric, Offering } from "../types"
-import { areas, attentionForLine, attentionForOffering, clients, fulfillerById, fulfillers, lines, model, offeringTypeById, offeringTypes, offerings, ownerUnconfirmed, patterns, tracks } from "../data"
+import { useState, type ReactNode } from "react"
+import type { Area, Arm, Attention, Offering } from "../types"
+import { areas, armForArea, arms, attentionForLine, attentionForOffering, clients, coordinatorLabel, fulfillerById, fulfillers, lines, model, offeringTypeById, offeringTypes, offerings, ownerUnconfirmed, patterns, tracks } from "../data"
 import type { Route } from "../routes"
-import { Label, Owner, TrackNumber } from "./ui"
-import { surfaceTone } from "./surface"
+import { AttentionCell, Label, Owner, TrackNumber } from "./ui"
+import { armTone, surfaceTone } from "./surface"
 
 const tracksFor = (areaId: string) => tracks.filter((t) => t.area === areaId)
 const tracksForOffering = (id: string) => tracks.filter((t) => t.offerings.includes(id))
@@ -23,8 +23,6 @@ export function Model({ navigate }: { navigate: (r: Route) => void }) {
 
   const untracked = offerings.filter((o) => tracksForOffering(o.id).length === 0)
   const unownedAreas = areas.filter((a) => ownerUnconfirmed(a.owner))
-  const missingMetrics = [...model.programMetrics, ...areas.map((a) => a.metric)].filter((m) => m.value == null)
-
   return (
     <div className="space-y-8">
       <div>
@@ -38,7 +36,18 @@ export function Model({ navigate }: { navigate: (r: Route) => void }) {
         </p>
       </div>
 
-      {/* Diagram */}
+      {/* The simple version: two arms. Everything below cascades from this. */}
+      <section>
+        <Label>The simple version</Label>
+        <div className="mt-2 grid gap-3 md:grid-cols-2">
+          {arms.map((arm) => <ArmCard key={arm.id} arm={arm} navigate={navigate} />)}
+        </div>
+        <p className="mt-2 text-[11px] leading-5 text-[#7A7A7A]">
+          Every offering crosses both arms: it is shelved on one or more surfaces and owned by one Fulfiller. So a line can have a Surface Area Coordinator watching how it sells at signing and a different Fulfiller owner supplying its revenue, and both are right. Tracks are a third thing: one outcome, one owner, grouped by the arm it ships in.
+        </p>
+      </section>
+
+      {/* The detailed diagram: Sponsor, Distribution (three surfaces), offerings, Resident, Delivery */}
       <div className="space-y-2">
         <Band tone="customer" title="Sponsor: Entrata's Customer (the owner or PMC)" sub="The decision-maker, not the end user. Puts offerings on the property's menu, sets each as required or optional, collects through the ledger, sometimes pays Entrata a fee for the offering and earns a revenue share back when residents enroll, pays outright for programs like Rewards, and provides the community features and linked services Live points at. The plan sponsor, in benefits terms.">
           Sponsor
@@ -50,6 +59,7 @@ export function Model({ navigate }: { navigate: (r: Route) => void }) {
           <span>▼ pays for programs, provides its own services, there when the resident needs it</span>
         </div>
 
+        <ArmHeader arm={arms.find((m) => m.id === "distribution")!} />
         <div className="grid gap-2 md:grid-cols-3">
           <SurfaceCard area={sign} navigate={navigate} />
           <SurfaceCard area={pay} navigate={navigate} />
@@ -90,6 +100,7 @@ export function Model({ navigate }: { navigate: (r: Route) => void }) {
           User
         </Band>
 
+        <ArmHeader arm={arms.find((m) => m.id === "delivery")!} />
         <div className={`rounded-xl border ${surfaceTone("fulfill").border} ${surfaceTone("fulfill").soft} p-3`}>
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex flex-wrap items-center gap-2">
@@ -98,7 +109,7 @@ export function Model({ navigate }: { navigate: (r: Route) => void }) {
               <span className="text-[11px] text-[#7A7A7A]">{fulfill.tagline}</span>
             </div>
             <div className="flex items-center gap-2 text-[11px]">
-              <Owner name={fulfill.owner} prefix="Coordinator:" />
+              <Owner name={fulfill.owner} prefix={`${coordinatorLabel(fulfill.id)}:`} />
               <TrackList areaId={fulfill.id} navigate={navigate} />
             </div>
           </div>
@@ -113,7 +124,8 @@ export function Model({ navigate }: { navigate: (r: Route) => void }) {
                     <span className="font-semibold">e.g.</span> {f.examples}
                   </p>
                   {list.length > 0 ? (
-                    <p className="mt-1 flex flex-wrap gap-1">
+                    <p className="mt-1 flex flex-wrap items-center gap-1">
+                      <span className="text-[9px] font-semibold uppercase tracking-wide text-[#7A7A7A]">owns</span>
                       {list.map((o) => (
                         <span key={o.id} className="rounded-full border border-[#E0E0E0] bg-[#F7F7F7] px-1.5 py-0.5 text-[9px] text-[#474747]">
                           {o.name}
@@ -200,10 +212,13 @@ export function Model({ navigate }: { navigate: (r: Route) => void }) {
             <span className="font-semibold text-[#161616]">The app is the mechanism, not the value.</span> A resident logs in to reach an offering or to complain about one. The value is the policy that pays a claim, the tradeline at the bureau, the points that post. Measure the offering, and treat the app as the access rate to it.
           </li>
           <li>
+            <span className="font-semibold text-[#161616]">Two arms, three kinds of owner.</span> Distribution is the three surfaces; Delivery is fulfillment. Surface Area Coordinators own how an offering sells on their surface. Fulfiller owners own the offering or line and its economics. Track owners own one outcome. HBG is the worked example: Josh Tebbs owns the line; Jae Lee owns the HBG Distribution Get Well track; HBG Delivery Get Well (charges, cancellations, Leap sync) is a Fulfill track with its owner to confirm; and the attach rate at signing is Sign's number.
+          </li>
+          <li>
             <span className="font-semibold text-[#161616]">Sign is Entrata's surface; Pay and Live are Homebody's.</span> Lease checkout belongs to the leasing product. Homebody is featured there on the Customer's behalf and negotiates for placement. Pay is the surface Homebody owns outright and is where the old Resident Portal is being retired. Live is the service desk and the community.
           </li>
           <li>
-            <span className="font-semibold text-[#161616]">"Required" only exists on Sign.</span> Proof of insurance and a deposit or deposit alternative are lease conditions the Customer sets. That makes the Customer liable when fulfillment fails, which is why IVS and billing integrity are fulfillment tracks and not product bugs.
+            <span className="font-semibold text-[#161616]">"Required" only exists on Sign.</span> Proof of insurance and a deposit or deposit alternative are lease conditions the Customer sets. That makes the Customer liable when fulfillment fails, which is why IVS and billing integrity are Delivery tracks and not product bugs.
           </li>
           <li>
             <span className="font-semibold text-[#161616]">Type and Fulfiller are separate axes.</span> Who pays tells you why the Sponsor turns an offering on. Who fulfills tells you where it breaks and who signs the contract. Insurance is resident-paid and team-fulfilled with embedded carriers; Rewards is Sponsor-paid and partner-fulfilled; the laundry link is Sponsor-provided and vendor-fulfilled.
@@ -215,86 +230,30 @@ export function Model({ navigate }: { navigate: (r: Route) => void }) {
             <span className="font-semibold text-[#161616]">Live is foot traffic for Pay.</span> Claims, documents, Rewards, Resident Pulse, reservations, the bulletin board, and linked apps give the resident a reason to open the app between rent payments. Without them the app is a monthly bill and the optional offerings go unseen.
           </li>
           <li>
-            <span className="font-semibold text-[#161616]">Sell-in comes before sell-through.</span> Every offering is sponsored per property. Distribution (share of doors where it is sponsored) is the number in front of every attach and enrollment number, and it does not have an owner yet. Velocity, enrollments per 100 sponsored doors, is the number that says whether a line deserves its shelf.
+            <span className="font-semibold text-[#161616]">Sell-in comes before sell-through.</span> Every offering is sponsored per property. Doors sponsored (the share of doors where it is on the menu) is the number in front of every attach and enrollment number, and it does not have an owner yet. Velocity, enrollments per 100 sponsored doors, is the number that says whether a line deserves its shelf.
           </li>
         </ol>
       </section>
 
-      {/* Offerings table */}
+      {/* Offerings and lines: one structural table. Numbers live on the Insurance Line Performance tab. */}
       <section>
-        <h3 className="text-sm font-semibold">Offerings</h3>
-        <p className="mt-1 text-xs text-[#7A7A7A]">Contracts are hypotheses until someone confirms them; each cell says so.</p>
-        <div className="mt-2 overflow-x-auto rounded-xl border border-[#E0E0E0] bg-white">
-          <table className="w-full text-left text-xs">
-            <thead>
-              <tr className="border-b border-[#E0E0E0] text-[10px] uppercase tracking-wide text-[#7A7A7A]">
-                <th className="px-3 py-2 font-semibold">Offering</th>
-                <th className="px-3 py-2 font-semibold">Reached on</th>
-                <th className="px-3 py-2 font-semibold">Required or optional</th>
-                <th className="px-3 py-2 font-semibold">Who pays whom</th>
-                <th className="px-3 py-2 font-semibold">Fulfilled by</th>
-                <th className="px-3 py-2 font-semibold">Contracts</th>
-                <th className="px-3 py-2 font-semibold">Owner</th>
-                <th className="px-3 py-2 font-semibold">Tracks</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-[#F2F2F2] align-top">
-              {offerings.map((o) => {
-                const ts = tracksForOffering(o.id)
-                const t = offeringTypeById(o.type)
-                const f = fulfillerById(o.fulfiller)
-                return (
-                  <tr key={o.id}>
-                    <td className="px-3 py-2">
-                      <span className="font-semibold text-[#161616]">{o.name}</span>
-                      <span className={`mt-1 block w-fit rounded px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide ${typeTone[o.type]}`}>{t?.name}</span>
-                      {o.note ? <span className="mt-1 block text-[10px] text-[#7A7A7A]">{o.note}</span> : null}
-                    </td>
-                    <td className="px-3 py-2"><SurfaceChips ids={o.surfaces} /></td>
-                    <td className="px-3 py-2 text-[#474747]">{o.requirement}</td>
-                    <td className="px-3 py-2 text-[#474747]">{o.money}</td>
-                    <td className="px-3 py-2 text-[#474747]">
-                      <span className="block text-[10px] font-semibold uppercase tracking-wide text-[#7A7A7A]">{f?.name}</span>
-                      <span className={/to confirm/i.test(o.fulfillment) ? "text-[#8A6B00]" : ""}>{o.fulfillment}</span>
-                    </td>
-                    <td className={`px-3 py-2 ${/to confirm/i.test(o.contracts) ? "text-[#8A6B00]" : "text-[#474747]"}`}>{o.contracts}</td>
-                    <td className="px-3 py-2">
-                      <Owner name={o.owner} />
-                    </td>
-                    <td className="px-3 py-2">
-                      {ts.length === 0 ? (
-                        <span className="text-[#8A6B00]">none</span>
-                      ) : (
-                        <span className="flex flex-wrap gap-1">
-                          {ts.map((tr) => (
-                            <TrackNumber key={tr.id} n={tr.number} onClick={() => navigate({ tab: "tracks", track: tr.number })} />
-                          ))}
-                        </span>
-                      )}
-                    </td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Economics: revenue next to attention, with insurance split by line */}
-      <section>
-        <h3 className="text-sm font-semibold">Economics by line</h3>
+        <h3 className="text-sm font-semibold">Offerings and lines</h3>
         <p className="mt-1 text-xs leading-5 text-[#7A7A7A]">
-          Revenue next to attention, per offering, with Insurance split into its lines because the lines do not share economics or attention. Attention is counted from this repo: the tracks that move a line plus the live client threads tagged with it, over the {tracks.length} tracks and{" "}
-          {clients.filter((c) => c.heat !== "idle").length} client threads the room is carrying. Revenue is blank until the owner supplies it; the comparison is the point. Insurance lines are owned by Josh Tebbs, who runs the agency.
+          Every offering the Sponsor can put in front of residents, with Insurance split into its lines because the lines do not share fulfillment, ownership, or attention. Reached on is the Distribution side; Fulfilled by and Line owner are the Delivery side. Attention is counted from this repo: the tracks that move a line plus the live client threads tagged with it, over the {tracks.length} tracks and{" "}
+          {clients.filter((c) => c.heat !== "idle").length} client threads the room is carrying. Open a row for who pays whom and who contracts with whom; contracts are hypotheses until someone confirms them. Revenue, distribution, and enrollment are not on this page: see{" "}
+          <button type="button" onClick={() => navigate({ tab: "insurance" })} className="font-semibold text-[#004B37] underline underline-offset-2">
+            Insurance Line Performance
+          </button>
+          .
         </p>
         <div className="mt-2 overflow-x-auto rounded-xl border border-[#E0E0E0] bg-white">
           <table className="w-full text-left text-xs">
             <thead>
               <tr className="border-b border-[#E0E0E0] text-[10px] uppercase tracking-wide text-[#7A7A7A]">
                 <th className="px-3 py-2 font-semibold">Line or offering</th>
-                <th className="px-3 py-2 font-semibold">Owner</th>
-                <th className="px-3 py-2 font-semibold">Revenue and what Entrata keeps</th>
-                <th className="px-3 py-2 font-semibold">Distribution and enrollment</th>
+                <th className="px-3 py-2 font-semibold">Reached on</th>
+                <th className="px-3 py-2 font-semibold">Fulfilled by</th>
+                <th className="px-3 py-2 font-semibold">Line owner (Fulfiller)</th>
                 <th className="px-3 py-2 font-semibold">Attention</th>
                 <th className="px-3 py-2 font-semibold">Role beyond revenue</th>
               </tr>
@@ -303,26 +262,37 @@ export function Model({ navigate }: { navigate: (r: Route) => void }) {
               {offerings.map((o) => {
                 const ls = lines.filter((l) => l.offering === o.id)
                 const t = offeringTypeById(o.type)
+                const f = fulfillerById(o.fulfiller)
                 return [
-                  <EconRow
+                  <OfferingRow
                     key={o.id}
                     name={o.name}
                     badge={<span className={`rounded px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide ${typeTone[o.type]}`}>{t?.name}</span>}
-                    sub={ls.length ? `${ls.length} lines below` : undefined}
+                    sub={ls.length ? `${ls.length} lines below` : o.note}
+                    surfaces={o.surfaces}
+                    fulfillerName={f?.name}
+                    fulfillment={o.fulfillment}
                     owner={o.owner}
-                    econ={o.economics}
                     attention={attentionForOffering(o)}
+                    role={o.economics.role}
+                    details={[
+                      ["Required or optional", o.requirement],
+                      ["Who pays whom", o.money],
+                      ["Contracts", o.contracts],
+                    ]}
                     navigate={navigate}
                     group={ls.length > 0}
                   />,
                   ...ls.map((l) => (
-                    <EconRow
+                    <OfferingRow
                       key={l.id}
                       name={l.name}
                       sub={l.requirement}
+                      surfaces={l.surfaces}
+                      fulfillment={l.fulfillment}
                       owner={l.owner}
-                      econ={l.economics}
                       attention={attentionForLine(l)}
+                      role={l.economics.role}
                       navigate={navigate}
                       indent
                       path={l.path}
@@ -342,24 +312,88 @@ export function Model({ navigate }: { navigate: (r: Route) => void }) {
       <section className="rounded-xl border border-[#F2DEA3] bg-[#FFF3D1] p-5 text-sm leading-6 text-[#474747]">
         <h3 className="text-sm font-semibold text-[#161616]">What the model exposes today</h3>
         <ul className="mt-2 list-disc space-y-1 pl-5">
-          <HbgGap />
+          <HbgGap navigate={navigate} />
           <li>
             {tracks.filter((t) => t.offerings.includes("insurance")).length} of {tracks.length} tracks are about insurance. {untracked.length} of {offerings.length} offerings have no track:{" "}
             {untracked.map((o) => o.name).join(", ")}.
           </li>
-          <li>Pay has one track (migration) and no track about what is offered once residents are in it. Live has one track (Rewards) and nothing on claims, policy documents, Resident Pulse, or community features.</li>
+          <li>
+            {areas
+              .filter((a) => armForArea(a.id)?.id === "distribution")
+              .map((a) => {
+                const n = tracks.filter((t) => t.area === a.id).length
+                return `${a.title} has ${n === 0 ? "no tracks" : n === 1 ? "one track" : `${n} tracks`}`
+              })
+              .join("; ")}
+            . Pay has nothing about what is offered once residents are in it; Live has nothing on claims, policy documents, Resident Pulse, or community features, and Rewards now sits with its Fulfiller owner on Delivery.
+          </li>
           <li>
             {unownedAreas.length === 0 ? "Every surface has a named coordinator." : `${unownedAreas.length} surface${unownedAreas.length === 1 ? "" : "s"} without a named coordinator: ${unownedAreas.map((a) => a.title).join(", ")}.`}
             {unownedAreas.some((a) => a.id === "fulfill") ? " Fulfill in particular spans the insurance agency, the Logan team, and the partner relationships, and has no single name." : null}
           </li>
           <li>Every contracts cell is "to confirm." No one has written down yet who contracts with whom per offering, and that is the question behind most of the partner and liability threads.</li>
-          <li>
-            {missingMetrics.length} of {model.programMetrics.length + areas.length} headline numbers are blank: {missingMetrics.map((m) => `${m.label} (${m.needs ?? "owner"})`).join("; ")}.
-          </li>
-          <li>Distribution has no owner yet: doors per offering where the Sponsor has turned it on. It is the sell-in number in front of every attach and enrollment number here.</li>
-          <li>No fulfillment metric exists in this war room: claims cycle time, policy issuance lag, bureau reporting accuracy, opt-out handling. Today's client heat is fulfillment heat, measured only as escalations.</li>
+          <li>Doors sponsored has no owner yet: doors per offering where the Sponsor has turned it on. It is the sell-in number in front of every attach and enrollment number here, and it is a Distribution number.</li>
+          <li>No Delivery metric exists in this war room: claims cycle time, policy issuance lag, bureau reporting accuracy, opt-out handling. Today's client heat is fulfillment heat, measured only as escalations.</li>
         </ul>
       </section>
+    </div>
+  )
+}
+
+function ArmCard({ arm, navigate }: { arm: Arm; navigate: (r: Route) => void }) {
+  const delivery = arm.id === "delivery"
+  const tone = armTone(arm.id)
+  const armAreas = arm.areas.map((id) => areas.find((a) => a.id === id)!).filter(Boolean)
+  return (
+    <div className={`rounded-2xl border-2 bg-white p-4 ${tone.border}`}>
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 className="flex items-center gap-2 text-base font-bold tracking-tight text-[#161616]">
+          <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${tone.solid}`}>{arm.name}</span>
+        </h3>
+        <span className="text-[11px] italic text-[#7A7A7A]">{arm.question}</span>
+      </div>
+      <p className="mt-1 text-xs leading-5 text-[#474747]">{arm.meaning}</p>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {armAreas.map((a) => {
+          const tone = surfaceTone(a.id)
+          return (
+            <button key={a.id} type="button" onClick={() => navigate({ tab: "tracks" })} className={`flex items-center gap-2 rounded-lg border px-2.5 py-1.5 text-left ${tone.border} ${tone.soft} hover:brightness-95`} title={`${a.title}: ${a.subtitle}`}>
+              <span className={`rounded px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide ${tone.solid}`}>{a.title}</span>
+              <span className="text-[11px] text-[#474747]">{a.subtitle.split(" · ")[0]}</span>
+            </button>
+          )
+        })}
+        {delivery
+          ? fulfillers.map((f) => (
+              <span key={f.id} className="rounded-lg border border-[#CCCCCC] bg-white px-2.5 py-1.5 text-[11px] text-[#474747]">
+                {f.name}
+              </span>
+            ))
+          : null}
+      </div>
+      <p className="mt-3 text-[11px] leading-4 text-[#474747]">
+        <span className="font-semibold uppercase tracking-wide text-[#7A7A7A]">Owns: </span>
+        {arm.owns}
+      </p>
+      <p className="mt-1 text-[11px] text-[#474747]">
+        {armAreas.map((a, i) => (
+          <span key={a.id}>
+            {i > 0 ? " · " : ""}
+            <Owner name={a.owner} prefix={`${a.title} ${arm.coordinatorLabel}:`} />
+          </span>
+        ))}
+      </p>
+    </div>
+  )
+}
+
+function ArmHeader({ arm }: { arm: Arm }) {
+  const tone = armTone(arm.id)
+  return (
+    <div className="flex items-center gap-3 pt-2">
+      <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${tone.solid}`}>{arm.name}</span>
+      <span className="text-[11px] text-[#7A7A7A]">{arm.question}</span>
+      <span className="h-px flex-1 bg-[#E0E0E0]" />
     </div>
   )
 }
@@ -390,57 +424,17 @@ function SurfaceChips({ ids }: { ids: string[] }) {
   )
 }
 
-function MetricCell({ m }: { m: Metric }) {
-  if (m.value == null) {
-    return (
-      <span className="block text-[#8A6B00]">
-        <span className="block text-[10px] leading-4">{m.label}</span>
-        <span className="font-semibold">needs {m.needs ?? "owner"}</span>
-      </span>
-    )
-  }
-  return (
-    <span className="block">
-      <span className="block text-[10px] leading-4 text-[#7A7A7A]">{m.label}</span>
-      <span className="font-semibold text-[#161616]">{m.value}</span>
-      {m.source ? <span className="block text-[10px] text-[#B8B8B8]">{m.source}</span> : null}
-    </span>
-  )
-}
-
-function AttentionCell({ a, navigate }: { a: Attention; navigate: (r: Route) => void }) {
-  const pct = Math.round(a.share * 100)
-  const tone = pct >= 40 ? "bg-[#FFCCD5]" : pct >= 15 ? "bg-[#F2DEA3]" : "bg-[#BFDBFE]"
-  return (
-    <span className="block w-32">
-      <span className="flex items-baseline justify-between gap-2">
-        <span className="font-semibold text-[#161616]">{pct}%</span>
-        <span className="text-[10px] text-[#7A7A7A]">
-          {a.tracks.length} track{a.tracks.length === 1 ? "" : "s"} · {a.clients.length} client{a.clients.length === 1 ? "" : "s"}
-        </span>
-      </span>
-      <span className="mt-1 block h-1.5 w-full overflow-hidden rounded bg-[#F2F2F2]">
-        <span className={`block h-full ${tone}`} style={{ width: `${Math.max(pct, 1)}%` }} />
-      </span>
-      {a.tracks.length > 0 ? (
-        <span className="mt-1 flex flex-wrap gap-1">
-          {a.tracks.map((t) => (
-            <TrackNumber key={t.id} n={t.number} onClick={() => navigate({ tab: "tracks", track: t.number })} />
-          ))}
-        </span>
-      ) : null}
-      {a.clients.length > 0 ? <span className="mt-1 block text-[10px] text-[#7A7A7A]">{a.clients.map((c) => c.name).join(", ")}</span> : null}
-    </span>
-  )
-}
-
-function EconRow({
+function OfferingRow({
   name,
   badge,
   sub,
+  surfaces,
+  fulfillerName,
+  fulfillment,
   owner,
-  econ,
   attention,
+  role,
+  details,
   navigate,
   indent,
   group,
@@ -449,54 +443,70 @@ function EconRow({
   name: string
   badge?: ReactNode
   sub?: string
+  surfaces: string[]
+  fulfillerName?: string
+  fulfillment: string
   owner: string
-  econ: Economics
   attention: Attention
+  role: string
+  /** Rarely-changing prose shown when the row is opened: [label, text]. */
+  details?: [string, string][]
   navigate: (r: Route) => void
   indent?: boolean
   group?: boolean
   path?: string
 }) {
+  const [open, setOpen] = useState(false)
+  const toConfirm = (s: string) => /to confirm/i.test(s)
   return (
-    <tr className={group ? "bg-[#F7F7F7]" : undefined}>
-      <td className={`px-3 py-2 ${indent ? "pl-7" : ""}`}>
-        <span className="flex flex-wrap items-center gap-1.5">
-          <span className="font-semibold text-[#161616]">{name}</span>
-          {badge}
-        </span>
-        {path ? <span className={`mt-1 block w-fit rounded px-1.5 py-0.5 text-[9px] font-semibold ${/alternative/i.test(path) ? "bg-[#F2DEA3] text-[#8A6B00]" : /default|required/i.test(path) ? "bg-[#96F5A9] text-[#004B37]" : "bg-[#F2F2F2] text-[#474747]"}`}>{path}</span> : null}
-        {sub ? <span className="mt-1 block w-44 text-[10px] leading-4 text-[#7A7A7A]">{sub}</span> : null}
-      </td>
-      <td className="px-3 py-2">
-        <Owner name={owner} />
-      </td>
-      <td className="px-3 py-2">
-        <MetricCell m={econ.revenue} />
-        <span className="mt-1.5 block">
-          <MetricCell m={{ ...econ.share, label: econ.share.label ? `Entrata keeps: ${econ.share.label.toLowerCase()}` : "Entrata keeps" }} />
-        </span>
-        {econ.extra?.map((m) => (
-          <span key={m.label} className="mt-1.5 block">
-            <MetricCell m={m} />
+    <>
+      <tr className={group ? "bg-[#F7F7F7]" : undefined}>
+        <td className={`px-3 py-2 ${indent ? "pl-7" : ""}`}>
+          <span className="flex flex-wrap items-center gap-1.5">
+            <span className="font-semibold text-[#161616]">{name}</span>
+            {badge}
           </span>
-        ))}
-      </td>
-      <td className="px-3 py-2">
-        <MetricCell m={econ.distribution} />
-        <span className="mt-1.5 block">
-          <MetricCell m={econ.enrolled} />
-        </span>
-      </td>
-      <td className="px-3 py-2">
-        <AttentionCell a={attention} navigate={navigate} />
-      </td>
-      <td className={`max-w-xs px-3 py-2 text-[11px] leading-4 ${/to confirm/i.test(econ.role) ? "text-[#8A6B00]" : "text-[#474747]"}`}>{econ.role}</td>
-    </tr>
+          {path ? <span className={`mt-1 block w-fit rounded px-1.5 py-0.5 text-[9px] font-semibold ${/alternative/i.test(path) ? "bg-[#F2DEA3] text-[#8A6B00]" : /default|required/i.test(path) ? "bg-[#96F5A9] text-[#004B37]" : "bg-[#F2F2F2] text-[#474747]"}`}>{path}</span> : null}
+          {sub ? <span className="mt-1 block w-44 text-[10px] leading-4 text-[#7A7A7A]">{sub}</span> : null}
+          {details ? (
+            <button type="button" onClick={() => setOpen((v) => !v)} className="mt-1 text-[10px] text-[#004B37] underline underline-offset-2" aria-expanded={open}>
+              {open ? "hide details" : "who pays, who contracts"}
+            </button>
+          ) : null}
+        </td>
+        <td className="px-3 py-2"><SurfaceChips ids={surfaces} /></td>
+        <td className="max-w-xs px-3 py-2 text-[11px] leading-4 text-[#474747]">
+          {fulfillerName ? <span className="block text-[10px] font-semibold uppercase tracking-wide text-[#7A7A7A]">{fulfillerName}</span> : null}
+          <span className={toConfirm(fulfillment) ? "text-[#8A6B00]" : ""}>{fulfillment}</span>
+        </td>
+        <td className="px-3 py-2">
+          <Owner name={owner} />
+        </td>
+        <td className="px-3 py-2">
+          <AttentionCell a={attention} navigate={navigate} />
+        </td>
+        <td className={`max-w-xs px-3 py-2 text-[11px] leading-4 ${toConfirm(role) ? "text-[#8A6B00]" : "text-[#474747]"}`}>{role}</td>
+      </tr>
+      {open && details ? (
+        <tr className={group ? "bg-[#F7F7F7]" : undefined}>
+          <td colSpan={6} className="px-3 pb-3 pt-0">
+            <dl className="grid gap-x-6 gap-y-1 rounded-lg border border-[#E0E0E0] bg-white p-3 text-[11px] leading-4 md:grid-cols-3">
+              {details.map(([label, text]) => (
+                <div key={label}>
+                  <dt className="text-[10px] font-semibold uppercase tracking-wide text-[#7A7A7A]">{label}</dt>
+                  <dd className={toConfirm(text) ? "text-[#8A6B00]" : "text-[#474747]"}>{text}</dd>
+                </div>
+              ))}
+            </dl>
+          </td>
+        </tr>
+      ) : null}
+    </>
   )
 }
 
 /** The HBG question, stated from the data: attention share now, revenue share blank. */
-function HbgGap() {
+function HbgGap({ navigate }: { navigate: (r: Route) => void }) {
   const hbg = lines.find((l) => l.id === "hbg")
   if (!hbg) return null
   const a = attentionForLine(hbg)
@@ -506,7 +516,11 @@ function HbgGap() {
       <span className="font-semibold text-[#161616]">HBG is {pct}% of the room's attention</span> ({a.tracks.length} of {tracks.length} tracks, {a.clients.length} of {clients.filter((c) => c.heat !== "idle").length} client threads) and{" "}
       {hbg.economics.revenue.value == null ? (
         <>
-          its share of revenue is not written down yet. Until {hbg.economics.revenue.needs} supplies revenue net of claims, the room cannot say whether this much energy is appropriate.
+          its share of revenue is not written down yet. Until {hbg.economics.revenue.needs} supplies revenue net of claims on{" "}
+          <button type="button" onClick={() => navigate({ tab: "insurance" })} className="font-semibold text-[#004B37] underline underline-offset-2">
+            Insurance Line Performance
+          </button>
+          , the room cannot say whether this much energy is appropriate.
         </>
       ) : (
         <>its revenue is {hbg.economics.revenue.value}.</>
@@ -538,11 +552,9 @@ function SurfaceCard({ area, navigate }: { area: Area; navigate: (r: Route) => v
         ))}
       </ul>
       <p className="mt-2 flex-1 text-[10px] leading-relaxed text-[#7A7A7A]">{area.why}</p>
-      <div className="mt-2 flex flex-wrap items-center justify-between gap-2 border-t border-[#F2F2F2] pt-2 text-[10px]">
-        <Owner name={area.owner} prefix="Coordinator:" />
-        <span className={area.metric.value == null ? "text-[#8A6B00]" : "text-[#474747]"}>
-          {area.metric.label}: <span className="font-semibold">{area.metric.value ?? `needs ${area.metric.needs ?? "owner"}`}</span>
-        </span>
+      {/* Surface metrics intentionally not shown here; numbers live in a separate data/trending view so this diagram cannot drift. */}
+      <div className="mt-2 border-t border-[#F2F2F2] pt-2 text-[10px]">
+        <Owner name={area.owner} prefix={`${coordinatorLabel(area.id)}:`} />
       </div>
     </div>
   )

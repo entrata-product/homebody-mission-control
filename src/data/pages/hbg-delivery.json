@@ -1,0 +1,136 @@
+{
+  "id": "hbg-delivery",
+  "title": "HBG Delivery Get Well",
+  "track": 9,
+  "purpose": "The Delivery side of Homebody Guaranty: what happens after a resident is enrolled. Scheduled charges that match the policy, cancellations that reverse their own charges, policies that stay in sync with Leap, claims, and the reporting the agency and Finance need. The escalated clients feel this side as refund requests. HBG Distribution Get Well covers the Sign side (application, renewals, transfers). Economics for the line live on Insurance Line Performance.",
+  "asOf": "2026-10-19",
+  "sections": [
+    {
+      "type": "stats",
+      "title": "Where we stand",
+      "tiles": [
+        {
+          "label": "Open HBG issues",
+          "value": "96",
+          "sub": "of 200 touched in the last year",
+          "source": "Jira 2026-10-19 · summary matches HBG / Guaranty · updated in last 365d · all projects"
+        },
+        {
+          "label": "Open bugs",
+          "value": "31",
+          "sub": "of 76 bugs in that set",
+          "source": "Jira 2026-10-19 · same filter · type Bug"
+        },
+        {
+          "label": "Refund or reinstatement requests filed as bugs",
+          "value": "12",
+          "sub": "4 still open; mostly Cardinal Group",
+          "source": "Jira 2026-10-19 · summary contains refund or reinstatement"
+        },
+        {
+          "label": "HB Guaranty Reporting",
+          "value": "Ready for Dev",
+          "sub": "since 2024-10-07, no release",
+          "source": "DEV-138646"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "What HBG is wrapping",
+      "tone": "neutral",
+      "body": "HBG embeds Leap's Guarantor Waiver Program. In Leap's native version the recurring Guarantor Waiver Fee on the resident's scheduled charges is the policy: it enrolls, keeps, and renews coverage, and Leap invoices the property for every fee it sees each month, whole months, no proration. Leap tells property teams to audit charge codes monthly, audit recent transfers, watch a Flagged Cancellations tab for dropped charges and move-outs, and file claims within 120 days. HBG's promise is to do those audits inside Entrata's lease and ledger events. Each category below is one of those audits, automated imperfectly."
+    },
+    {
+      "type": "table",
+      "title": "Delivery-side issue categories",
+      "headers": ["Category", "What breaks", "Evidence", "Leap's manual equivalent", "Owner"],
+      "rows": [
+        [
+          "Scheduled charges and billing",
+          "Residents charged more than once a month, wrong amounts, premiums changing on their own, charges missing on active policies, enrollment fee posting twice or not at all. Because Leap invoices the property off these same charges, every ledger error is also a property invoice error.",
+          "64 issues, 34 open (summary mentions charge, fee, premium, pricing, or amount). DEV-349211, DEV-335646, DEV-349177, DEV-349205, DEV-347186, DEV-336584. A dedicated request tracker opened 2026-10-09 (DEV-347150).",
+          "Monthly charge-code audit: pull recurring charges and tie them to lease dates.",
+          "Owner to confirm"
+        ],
+        [
+          "Cancellations, refunds, reinstatement",
+          "Cancel before policy start does not reverse posted charges. Reversing future charges on cancellation has been in development since April. Flat-cancel on Leap's confirm is new and unstarted. Reinstatement and cancel/rewrite epics have sat in New since June. Refund requests arrive as R&D bugs and close by datafix.",
+          "20 cancel or reversal issues (10 open) plus 12 refund or reinstatement requests (4 open). DEV-286241, DEV-336247, DEV-349261, DEV-349465, DEV-303585, DEV-303584, DEV-343499.",
+          "Flagged Cancellations tab: property cancels, files a claim, or fixes the charge. Cancellations are final.",
+          "Owner to confirm"
+        ],
+        [
+          "Policy issuance and Leap sync",
+          "Migrations that succeed on Leap's side and fail on ours, leaving partial records. Issuance pulling the wrong lease interval. confirmed_on not syncing. Rate sync delay. Policy term not matching lease term. A 10-policy batch ceiling on migration.",
+          "42 issues, 24 open (summary mentions migration, E2E, L2E, PDM, sync, confirm, Leap, or interval). DEV-338721, DEV-350065, DEV-344074, DEV-349445, DEV-336331, DEV-342834, DEV-334131, DEV-287713.",
+          "Verify the policy in the Leap portal after any change.",
+          "Owner to confirm"
+        ],
+        [
+          "Claims",
+          "Thin, because claims live in Leap's portal. Entrata's exposure is the policy UI, a load failure on claim submission, cancel-claim, and renewal blocking when a claim is open or paid.",
+          "8 issues, 3 open. DEV-333357, DEV-344520, DEV-342613, DEV-319740.",
+          "File in the Leap portal within 120 days; paid after possession; 8% deductible plus uncollected premium.",
+          "Owner to confirm"
+        ],
+        [
+          "Reporting and invoicing",
+          "No HBG reporting has shipped. Some invoices still say DepositInsure. This is why Insurance Line Performance has no numbers to pull.",
+          "DEV-138646 (Ready for Dev since 2024-10-07), DEV-127842 (New since 2024-08-07), BIL-591 (Blocked), BIL-1144.",
+          "Leap sends the property a monthly invoice; the property reconciles it.",
+          "Owner to confirm"
+        ],
+        [
+          "Platform coupling with Deposit Alternative",
+          "HBG was cloned from Deposit Alternative and shares libraries with ledger, move-in, and screening. Many fixes ship as DA/HBG. Code-separation stories date to 2024.",
+          "DEV-339966, DEV-109657, DEV-340085, DEV-239325, DEV-320980.",
+          "Not applicable.",
+          "Owner to confirm"
+        ]
+      ],
+      "note": "Counts are a keyword cut of issue summaries and overlap. Treat them as scale, not inventory. No resident names or IDs are recorded here; Jira keys are the pointer."
+    },
+    {
+      "type": "checklist",
+      "title": "Get-well checklist, from Jira status on 2026-10-19",
+      "items": [
+        { "text": "Policy cancellation reverses future charges (DEV-286241).", "status": "in_progress", "source": "Jira: Dev - In Development, opened 2026-04-27" },
+        { "text": "Recurring and enrollment charge reversal is a defined product function, not a datafix (DEV-343499).", "status": "in_progress", "source": "Jira: In Progress" },
+        { "text": "Flat cancellation on Leap policy confirm reverses resident billing on the collapsed term (DEV-349261, DEV-349465).", "status": "open", "source": "Jira: New" },
+        { "text": "Policy reinstatement is a workflow (DEV-303585).", "status": "open", "source": "Jira: epic in New since 2026-06-17" },
+        { "text": "Cancel, rewrite, and coverage change are workflows (DEV-303584).", "status": "open", "source": "Jira: epic in New since 2026-06-17" },
+        { "text": "E2E migrations cannot create duplicate DA/HBG charges (DEV-336299).", "status": "open", "source": "Jira: epic in New" },
+        { "text": "Leap migration status is recalculated with recovery actions when a write is interrupted (DEV-323454).", "status": "open", "source": "Jira: New" },
+        { "text": "HB Guaranty Reporting has a release (DEV-138646).", "status": "open", "source": "Jira: Ready for Dev since 2024-10-07" },
+        { "text": "Invoices say Homebody Guaranty, not DepositInsure (BIL-591).", "status": "open", "source": "Jira: Blocked" },
+        { "text": "Renewal process documented for clients, CS, and Service (Track 6).", "status": "open", "owner": "Wyatt Moore", "source": "tracks.json" }
+      ]
+    },
+    {
+      "type": "clients",
+      "title": "Client threads on this side"
+    },
+    {
+      "type": "text",
+      "title": "Where the line is with HBG Distribution Get Well",
+      "tone": "neutral",
+      "body": "Distribution owns getting the resident enrolled and re-enrolled: application and screening, renewal offers and repricing, transfers, and the lease documents that price the guaranty. Delivery owns everything the policy does after that: the charges it posts, how it cancels and refunds, whether it matches what Leap has, claims, and reporting. A transfer that creates no new policy is Distribution. A transfer that double-bills is Delivery. When one ticket is both, it goes where the fix is."
+    },
+    {
+      "type": "roadmap",
+      "title": "Roadmap items in the Insurance lane",
+      "lane": "insurance"
+    },
+    {
+      "type": "links",
+      "title": "References",
+      "items": [
+        { "label": "Leap: Guarantor Waiver Program 102, Student Housing (charge code, renewals, transfers, flagged cancellations)", "href": "https://leapeasy.com/wp-content/uploads/2025/04/Guide-Leap-Guarantor-Waiver-Program-102-Student-Housing.pdf" },
+        { "label": "Leap: Claims Filing and Management SOP, Student Housing", "href": "https://leapeasy.com/wp-content/uploads/2025/04/Leap-Claims-Filing-and-Management-SOP-Student-Housing.docx.pdf" },
+        { "label": "Jira: HBG issues updated in the last year", "href": "https://entrata.atlassian.net/issues/?jql=%28summary%20~%20%22Homebody%20Guaranty%22%20OR%20summary%20~%20%22HBG%22%20OR%20summary%20~%20%22guaranty%22%29%20AND%20updated%20%3E%3D%20-365d%20ORDER%20BY%20updated%20DESC" },
+        { "label": "Help Center: HBG coverage during a unit transfer", "href": "https://entratasupport.zendesk.com/hc/en-us/articles/56520943372187-Understanding-Homebody-Guaranty-Coverage-During-a-Unit-Transfer" }
+      ]
+    }
+  ]
+}

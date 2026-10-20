@@ -6,7 +6,9 @@
 
 A twice-weekly war room for Homebody, including Homebody Guaranty (HBG). It exists to drive Homebody revenue growth (target: +10% in Q1 2027, final number to be confirmed). Elevated client concerns going into and coming out of Summit were the trigger and are the signal of friction against that goal. The [Homebody Quarter Brief](https://github.com/Entrata-Collab/rxp) stays the strategic surface (bets, measurement, quarter narrative). This repo is the operating surface: the finite work that removes the friction.
 
-## The model: Sign, Pay, Live, Fulfill
+## The model: two arms, four areas
+
+Two arms. **Distribution** is the three surfaces where offerings are shelved and met (Sign, Pay, Live); Surface Area Coordinators own how offerings sell there. **Delivery** is fulfillment (Fulfill); Fulfiller owners own the offerings and lines and their economics, with Chris Finken as Delivery Coordinator. Track owners own one outcome each, grouped by the arm it ships in. See `docs/homebody-model.md`, "The simple version."
 
 Homebody is a portfolio of **offerings** for residents, sponsored by the Customer (owner or PMC) and delivered by Fulfillers. The app is how residents reach the offerings, not the value itself. The full reference, with the diagram and the three delivery patterns, is [`docs/homebody-model.md`](./homebody-model.md). In short:
 
@@ -23,7 +25,7 @@ Five of seven offerings have no track today and there is no fulfillment metric. 
 
 ## What a track is
 
-A track is a **finite deliverable one person can finish**. It has:
+A track is a **finite outcome one person owns by coordinating the work needed**. It has:
 
 - exactly one `owner` (a person rather than a function; write `Owner to confirm` until a person is named)
 - an `area` (surface) and `offerings` from the model above
@@ -45,7 +47,7 @@ One row per client thread, one owner (the CSM who drives the outcome: de-escalat
 ## Ownership rules
 
 1. One person per track, per client thread, per decision, per action item.
-2. If you do not know who, write `Owner to confirm`. It renders gold (`#8A6B00`, the marketing palette's "Offers & rewards" tone) everywhere so the gap is a visible to-do. Surface colors come from the same palette (homebody.com/pm): Sign emerald, Pay violet, Live terracotta, Fulfill brand gray; they are defined once in `src/components/surface.ts`.
+2. If you do not know who, write `Owner to confirm`. It renders gold (`#8A6B00`, the marketing palette's "Offers & rewards" tone) everywhere so the gap is a visible to-do. Surface colors come from the same palette (homebody.com/pm): Sign emerald, Pay violet, Live terracotta, Fulfill brand gray; they are defined once in `src/components/surface.ts`. The two arms use colors outside that palette on purpose (Distribution teal `#0B6E78`, Delivery bronze `#6B4A2B`) so an arm tag never reads as a surface.
 3. Owners update their own tracks and pages in git. The huddle debates and decides; it does not read status aloud. Decisions the room owes sit in Open action items on the Tracks tab with a decider and a date; decided ones stay in `decisions.json` for the record.
 4. The hygiene agent (`docs/agents/hygiene-agent.md`) drafts a DM to owners of past-due, undated, or stale items twice a week. It sends only with approval.
 

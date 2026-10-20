@@ -11,7 +11,8 @@ export type Update = { date: string; text: string; source: string; by?: string }
 export type Area = {
   id: string
   number: number
-  layer: "Access" | "Fulfillment"
+  /** Which arm the area belongs to: Distribution (Sign, Pay, Live) or Delivery (Fulfill). */
+  layer: "Distribution" | "Delivery"
   /** The verb: Sign, Pay, Live, Fulfill. */
   title: string
   /** e.g. "Lease checkout · an Entrata surface" */
@@ -20,7 +21,7 @@ export type Area = {
   runBy: "Entrata" | "Homebody"
   tagline: string
   why: string
-  /** Surface Area Coordinator. Tracks keep their own owners; this person coordinates across them. */
+  /** Surface Area Coordinator (Distribution) or Delivery Coordinator (Delivery). Tracks keep their own owners; this person coordinates across them. */
   owner: string
   parts?: string[]
   metric: Metric
@@ -104,6 +105,17 @@ export type Line = {
   economics: Economics
 }
 
+/** One of the two arms of the model: Distribution (the surfaces) or Delivery (fulfillment). */
+export type Arm = {
+  id: "distribution" | "delivery"
+  name: string
+  question: string
+  areas: string[]
+  meaning: string
+  owns: string
+  coordinatorLabel: string
+}
+
 /** A term the model uses, with the comparable it is borrowed from (voluntary benefits, CPG retail, embedded insurance, marketplaces). */
 export type VocabularyEntry = { term: string; meaning: string; precedent: string }
 
@@ -128,7 +140,7 @@ export type Metric = {
   needs?: string
 }
 
-/** A finite deliverable owned by one person. */
+/** A finite outcome owned by one person. */
 export type Track = {
   number: number
   id: string
@@ -138,7 +150,7 @@ export type Track = {
   offerings: string[]
   /** Line ids from areas.json this track moves (insurance lines today). */
   lines: string[]
-  deliverable: string
+  outcome: string
   owner: string
   due: string | null
   measure: string | null

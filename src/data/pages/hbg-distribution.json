@@ -1,0 +1,208 @@
+{
+  "id": "hbg-distribution",
+  "title": "HBG Distribution Get Well",
+  "track": 10,
+  "purpose": "The Distribution side of Homebody Guaranty: getting the resident enrolled and re-enrolled on Sign. Application and screening, renewal offers and repricing, transfers, and the lease documents that price the guaranty. Renewals (#2) are the critical path; transfers (#8) are tracked here too but off it. What the policy does after enrollment (charges, cancellations, Leap sync, claims, reporting) is HBG Delivery Get Well. Economics for the line live on Insurance Line Performance.",
+  "asOf": "2026-10-19",
+  "sections": [
+    {
+      "type": "stats",
+      "title": "Where we stand",
+      "tiles": [
+        {
+          "label": "Active client escalations",
+          "value": "5",
+          "sub": "Priess, Asset, Landmark, Cardinal, Yugo",
+          "source": "clients.json"
+        },
+        {
+          "label": "Renewals lock date",
+          "countdownTo": "2026-10-13"
+        },
+        {
+          "label": "Open renewal issues",
+          "value": "21",
+          "sub": "of 46 touched in the last year",
+          "source": "Jira 2026-10-19 · summary matches HBG / Guaranty and renew, MTM, carry-forward, or ineligib · last 365d"
+        },
+        {
+          "label": "Renewals eligible / processed",
+          "value": null,
+          "sub": "units on the renewal path",
+          "needs": "Dan Bullock"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Distribution-side issue categories",
+      "headers": [
+        "Category",
+        "What breaks",
+        "Evidence",
+        "Leap's manual equivalent",
+        "Owner"
+      ],
+      "rows": [
+        [
+          "Renewals",
+          "Not one problem but a program. Auto-enroll with full repricing shipped late September to mid-October with two hotfixes behind it (bulk renewal stopping after one lease; expiration not firing on an ineligible response). A follow-on request tracker already queues repricing on Edit Renewal Offer, refreshing the offer when rent changes, overriding ineligibility blockers, locking carry-forward enrollment, and starting the next policy on the 1st. Bug pattern: false duplicate-enrollment blocks, unenroll leaving charges alive, renewal flows retyping the scheduled charge, pricing discrepancies.",
+          "46 issues, 21 open. DEV-343026 (initiative), DEV-287712, DEV-348657 and DEV-349951 (hotfix), DEV-347769 and DEV-348144 (hotfix), DEV-347132 (request tracker), DEV-342483, DEV-347105, DEV-347155, DEV-349176, DEV-347139.",
+          "Policies do not auto-renew. Extend the Guarantor Waiver Fee through the renewal term at current pricing before renewing.",
+          "Dan Bullock"
+        ],
+        [
+          "Transfers",
+          "Small in Jira, loud in the room. New policy not created on unit transfer; double billing of transferring residents; fees not showing in renewal transfers. No epic yet (Track 8).",
+          "4 issues, 2 open. DEV-342481, DEV-331223, DEV-342530, DEV-348855.",
+          "End the old unit's fee in the last month of occupancy, start the new unit's fee at occupancy, no overlap in one month, verify the old policy is inactive in the Leap portal.",
+          "Jae Lee"
+        ],
+        [
+          "Application and screening",
+          "Unauthorized enrollments. Guarantor options not offered. Waiver not appearing in the student application. Screening and application events changing coverage after a policy already exists.",
+          "36 issues, 21 open (summary mentions screening, application, or enrollment). DEV-349570, DEV-326349, DEV-349675, DEV-349201, DEV-348851 (epic, New), DEV-311270.",
+          "Student proof on file; lease signed more than 60 days before start; one student, at most 2 bed spaces; no overlapping Leap policy; no prior claim payout. Forced-place component available.",
+          "Owner to confirm"
+        ],
+        [
+          "Lease documents and merge fields",
+          "Guaranty merge fields price from the current interval's rent instead of the renewal document's. Blank when the admin fee is $0. Enrollment amount merge field not working.",
+          "7 issues, 3 open. DEV-349618, DEV-350007, DEV-346223, DEV-314189, DEV-331326.",
+          "Leap addendum signed before approval; declarations page uploaded before move-in.",
+          "Owner to confirm"
+        ]
+      ],
+      "note": "Counts are a keyword cut of issue summaries over 200 HBG issues updated in the last 365 days and overlap. Scale, not inventory. No resident names or IDs here; Jira keys are the pointer."
+    },
+    {
+      "type": "checklist",
+      "title": "Renewal requirements",
+      "items": [
+        {
+          "text": "A renewal lease interval must exist for HBG to renew.",
+          "status": "done",
+          "source": "#leap-entrata, 2026-09-24"
+        },
+        {
+          "text": "No month-to-month, including a roll to month-to-month because move-out has not been performed.",
+          "status": "done",
+          "source": "#leap-entrata, 2026-09-24"
+        },
+        {
+          "text": "HBG auto-renewal does not copy Deposit Alternative auto-renewal.",
+          "status": "done",
+          "source": "Decision, 2026-09-24"
+        },
+        {
+          "text": "Block list: property settings disabled.",
+          "status": "in_progress",
+          "owner": "Dan Bullock",
+          "source": "#leap-entrata working list"
+        },
+        {
+          "text": "Block list: a claim in Open or Closed Paid.",
+          "status": "in_progress",
+          "owner": "Dan Bullock",
+          "source": "#leap-entrata working list"
+        },
+        {
+          "text": "Block list: a duplicate policy on another lease before the renewal lease is created.",
+          "status": "in_progress",
+          "owner": "Dan Bullock",
+          "source": "#leap-entrata working list"
+        },
+        {
+          "text": "Insurance ops confirms the scenarios that should not renew.",
+          "status": "open",
+          "owner": "Dan Bullock"
+        },
+        {
+          "text": "Robert Jones and Dan Bullock lock final renewal requirements.",
+          "status": "open",
+          "owner": "Dan Bullock",
+          "source": "Requested 2026-09-24; outcome not recorded"
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "title": "Acceptance criteria borrowed from Leap's own SOP (proposed, owners to confirm)",
+      "items": [
+        {
+          "text": "Renewal: the Guarantor Waiver Fee is extended through the end of the renewal term before the renewal is countersigned, at current pricing.",
+          "status": "open",
+          "source": "Leap GWP 102, Renewals"
+        },
+        {
+          "text": "Renewal: no policy renews into month-to-month, including a roll to MTM because move-out was not performed.",
+          "status": "done",
+          "source": "#leap-entrata, 2026-09-24; matches Leap: policies run to lease end"
+        },
+        {
+          "text": "Transfer: the current unit's fee ends in the final month of occupancy.",
+          "status": "open",
+          "source": "Leap GWP 102, Transferring Residents"
+        },
+        {
+          "text": "Transfer: the new unit's fee starts in the first month of occupancy and runs through the new lease term.",
+          "status": "open",
+          "source": "Leap GWP 102, Transferring Residents"
+        },
+        {
+          "text": "Transfer: two fees never post for one resident in one month.",
+          "status": "open",
+          "source": "Leap GWP 102: two fees in one month are billed twice"
+        },
+        {
+          "text": "Transfer: the old policy is confirmed inactive on Leap's side after the transfer.",
+          "status": "open",
+          "source": "Leap GWP 102, Transferring Residents"
+        },
+        {
+          "text": "Application: an active Leap policy on another lease blocks a second enrollment; a non-overlapping future lease does not.",
+          "status": "in_progress",
+          "source": "Leap GWP 102 contingencies; DEV-338404 done, DEV-342483 ready for dev"
+        },
+        {
+          "text": "Application: once a policy exists, screening and application events cannot change coverage.",
+          "status": "open",
+          "source": "DEV-348851, epic in New"
+        }
+      ]
+    },
+    {
+      "type": "clients",
+      "title": "Client escalations on Insurance and Guaranty"
+    },
+    {
+      "type": "text",
+      "title": "Transfers",
+      "tone": "neutral",
+      "body": "Taken off the renewals critical path on 2026-09-24 so the team can focus on renewals. Jae owns opening a separate epic (Track 8). The Unit Transfer coverage article was published 2026-09-28 and is the model for the renewals article (Track 6). A transfer that creates no new policy belongs here; a transfer that double-bills belongs to HBG Delivery Get Well."
+    },
+    {
+      "type": "roadmap",
+      "title": "Roadmap items in the Insurance lane",
+      "lane": "insurance"
+    },
+    {
+      "type": "links",
+      "title": "References",
+      "items": [
+        {
+          "label": "Leap: Guarantor Waiver Program 102, Student Housing (renewals and transfers SOP)",
+          "href": "https://leapeasy.com/wp-content/uploads/2025/04/Guide-Leap-Guarantor-Waiver-Program-102-Student-Housing.pdf"
+        },
+        {
+          "label": "Help Center: HBG coverage during a unit transfer",
+          "href": "https://entratasupport.zendesk.com/hc/en-us/articles/56520943372187-Understanding-Homebody-Guaranty-Coverage-During-a-Unit-Transfer"
+        },
+        {
+          "label": "Jira: HBG issues updated in the last year",
+          "href": "https://entrata.atlassian.net/issues/?jql=%28summary%20~%20%22Homebody%20Guaranty%22%20OR%20summary%20~%20%22HBG%22%20OR%20summary%20~%20%22guaranty%22%29%20AND%20updated%20%3E%3D%20-365d%20ORDER%20BY%20updated%20DESC"
+        }
+      ]
+    }
+  ]
+}

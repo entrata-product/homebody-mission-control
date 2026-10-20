@@ -74,3 +74,31 @@ const neutral: SurfaceTone = {
 }
 
 export const surfaceTone = (areaId: string | null | undefined): SurfaceTone => (areaId && tones[areaId]) || neutral
+
+/**
+ * One color per arm (Distribution, Delivery). Deliberately outside the surface palette so an arm tag
+ * never reads as a surface: teal for Distribution, bronze for Delivery. Neither is used for status
+ * (blue/yellow/pink), for Sponsor/Resident (navy), or for "needs an owner" (gold).
+ */
+const armTones: Record<string, SurfaceTone> = {
+  distribution: {
+    solid: "bg-[#0B6E78] text-white",
+    solidHover: "hover:bg-[#095A62]",
+    soft: "bg-[#DDF1F3]",
+    border: "border-[#0B6E78]",
+    text: "text-[#0B6E78]",
+    chip: "bg-[#DDF1F3] text-[#0B6E78]",
+    hex: "#0B6E78",
+  },
+  delivery: {
+    solid: "bg-[#6B4A2B] text-white",
+    solidHover: "hover:bg-[#553A21]",
+    soft: "bg-[#F3EBE2]",
+    border: "border-[#6B4A2B]",
+    text: "text-[#6B4A2B]",
+    chip: "bg-[#F3EBE2] text-[#6B4A2B]",
+    hex: "#6B4A2B",
+  },
+}
+
+export const armTone = (armId: string | null | undefined): SurfaceTone => (armId && armTones[armId]) || neutral

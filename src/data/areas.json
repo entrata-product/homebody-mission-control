@@ -1,6 +1,6 @@
 {
   "asOf": "2026-10-15",
-  "model": "Homebody is a portfolio of offerings for residents. The Customer sponsors them (puts them on the property's menu, sets each as required or optional, sometimes pays Entrata a fee for the offering and earns a revenue share back when residents enroll), the Resident enrolls in them (required lines can be satisfied with an alternative rather than skipped), and a Fulfiller delivers them: a Homebody fulfillment team, an embedded partner, an integration partner, Homebody R&D, or the Customer's own vendor. Residents reach the offerings through three surfaces: Sign (Entrata's lease flow), Pay (Homebody's rent experience, which is absorbing the old Resident Portal), and Live (everything else the resident does in the app). Pay and Live are separate because Pay is a required moment every month unless autopay is on, while Live is optional: a resident may go a whole lease without submitting a maintenance ticket, reserve the clubhouse, check a policy, or file a claim. The app is the access mechanism, not the value; the offering is the value, and Fulfill is where it is delivered. Full reference: docs/homebody-model.md.",
+  "model": "Homebody is a portfolio of offerings for residents. The Customer sponsors them (puts them on the property's menu, sets each as required or optional, sometimes pays Entrata a fee for the offering and earns a revenue share back when residents enroll), the Resident enrolls in them (required lines can be satisfied with an alternative rather than skipped), and a Fulfiller delivers them: a Homebody fulfillment team, an embedded partner, an integration partner, Homebody R&D, or the Customer's own vendor. Two arms do the work. Distribution is where offerings are shelved and met: three surfaces, Sign (Entrata's lease flow), Pay (Homebody's rent experience, which is absorbing the old Resident Portal), and Live (everything else the resident does in the app). Delivery is where offerings are fulfilled once a resident is in: the insurance agency, the rent reporting team, embedded and integration partners, the Customer's own vendors. Offerings and their lines are owned on the Delivery side, by the Fulfiller who carries their economics; the surfaces own how well they sell. Pay and Live are separate because Pay is a required moment every month unless autopay is on, while Live is optional: a resident may go a whole lease without submitting a maintenance ticket, reserve the clubhouse, check a policy, or file a claim. The app is the access mechanism, not the value; the offering is the value, and Delivery is where it is fulfilled. Full reference: docs/homebody-model.md.",
   "programMetrics": [
     {
       "label": "Residents logged in, 30d",
@@ -23,6 +23,16 @@
   ],
   "vocabulary": [
     {
+      "term": "Distribution / Delivery",
+      "meaning": "The two arms. Distribution is the three surfaces where offerings are shelved and met (Sign, Pay, Live). Delivery is fulfillment: who issues, pays, reports, and services the offering once a resident is in. Every line crosses both: shelved on surfaces, owned by its Fulfiller.",
+      "precedent": "Retail and CPG: the retailer runs the shelf (distribution), the brand owns the product and makes it (supply). Embedded insurance: the platform distributes, the carrier or agency underwrites and services."
+    },
+    {
+      "term": "Three kinds of owner",
+      "meaning": "Surface Area Coordinators own sell-through on their surface. Fulfiller owners own an offering or line and its economics. Track owners own one outcome, wherever it ships. One person can hold more than one, but the roles stay distinct, which is why a line's revenue and a track about that line can name different people.",
+      "precedent": "Category manager vs brand owner vs project lead in CPG; distribution partner vs carrier vs program manager in embedded insurance."
+    },
+    {
       "term": "Sponsor",
       "meaning": "The Customer's role in Homebody. Puts an offering on a property's menu, sets it as required or optional, collects through the ledger, sometimes pays Entrata a fee for the offering, and Entrata shares revenue back when residents enroll, and pays outright for programs like Rewards.",
       "precedent": "Plan sponsor in employer voluntary benefits: offers the menu, pays anywhere from none to all of the premium, collects by payroll deduction. The more the sponsor endorses, the more it owns the outcome."
@@ -38,8 +48,8 @@
       "precedent": "CPG: shipments to the retailer vs. what left the shelf."
     },
     {
-      "term": "Distribution",
-      "meaning": "Share of doors where an offering is sponsored. Replaces 'offered'. Weight by doors, not property count.",
+      "term": "Doors sponsored",
+      "meaning": "Share of doors where an offering is sponsored; the shelf number. Replaces 'offered'. Weight by doors, not property count. (CPG calls this distribution; here that word names the arm.)",
       "precedent": "CPG % ACV distribution: stores carrying you, weighted by store size. A SKU is 'authorized' when the retailer agrees to sell it."
     },
     {
@@ -62,7 +72,7 @@
     {
       "id": "sign",
       "number": 1,
-      "layer": "Access",
+      "layer": "Distribution",
       "title": "Sign",
       "subtitle": "Lease checkout · an Entrata surface",
       "runBy": "Entrata",
@@ -86,7 +96,7 @@
     {
       "id": "pay",
       "number": 2,
-      "layer": "Access",
+      "layer": "Distribution",
       "title": "Pay",
       "subtitle": "Rent day · Homebody's surface",
       "runBy": "Homebody",
@@ -109,7 +119,7 @@
     {
       "id": "live",
       "number": 3,
-      "layer": "Access",
+      "layer": "Distribution",
       "title": "Live",
       "subtitle": "Everything else in the app · Homebody's surface",
       "runBy": "Homebody",
@@ -134,11 +144,11 @@
     {
       "id": "fulfill",
       "number": 4,
-      "layer": "Fulfillment",
+      "layer": "Delivery",
       "title": "Fulfill",
-      "subtitle": "Service operations · Homebody teams",
+      "subtitle": "Fulfillment · Homebody teams and partners",
       "runBy": "Homebody",
-      "tagline": "Where offerings get delivered: Homebody teams, embedded partners, integration partners, the Customer's own vendors.",
+      "tagline": "The Delivery arm. Where offerings get fulfilled and where offerings and lines are owned: Homebody teams, embedded partners, integration partners, the Customer's own vendors.",
       "why": "Homebody sells offerings, not software, and fulfillment varies by offering. Insurance is fulfilled by a Homebody insurance agency (policies, claims, carriers, partnerships) with embedded carriers for specific lines. Rent credit reporting is fulfilled by a small team in Logan that came with the RentDynamics acquisition and reports to all three bureaus and handles opt-outs. Partner offers and Rewards redemption are fulfilled by embedded partners. Resident Pulse is fulfilled by Homebody R&D working with Entrata core. Laundry and parking links are fulfilled by the Customer's own vendor. Billing integrity, IVS verification, documentation for Customer staff, and rev share are fulfillment work too. When fulfillment fails the Customer is exposed, which is why most of today's client heat lives here and why these are service incidents, not bugs.",
       "owner": "Chris Finken",
       "parts": [
@@ -247,7 +257,7 @@
           "needs": "Josh Tebbs"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -286,7 +296,7 @@
           "needs": "Owner to confirm"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -325,7 +335,7 @@
           "needs": "Owner to confirm"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -366,7 +376,7 @@
           "needs": "Britton Pederson"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -404,7 +414,7 @@
           "needs": "Owner to confirm"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -440,7 +450,7 @@
           "value": "n/a"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -476,7 +486,7 @@
           "value": "n/a"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -517,7 +527,7 @@
           "needs": "Josh Tebbs"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -557,7 +567,7 @@
           "needs": "Josh Tebbs"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -595,7 +605,7 @@
           "needs": "Josh Tebbs"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -631,7 +641,7 @@
           "value": "n/a"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -677,7 +687,7 @@
           "needs": "Josh Tebbs"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -721,7 +731,7 @@
           "needs": "Josh Tebbs"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -758,7 +768,7 @@
           "needs": "Josh Tebbs"
         },
         "distribution": {
-          "label": "Distribution: doors sponsored",
+          "label": "Doors sponsored",
           "value": null,
           "needs": "Owner to confirm"
         },
@@ -801,6 +811,32 @@
       "fulfillment": "Varies by offering: a Homebody team, an embedded partner, an integration partner, Homebody R&D, or the Customer's own vendor.",
       "examples": "Homebody. ResidentVerify is a cousin: the Customer buys screening, but the user asking about status is a prospect.",
       "note": "Sponsor, Resident, and Fulfiller are three different parties. The app is not the value. Failures show up as client escalations, not bug reports."
+    }
+  ],
+  "arms": [
+    {
+      "id": "distribution",
+      "name": "Distribution",
+      "question": "Where does the resident meet the offering?",
+      "areas": [
+        "sign",
+        "pay",
+        "live"
+      ],
+      "meaning": "The three surfaces where the Sponsor shelves offerings and the Resident meets them. Sign is Entrata's lease flow; Pay and Live are Homebody's app.",
+      "owns": "Sell-in and sell-through: doors sponsored, attach at signing, enrollment rate, velocity. Each surface has a Surface Area Coordinator.",
+      "coordinatorLabel": "Surface Area Coordinator"
+    },
+    {
+      "id": "delivery",
+      "name": "Delivery",
+      "question": "Who fulfills it once the resident is in?",
+      "areas": [
+        "fulfill"
+      ],
+      "meaning": "The Fulfillers: the Homebody insurance agency, the rent reporting team in Logan, embedded and integration partners, Homebody R&D, the Customer's own vendors. Offerings and lines are owned here.",
+      "owns": "The line itself: issuance, claims, reporting, carrier and partner contracts, revenue net of cost. Each offering and line has a Fulfiller owner; Delivery has one coordinator across them.",
+      "coordinatorLabel": "Delivery Coordinator"
     }
   ]
 }

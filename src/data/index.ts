@@ -5,7 +5,7 @@ import decisionsFile from "./decisions.json"
 import actionsFile from "./actions.json"
 import teamFile from "./team.json"
 import roadmapFile from "./roadmap.json"
-import type { ActionItem, Area, Attention, ClientRow, Decision, DeliveryPattern, Fulfiller, Line, Metric, Offering, OfferingType, OwnerPageData, RoadmapItem, RosterMember, Track, VocabularyEntry } from "../types"
+import type { ActionItem, Area, Attention, ClientRow, Decision, DeliveryPattern, Fulfiller, Line, Metric, Offering, OfferingType, OwnerPageData, RoadmapItem, RosterMember, Track, VocabularyEntry, Arm } from "../types"
 
 export const model = {
   asOf: areasFile.asOf,
@@ -15,6 +15,10 @@ export const model = {
 }
 
 export const areas = (areasFile.areas as Area[]).slice().sort((a, b) => a.number - b.number)
+export const arms = areasFile.arms as Arm[]
+export const armForArea = (areaId: string | null | undefined): Arm | undefined => arms.find((m) => areaId != null && m.areas.includes(areaId))
+/** "Surface Area Coordinator" or "Delivery Coordinator", by arm. */
+export const coordinatorLabel = (areaId: string): string => armForArea(areaId)?.coordinatorLabel ?? "Coordinator"
 export const offerings = areasFile.offerings as Offering[]
 export const offeringTypes = areasFile.offeringTypes as OfferingType[]
 export const fulfillers = areasFile.fulfillers as Fulfiller[]
@@ -56,9 +60,15 @@ export const roadmap = {
 
 // Owner pages: one JSON file per page in src/data/pages/. Add a file, it shows up.
 const pageModules = import.meta.glob<{ default: OwnerPageData }>("./pages/*.json", { eager: true })
+// Ordered by surface (Sign, Pay, Live, Fulfill, following areas.json `number`), then by track number within a
+// surface, so the tabs for one surface sit next to each other.
+const areaOrder = (trackNumber: number | null | undefined): number => {
+  const areaId = tracks.find((t) => t.number === trackNumber)?.area
+  return areas.find((a) => a.id === areaId)?.number ?? 999
+}
 export const pages: OwnerPageData[] = Object.values(pageModules)
   .map((m) => m.default)
-  .sort((a, b) => (a.track ?? 999) - (b.track ?? 999))
+  .sort((a, b) => areaOrder(a.track) - areaOrder(b.track) || (a.track ?? 999) - (b.track ?? 999))
 
 export const pageById = (id: string | null | undefined): OwnerPageData | undefined =>
   id ? pages.find((p) => p.id === id) : undefined

@@ -4,9 +4,9 @@ This repo is the **Homebody War Room** for Homebody and Homebody Guaranty (HBG).
 
 New to this operating model? Read the canonical playbook at [Entrata-Collab/operating-playbooks — `mission-control.md`](https://github.com/Entrata-Collab/operating-playbooks/blob/main/mission-control.md).
 
-**Mission:** Increase Homebody revenue growth by 10% in Q1 2027 (final target to be confirmed). One surface for Homebody and HBG. Every track is a deliverable one person can finish; every hot client thread has one owner and a next step, because hot clients are where friction against the goal shows up.
+**Mission:** Increase Homebody revenue growth by 10% in Q1 2027 (final target to be confirmed). One surface for Homebody and HBG. Every track is an outcome one person owns by coordinating the work needed; every hot client thread has one owner and a next step, because hot clients are where friction against the goal shows up.
 
-**Model:** Homebody is a portfolio of offerings for residents: the Customer sponsors them, the Resident enrolls in them (required lines can be met with an alternative rather than skipped), and Homebody teams, partners, or the Customer's own vendors fulfill them. Residents reach them through Sign (Entrata's lease flow), Pay (Homebody's rent experience), and Live (everything else in the app). Fulfill is where the service is delivered. Tracks are grouped by surface. Canonical reference, diagram, and the three delivery patterns: `docs/homebody-model.md`.
+**Model:** Two arms. Distribution is the three surfaces where offerings are shelved and met (Sign, Pay, Live); Delivery is fulfillment, where offerings and lines are owned. Homebody is a portfolio of offerings for residents: the Customer sponsors them, the Resident enrolls in them (required lines can be met with an alternative rather than skipped), and Homebody teams, partners, or the Customer's own vendors fulfill them. Residents reach them through Sign (Entrata's lease flow), Pay (Homebody's rent experience), and Live (everything else in the app). Fulfill is where the service is delivered. Tracks are grouped by surface. Canonical reference, diagram, and the three delivery patterns: `docs/homebody-model.md`.
 
 **Cadence:** Twice weekly. Elevated client concerns going into and coming out of Summit were the trigger; the goal is revenue growth.
 
@@ -56,7 +56,7 @@ This repo is the working copy. Labs publishes from [entrata-product/homebody-mis
 
 | What | File |
 | --- | --- |
-| Tracks: deliverable, owner, due, measure, page, linked clients, updates | `src/data/tracks.json` |
+| Tracks: outcome, owner, due, measure, page, linked clients, updates | `src/data/tracks.json` |
 | Surfaces (Sign, Pay, Live, Fulfill), offerings, insurance lines, economics, Fulfillers, delivery patterns, owners, headline metrics | `src/data/areas.json` |
 | Client threads: page owner (Alyssa Schroeder), CSM owner per row, next step, source, linked tracks | `src/data/clients.json` |
 | Owner pages: one JSON file per page, auto-discovered | `src/data/pages/<id>.json` |
@@ -72,14 +72,15 @@ Tracks are the source of truth. Do not paste the track list into this README.
 
 ### Tabs
 
-One flat row, like the Leasing AI war room. Owner pages are peer tabs, not a second row.
+One strip, grouped the way the model is: **This room** (Tracks, Clients), **Distribution** (owner pages on Sign, Pay, Live, in surface order), **Delivery** (owner pages on Fulfill, then Insurance Line Performance), **Reference** (The model, How to update). One row per group, label on the left. Groups come from `arms` in `src/data/areas.json`; owner pages land in a group by their primary track's surface.
 
 | Tab | What it shows |
 | --- | --- |
-| **Tracks** (default) | Every track grouped by surface (headline-number tiles are hidden for the rollout; `SHOW_KEY_NUMBERS` in `Tracks.tsx` brings them back). Each card: deliverable, owner, status, due, next step, linked clients. Click a card to open the owner's tab. Open action items at the bottom, including decisions the room owes. |
+| **Tracks** (default) | Every track grouped by surface (headline-number tiles are hidden for the rollout; `SHOW_KEY_NUMBERS` in `Tracks.tsx` brings them back). Each card: outcome, owner, status, due, next step, linked clients. Click a card to open the owner's tab. Open action items at the bottom, including decisions the room owes. |
 | **Clients** | One row per client thread: one owner (the CSM), next step, source, linked tracks |
-| **App Migration · HBG Renewals · Billing Integrity · Insurance Funnel · Rewards · IVS Remediation** | One tab per owner page, built from `src/data/pages/<id>.json`. Add a file, get a tab. |
-| **The model** | Sign, Pay, Live, Fulfill with track numbers in place; the offerings table with types, Fulfillers, and contracts; why Homebody is not like the rest of Entrata; what the model exposes |
+| **Insurance Funnel · HBG Distribution Get Well · App Migration · Rewards · Billing Integrity · IVS Remediation · HBG Delivery Get Well** | One tab per owner page, built from `src/data/pages/<id>.json`. Add a file, get a tab. |
+| **Insurance Line Performance** | The only tab with insurance numbers: revenue, what Entrata keeps, distribution, enrollment per line, next to the room's attention per line, plus how core's ten policy types map to the lines. Data: `lines[].economics` in `areas.json`. |
+| **The model** | Sign, Pay, Live, Fulfill with track numbers in place; one Offerings and lines table (reached on, Fulfiller, owner, attention, role; who pays and who contracts behind a toggle); why Homebody is not like the rest of Entrata. No numbers on this page. |
 | **How to update** | Claim a track, build your page, add a client thread, what the hygiene agent does, roster |
 
 ---

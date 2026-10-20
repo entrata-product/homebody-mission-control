@@ -1,13 +1,13 @@
 import type { ChecklistItem, OwnerPageData, PageSection } from "../types"
-import { surfaceTone } from "./surface"
-import { areaById, clients, isPastDue, pageOwner, roadmap, trackByNumber, tracks } from "../data"
+import { armTone, surfaceTone } from "./surface"
+import { areaById, clients, isPastDue, pageOwner, roadmap, trackByNumber, tracks, armForArea } from "../data"
 import type { Route } from "../routes"
 import { Clients } from "./Clients"
 import { Label, Owner, StatusPill, TileCard, TrackNumber, Updates } from "./ui"
 
 export function OwnerPage({ page, navigate }: { page: OwnerPageData; navigate: (r: Route) => void }) {
   const track = trackByNumber(page.track)
-  // Other tracks that also point at this page (e.g. HBG transfers → HBG Renewals).
+  // Other tracks that also point at this page (e.g. HBG renewals and transfers → HBG Distribution Get Well).
   const alsoHere = tracks.filter((t) => t.page === page.id && t.number !== page.track)
   const area = track ? areaById(track.area) : undefined
   const pastDue = track ? isPastDue(track.due, track.status) : false
@@ -25,6 +25,7 @@ export function OwnerPage({ page, navigate }: { page: OwnerPageData; navigate: (
                 {area.title}
               </button>
             ) : null}
+            {area ? <span className={`rounded px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide ${armTone(armForArea(area.id)?.id).chip}`}>{armForArea(area.id)?.name}</span> : null}
           </div>
           <p className="mt-1 text-sm leading-6 text-[#474747]">{page.purpose}</p>
         </div>
@@ -44,8 +45,8 @@ export function OwnerPage({ page, navigate }: { page: OwnerPageData; navigate: (
         <section className="rounded-xl border border-[#E0E0E0] bg-white px-4 py-3">
           <div className="grid gap-3 md:grid-cols-3">
             <div>
-              <Label>Deliverable</Label>
-              <p className="mt-1 text-sm text-[#161616]">{track.deliverable}</p>
+              <Label>Outcome</Label>
+              <p className="mt-1 text-sm text-[#161616]">{track.outcome}</p>
               <p className={`mt-1 text-[11px] ${pastDue ? "font-semibold text-[#B42318]" : "text-[#7A7A7A]"}`}>
                 {track.due ? `Due ${track.due}${pastDue ? " · passed" : ""}` : track.status === "complete" ? "" : "Date needed"}
                 {track.note ? <span className={track.noteTone === "alert" ? "text-[#8A2E28]" : "text-[#8A6B00]"}> · {track.note}</span> : null}
@@ -65,7 +66,7 @@ export function OwnerPage({ page, navigate }: { page: OwnerPageData; navigate: (
               Also on this page:{" "}
               {alsoHere.map((t) => (
                 <button key={t.id} type="button" onClick={() => navigate({ tab: "tracks", track: t.number })} className="mr-2 text-[#004B37] underline underline-offset-2">
-                  #{t.number} {t.deliverable}
+                  #{t.number} {t.outcome}
                 </button>
               ))}
             </p>

@@ -1,7 +1,8 @@
 import { useState, type ReactNode } from "react"
-import type { Heat, Status, Tile } from "../types"
+import type { Attention, Heat, Metric, Status, Tile } from "../types"
 import { daysUntil, ownerUnconfirmed, trackByNumber } from "../data"
 import { surfaceTone } from "./surface"
+import type { Route } from "../routes"
 
 export const heatMeta: Record<Heat, { label: string; pill: string; card: string }> = {
   burning: { label: "Burning", pill: "bg-[#FFCCD5] text-[#161616]", card: "border-[#FFCCD5] bg-[#FFF2F4]" },
@@ -153,5 +154,51 @@ export function Updates({ updates }: { updates: { date: string; text: string; so
         </li>
       ))}
     </ol>
+  )
+}
+
+/** One number with its label; blank renders as "needs <owner>" in gold. */
+export function MetricCell({ m }: { m: Metric }) {
+  if (m.value == null) {
+    return (
+      <span className="block text-[#8A6B00]">
+        <span className="block text-[10px] leading-4">{m.label}</span>
+        <span className="font-semibold">needs {m.needs ?? "owner"}</span>
+      </span>
+    )
+  }
+  return (
+    <span className="block">
+      <span className="block text-[10px] leading-4 text-[#7A7A7A]">{m.label}</span>
+      <span className="font-semibold text-[#161616]">{m.value}</span>
+      {m.source ? <span className="block text-[10px] text-[#B8B8B8]">{m.source}</span> : null}
+    </span>
+  )
+}
+
+/** Share of the room's tracks and live client threads that touch a line or offering. */
+export function AttentionCell({ a, navigate }: { a: Attention; navigate: (r: Route) => void }) {
+  const pct = Math.round(a.share * 100)
+  const tone = pct >= 40 ? "bg-[#FFCCD5]" : pct >= 15 ? "bg-[#F2DEA3]" : "bg-[#BFDBFE]"
+  return (
+    <span className="block w-32">
+      <span className="flex items-baseline justify-between gap-2">
+        <span className="font-semibold text-[#161616]">{pct}%</span>
+        <span className="text-[10px] text-[#7A7A7A]">
+          {a.tracks.length} track{a.tracks.length === 1 ? "" : "s"} · {a.clients.length} client{a.clients.length === 1 ? "" : "s"}
+        </span>
+      </span>
+      <span className="mt-1 block h-1.5 w-full overflow-hidden rounded bg-[#F2F2F2]">
+        <span className={`block h-full ${tone}`} style={{ width: `${Math.max(pct, 1)}%` }} />
+      </span>
+      {a.tracks.length > 0 ? (
+        <span className="mt-1 flex flex-wrap gap-1">
+          {a.tracks.map((t) => (
+            <TrackNumber key={t.id} n={t.number} onClick={() => navigate({ tab: "tracks", track: t.number })} />
+          ))}
+        </span>
+      ) : null}
+      {a.clients.length > 0 ? <span className="mt-1 block text-[10px] text-[#7A7A7A]">{a.clients.map((c) => c.name).join(", ")}</span> : null}
+    </span>
   )
 }

@@ -9,7 +9,7 @@ export function Contribute() {
           <li>Pull latest.</li>
           <li>
             In <code className="text-[#004B37]">src/data/tracks.json</code>, find the track that says <code className="text-[#8A6B00]">"Owner to confirm"</code> and put your name in{" "}
-            <code className="text-[#004B37]">owner</code>. Or add a new track under the right <code className="text-[#004B37]">area</code> (sign, pay, live, fulfill) with the <code className="text-[#004B37]">offerings</code> it moves: one deliverable, one owner, a due date, a measure of done.
+            <code className="text-[#004B37]">owner</code>. Or add a new track under the right <code className="text-[#004B37]">area</code> (sign, pay, live, fulfill) with the <code className="text-[#004B37]">offerings</code> it moves: one outcome, one owner, a due date, a measure of done.
           </li>
           <li>
             Commit with the track number in the message, push to <code className="text-[#004B37]">main</code>.

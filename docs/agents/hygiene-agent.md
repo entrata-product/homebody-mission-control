@@ -82,7 +82,7 @@ Edge cases: a track with an existing non-null note is already acknowledged; leav
 ```
 Hey {first name} — a {few/couple of} items of yours could use a status touch in the Homebody War Room:
 
-1. **Track #{N} ({deliverable})** — {past due, date was DATE | no date set | no update since DATE}.
+1. **Track #{N} ({outcome})** — {past due, date was DATE | no date set | no update since DATE}.
 2. **Client: {name}** — {no update since DATE}.
 3. **{Page title} page** — the "{tile label}" tile still needs a number.
 ...

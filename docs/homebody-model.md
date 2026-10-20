@@ -8,6 +8,25 @@ Homebody is a portfolio of **offerings** for residents. Two parties decide, so n
 
 The one sentence to remember: **Sponsor, Resident, and Fulfiller are three different parties.** In core Entrata the buyer is the user and Entrata fulfills by shipping software. In Homebody the Customer sponsors, the Resident enrolls, and someone else delivers. That is why Homebody does not behave like the rest of Entrata; see [the three patterns](#why-homebody-does-not-behave-like-the-rest-of-entrata) and [the vocabulary](#vocabulary-and-where-it-is-borrowed-from).
 
+## The simple version: two arms
+
+Homebody has two arms, and most confusion in the room comes from mixing them.
+
+| Arm | Question it answers | Made of | Owns | Coordinator |
+|---|---|---|---|---|
+| **Distribution** | Where does the resident meet the offering? | Three surfaces: **Sign** (Entrata's lease flow), **Pay** (Homebody's rent experience), **Live** (everything else in the app) | Sell-in and sell-through: doors sponsored, attach at signing, enrollment rate, velocity | One Surface Area Coordinator per surface: Zack Melton (Sign), Joe Wilson (Pay), Joe Wilson (Live) |
+| **Delivery** | Who fulfills it once the resident is in? | The Fulfillers: the Homebody insurance agency, the rent reporting team in Logan, embedded and integration partners, Homebody R&D, the Customer's own vendors | The offerings and lines themselves: issuance, claims, reporting, carrier and partner contracts, revenue net of cost | Delivery Coordinator: Chris Finken. Each offering and line has a Fulfiller owner (Insurance lines: Josh Tebbs; Rewards: Britton Pederson) |
+
+Every offering crosses both arms: it is shelved on one or more surfaces and owned by one Fulfiller. That gives three kinds of owner, and they are deliberately distinct:
+
+- **Surface Area Coordinators** own how offerings sell on their surface.
+- **Fulfiller owners** own an offering or line and its economics.
+- **Track owners** own one outcome, wherever it ships. Tracks are grouped by the arm they ship in.
+
+HBG is the worked example. Josh Tebbs owns the line (premium, claims, carrier). Jae Lee owns the HBG Distribution Get Well track (application, renewal, and transfer mechanics, which are lease-event software on Sign). HBG Delivery Get Well (charges, cancellations, Leap sync, claims, reporting) is a Fulfill track with its owner to confirm. The attach rate at signing is Sign's number. None of those contradict each other.
+
+Insurance Line Performance is a Delivery-arm page: the line numbers live there and nowhere else.
+
 ## The diagram
 
 ```mermaid
@@ -76,7 +95,9 @@ flowchart TB
   F -.->|exposure when it fails| C
 ```
 
-## The four surfaces
+## The four areas: three surfaces and Fulfill
+
+Sign, Pay, and Live are the Distribution arm. Fulfill is the Delivery arm; it is grouped with the surfaces on the Tracks page because tracks need a home, but it is a different kind of thing.
 
 | # | Surface | Whose | What happens here | Surface Area Coordinator | Headline number |
 |---|---|---|---|---|---|
@@ -113,7 +134,7 @@ Contracts follow the Fulfiller, not the surface. Every contracts cell below is a
 
 ### The portfolio
 
-| Offering | Type | Reached on | Required or optional | Who pays whom | Fulfilled by | Contracts (to confirm) | Owner | Tracks |
+| Offering | Type | Reached on | Required or optional | Who pays whom | Fulfilled by | Contracts (to confirm) | Line owner (Fulfiller) | Tracks |
 |---|---|---|---|---|---|---|---|---|
 | **Insurance and Guaranty** | Resident-paid | Sign · Pay · Live | Proof of coverage is a lease condition at most properties: default enrollment in the Master Policy, or satisfied with an HO4 or an outside policy IVS verifies. HBG is required with the deposit as the alternative. Contents and additional lines are elective. Documents, status, and claims live on Live. | Resident pays the premium; the Sponsor collects it on the ledger. Entrata and the Sponsor earn. | Team: Homebody insurance agency, with embedded carriers for specific lines | Customer to Entrata for the program; Entrata's agency to carriers; resident under the master policy or holding their own HO4 | Jae Lee | #2 #3 #5 #6 #7 #8 |
 | **Rent credit reporting** | Resident-paid | Sign · Pay | Optional: opt in at signing or on Pay. Some states (Maryland most recently) require the Customer to offer it. | Resident pays a fee or it is bundled; the Customer earns a rev share. | Team: Logan rent reporting team; three bureaus, opt-outs, disputes | Customer to Entrata; resident consent at opt-in | Owner to confirm | none |
@@ -208,7 +229,7 @@ The Quarter Brief's two program numbers, Active Resident Rate and Resident Reven
 - Every contracts cell is "to confirm." No one has written down yet who contracts with whom per offering.
 - HBG is roughly two-thirds of the room's attention (four tracks, six client threads) and no revenue figure for it, gross or net of claims, exists in the room. The same is true for every other line.
 - Pay has one track (migration) and nothing about what is offered once residents are in it. Live has one track (Rewards) and nothing on claims, documents, Resident Pulse, or community features.
-- Five headline numbers are blank, and there is no fulfillment metric (claims cycle time, issuance lag, bureau accuracy, opt-out handling). Today's client heat is fulfillment heat, measured only as escalations.
+- There is no Delivery metric in the room (claims cycle time, issuance lag, bureau accuracy, opt-out handling). Today's client heat is fulfillment heat, measured only as escalations.
 
 These are either tracks someone claims or scope the room explicitly declines. Both are fine. Silence is not.
 

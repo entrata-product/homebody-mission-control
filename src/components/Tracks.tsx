@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import type { Area, Metric, Track } from "../types"
-import { actions, areas, clientById, clients, decisions, isPastDue, model, offeringById, ownerUnconfirmed, pageById, tracks, tracksMeta } from "../data"
+import { actions, areas, armForArea, clientById, clients, coordinatorLabel, decisions, isPastDue, model, offeringById, ownerUnconfirmed, pageById, tracks, tracksMeta } from "../data"
 import { pageRoute, type Route } from "../routes"
 import { Owner, StatusPill, TrackNumber, Updates } from "./ui"
-import { surfaceTone } from "./surface"
+import { armTone, surfaceTone } from "./surface"
 
 /** Key-number tiles at the top of Tracks. Off for the rollout; see the note in Tracks(). */
 const SHOW_KEY_NUMBERS = false
@@ -67,9 +67,23 @@ export function Tracks({ navigate, focusTrack }: { navigate: (r: Route) => void;
         </div>
       )}
 
-      {areas.map((area) => {
+      {areas.map((area, i) => {
         const areaTracks = tracks.filter((t) => t.area === area.id)
-        return (
+        const arm = armForArea(area.id)
+        const firstOfArm = arm != null && areas.findIndex((a) => armForArea(a.id)?.id === arm.id) === i
+        return [
+          firstOfArm && arm ? (
+            <div key={`arm-${arm.id}`} className="flex items-center gap-3 pt-2">
+              <span className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${armTone(arm.id).solid}`}>{arm.name}</span>
+              <span className="text-[11px] text-[#7A7A7A]">
+                {arm.question} <span className="text-[#B8B8B8]">·</span> {arm.owns.split(". ")[0]}.
+              </span>
+              <span className="h-px flex-1 bg-[#E0E0E0]" />
+              <button type="button" onClick={() => navigate({ tab: "model" })} className="text-[10px] text-[#7A7A7A] underline underline-offset-2 hover:text-[#161616]">
+                the model
+              </button>
+            </div>
+          ) : null,
           <section key={area.id} id={`area-${area.id}`} className={`space-y-3 rounded-2xl border-l-4 ${surfaceTone(area.id).border} ${surfaceTone(area.id).soft} p-4`}>
             <AreaRow area={area} count={areaTracks.length} navigate={navigate} />
             {areaTracks.length === 0 ? (
@@ -84,8 +98,8 @@ export function Tracks({ navigate, focusTrack }: { navigate: (r: Route) => void;
                 ))}
               </div>
             )}
-          </section>
-        )
+          </section>,
+        ]
       })}
 
       <ActionItems navigate={navigate} />
@@ -117,7 +131,7 @@ function AreaRow({ area, count, navigate }: { area: Area; count: number; navigat
         </button>
       </div>
       <div className="flex items-center gap-3 text-[11px]">
-        <Owner name={area.owner} prefix="Surface Area Coordinator:" />
+        <Owner name={area.owner} prefix={`${coordinatorLabel(area.id)}:`} />
         <span className="text-[#B8B8B8]">·</span>
         <span className="text-[#7A7A7A]">
           {count} track{count === 1 ? "" : "s"}
@@ -155,7 +169,7 @@ function TrackCard({ track, navigate, highlighted }: { track: Track; navigate: (
     >
       <div className="mb-1 flex flex-wrap items-center gap-2">
         <TrackNumber n={track.number} />
-        <h4 className="min-w-0 flex-1 text-[12px] font-semibold leading-snug">{track.deliverable}</h4>
+        <h4 className="min-w-0 flex-1 text-[12px] font-semibold leading-snug">{track.outcome}</h4>
         {page ? (
           <span className="shrink-0 rounded border border-[#E0E0E0] px-1.5 py-0.5 text-[9px] font-medium text-[#7A7A7A]">{page.title} →</span>
         ) : (
