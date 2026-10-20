@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-15",
+  "asOf": "2026-10-19",
   "owner": "Alyssa Schroeder",
   "sourceNote": "One row per client thread the war room is carrying, each with one owner: the CSM who drives the outcome, de-escalation. Hot clients are where friction against the revenue goal shows up, not the reason the room exists. Name the client, the property, and the ticket. Keep resident names and resident IDs out of this repo. Rows were lifted from the 2026-09-24 and 2026-09-28 slates; CSM owners were never named there, so most read 'Owner to confirm'.",
   "clients": [
@@ -34,8 +34,8 @@
         "HBG"
       ],
       "heat": "burning",
-      "owner": "Owner to confirm",
-      "nextStep": "Unconfirmed. Escalated on HBG renewals and escalating to Chase as of 2026-09-24. CSM to record current state.",
+      "owner": "Erika Bronson",
+      "nextStep": "Waiting for the Asset team to review and get back to Entrata with questions.",
       "due": null,
       "source": "Homebody product leadership DM, 2026-09-24",
       "tracks": [
@@ -43,6 +43,12 @@
       ],
       "scale": null,
       "updates": [
+        {
+          "date": "2026-10-19",
+          "text": "Asset Living has been live on auto renewal since 2026-10-14. The launch was communicated to Asset's systems team, with the expectation that they would update Stacey Lecocke (Division President - Student Housing); that update did not happen, and Asset escalated again. Waiting for the Asset team to review and get back to Entrata with questions.",
+          "source": "Alyssa 2026-10-19",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-09-24",
           "text": "Cal: Asset is escalated on HBG renewals, escalating to Chase.",
