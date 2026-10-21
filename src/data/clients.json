@@ -11,7 +11,7 @@
       ],
       "heat": "burning",
       "owner": "Erika Bronson",
-      "nextStep": "Priess plans to turn on HBG auto renewals on 2026-10-20. The HBG product team is tracking renewal charge timing, transfers, and reporting as current initiatives.",
+      "nextStep": "Monitor Preiss's HBG auto renewals and follow up if they report any issues; the first policy completed the flow successfully.",
       "due": null,
       "source": "Cal 2026-09-28 Mission Control update",
       "tracks": [
@@ -19,6 +19,12 @@
       ],
       "scale": null,
       "updates": [
+        {
+          "date": "2026-10-21",
+          "text": "HBG auto renewals are live for Preiss, and we watched one policy go through the flow seamlessly. Preiss said they would let us know if they see or hear anything and were happy the first one was a success.",
+          "source": "Alyssa 2026-10-21",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-10-19",
           "text": "Priess delayed enabling HBG auto renewals until other clients confirmed the feature was working. As of 2026-10-19, Priess is satisfied with the status updates and plans to turn on the feature on 2026-10-20. Priess is highly detail-oriented, so any issues are expected to be raised quickly. Lane, VP of Property Ops, told Cal Harris by email that “we are moving in the right direction.” With renewals released, Priess is shifting focus to renewal charge timing, transfers, and reporting; the HBG product team is tracking all three as current initiatives.",
