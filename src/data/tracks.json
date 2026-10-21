@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-19",
+  "asOf": "2026-10-21",
   "sourceNote": "A track is a finite outcome with exactly one named owner, a date, a measure of done, and a page where the work lives. Function names are not owners; write 'Owner to confirm' until a person is named. Reshaped 2026-10-15 from the 2026-09-28 area-based slate.",
   "tracks": [
     {
@@ -360,16 +360,22 @@
       "outcome": "HBG renewal process documented for clients and for CS and Service",
       "owner": "Wyatt Moore",
       "due": null,
-      "measure": "Help Center article on HBG renewals published; internal answer guide shared with CS and Service; the Unit Transfer article (done 2026-09-28) is the model",
+      "measure": "Help Center article and release notes on HBG renewals published; any needed technical troubleshooting documentation shared with CS and Service",
       "page": "hbg-delivery",
       "clients": [],
-      "status": "not_started",
+      "status": "in_progress",
       "heat": "active",
-      "summary": "Clients cannot find Help Center answers about Homebody services; sparse internal documentation produces inconsistent guidance. Scoped down from 'all Homebody documentation' to the one article the renewals work needs.",
-      "nextStep": "Name a technical writer. Connect with CS and Service to list the questions the article must answer.",
-      "note": "Owner to confirm.",
-      "noteTone": "alert",
+      "summary": "Technical Writing published the client-facing HBG renewals Help Center article and release notes. The external documentation is done; CS and Service still need to confirm whether they need additional technical troubleshooting guidance.",
+      "nextStep": "Coordinate with CS and Service to identify any remaining troubleshooting documentation needed, then create and share it.",
+      "note": null,
+      "noteTone": null,
       "updates": [
+        {
+          "date": "2026-10-21",
+          "text": "Technical Writing released a Help Center article on managing Homebody Guaranty renewals (https://entratasupport.zendesk.com/hc/en-us/articles/56817670474395-Manage-Homebody-Guaranty-for-Renewals) and release notes covering HBG Renewals (https://entratasupport.zendesk.com/hc/en-us/articles/56894727968027-Homebody-Release-Notes-Oct-13). The client-facing documentation is done. Coordinate internally with CS and Service to determine whether they need additional technical documentation to troubleshoot issues.",
+          "source": "Alyssa 2026-10-21",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-10-15",
           "text": "Owner named: Wyatt Moore.",
