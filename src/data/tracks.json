@@ -406,19 +406,25 @@
       "lines": [
         "outside-policy"
       ],
-      "outcome": "IVS: $142k client credits approved by Finance and wave 1 client outreach complete",
+      "outcome": "IVS: $181k client credits approved; client impact understood and settings remediation underway",
       "owner": "Chris Finken",
       "due": null,
-      "measure": "Finance approval recorded as a decision; wave 1 clients notified and their IVS settings corrected; no resident force-placed as a result",
+      "measure": "$181k credit approval recorded; affected clients contacted, business impact understood, and IVS settings corrected in waves; no resident force-placed as a result",
       "page": "ivs",
       "clients": [],
       "status": "in_progress",
       "heat": "active",
-      "summary": "IVS was not correctly implemented over the last two years; clients are paying for a service they are not receiving. Mass rollout is not feasible, so remediation runs in waves.",
-      "nextStep": "Chris: take the $142k credit request to Finance and record the outcome as a decision.",
+      "summary": "IVS was not correctly implemented over the last two years; clients are paying for a service they are not receiving. The refreshed credit amount is $181k and has been approved by Wes Bell and Chase Harrington. Client outreach and settings remediation are next; mass rollout is not feasible, so remediation runs in waves.",
+      "nextStep": "Start talking with affected clients to correct IVS settings and understand the impact on their businesses, then plan remediation in waves.",
       "note": null,
       "noteTone": null,
       "updates": [
+        {
+          "date": "2026-10-21",
+          "text": "Alyssa pulled refreshed data, bringing the credit amount to $181k. Chris obtained approval from Wes Bell and Chase Harrington (https://entrata.slack.com/archives/C0CAMF7QW31). Next step is to begin talking with clients to correct settings and understand the impact on their businesses.",
+          "source": "Alyssa 2026-10-21; Slack approval",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-10-15",
           "text": "Owner set to Chris Finken (page owner for IVS Remediation).",
