@@ -155,7 +155,7 @@
       ],
       "heat": "burning",
       "owner": "Jody Crockett",
-      "nextStep": "Meet with Yugo on 2026-10-20, review the individual lease issues and listed tickets, and agree on follow-up for the remaining one-off issues.",
+      "nextStep": "Monitor Yugo corporate's internal support ticket volume and charge-related issues during rent week, and compare charge issues with the prior few months.",
       "due": null,
       "source": "Alyssa 2026-09-30",
       "tracks": [
@@ -163,6 +163,12 @@
       ],
       "scale": null,
       "updates": [
+        {
+          "date": "2026-10-21",
+          "text": "Alyssa Schroeder and Mari Lewis hosted a training for Yugo's onsite teams on 2026-10-20. The teams asked many questions, which Alyssa and Mari were able to answer. The training may reduce the internal support tickets Yugo corporate receives. Yugo noted rent week is typically busiest for questions and is monitoring whether charge-related issues this month are lower than in the last few months.",
+          "source": "Alyssa 2026-10-21",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-10-19",
           "text": "Yugo has been live with HBG auto renewals since 2026-10-14. The first weekly meeting since release is scheduled for 2026-10-20. Yugo has continued to raise issues found on individual leases. Ginger Mathews, Director of Business Systems, told Cal Harris that Yugo is happy with the Entrata team's attention and responsiveness, while its internal teams are still “bearing the burden” of the one-off issues. Related tickets and incident: DEV-349211 (https://entrata.atlassian.net/browse/DEV-349211); INC1557-20261001-hbg-ledger-charges-that-dont-match-the-policy-amount; DEV-339897 (https://entrata.atlassian.net/browse/DEV-339897); DEV-341562 (https://entrata.atlassian.net/browse/DEV-341562); DEV-346223 (https://entrata.atlassian.net/browse/DEV-346223); DEV-347155 (https://entrata.atlassian.net/browse/DEV-347155); DEV-347105 (https://entrata.atlassian.net/browse/DEV-347105).",
