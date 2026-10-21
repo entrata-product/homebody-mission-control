@@ -2,74 +2,152 @@
   "id": "rewards",
   "title": "Rewards",
   "track": 4,
-  "purpose": "The Trinity relationship and the Rewards-in-2027 decision. Rewards is the Customer's loyalty program: the Customer rewards residents for great behavior (pay on time, renew, refer), and Homebody fulfills the points, tracking, and redemption. Its economics are a Customer-side question.",
-  "asOf": "2026-10-01",
+  "purpose": "Deliver and validate the Rewards workflows Trinity needs for broader staff use of bonus points. Continued Rewards sales in 2027 confirmed.",
+  "asOf": "2026-10-21",
   "sections": [
     {
       "type": "stats",
-      "title": "Where we stand",
+      "title": "Commercial progress",
       "tiles": [
         {
-          "label": "Rewards revenue, MTD",
-          "value": null,
-          "sub": "vs prior month",
-          "needs": "Britton Pederson"
+          "label": "Clients contracted for Rewards",
+          "value": "94",
+          "sub": "Total contracted, not live clients",
+          "source": "Britton Pederson, October 21, 2026"
         },
         {
-          "label": "Clients live on new Rewards",
-          "value": null,
-          "sub": "",
-          "needs": "Britton Pederson"
+          "label": "Trinity points sales, September",
+          "value": "$1.04M",
+          "sub": "September 2026 points sales",
+          "source": "Britton Pederson, October 19 update"
         },
         {
-          "label": "AOP decision",
-          "countdownTo": "2026-10-15"
+          "label": "Trinity points issued, September",
+          "value": "104M",
+          "sub": "September 2026",
+          "source": "Britton Pederson, October 19 update"
         },
         {
-          "label": "Open bugs, Rewards",
-          "value": "3",
-          "sub": "incl. Trinity duplicate reward events",
-          "source": "Jira 2026-10-01 · project DEV · open bugs · excl. Auto-Triage · summary ~ Rewards"
+          "label": "Rewards sales in 2027",
+          "value": "Confirmed",
+          "source": "October 19 confirmation"
         }
       ]
     },
     {
       "type": "text",
-      "title": "Why Trinity is frustrated",
-      "tone": "alert",
-      "body": "From Chase's diagnosis recorded in the RXP Quarter Brief (2026-07-02): the driver is Rewards economics. Roughly $2k in points nets about $1k in redemption with no channel control, and the 'pay for Rewards, get apps free' deal anchor means frustration lands on the whole migration. Actual product issues (login, payments) were resolved within an hour each. The offering was then switched; adoption of the new offering is minimal (Cal, 2026-09-29)."
+      "title": "Commercial progress and 2027 direction",
+      "tone": "neutral",
+      "body": "94 clients have contracted for Rewards as of October 21, per Britton. This is a contracted-client count, not a live-client count. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected in October per Alex, and additional student operators are in the pipeline. Continued Rewards sales in 2027 confirmed."
     },
     {
-      "type": "roadmap",
-      "title": "Trinity asks already on the roadmap",
-      "keys": [
-        "DEV-307726",
-        "DEV-341594",
-        "LUXERONE",
-        "DEV-340258",
-        "DEV-329237"
-      ]
+      "type": "text",
+      "title": "Trinity rollout readiness",
+      "tone": "neutral",
+      "body": "October 28 training and November 2 rollout are delayed. November 18 is tentative internal training, dependent on the required permissions and approval functionality; no replacement launch date is confirmed. Trinity expects ongoing service-recovery incentives rather than another September-sized issuance event. Trinity confirmed that the proposed approval workflow meets its regional needs; delivery and successful client testing remain outstanding."
+    },
+    {
+      "type": "table",
+      "title": "Delivery milestones",
+      "headers": [
+        "Milestone",
+        "Current status",
+        "Next step"
+      ],
+      "rows": [
+        [
+          "Approvals dashboard",
+          "Shipped, per Zack on October 19.",
+          "Confirm Trinity validation within the required end-to-end workflow."
+        ],
+        [
+          "Property-scoped issuance and bonus settings",
+          "October 23 target, subject to final validation: property/resident selectors and portfolio-level bonus reasons and thresholds.",
+          "Zack to confirm release readiness. Trinity agreed to start fresh with portfolio-level bonus reasons."
+        ],
+        [
+          "Approval Groups and approval emails",
+          "Subsequent phase; no committed delivery date. Approvers and point limits respect existing Entrata property access.",
+          "Zack to obtain Engineering timeline after Friday release; rough timing expected October 23 or by October 26-27."
+        ],
+        [
+          "Trinity validation and training",
+          "November 18 tentative training; required permissions and approval functionality are prerequisites.",
+          "Britton to coordinate with the client team to confirm successful testing and training readiness."
+        ],
+        [
+          "Resident gift card redemption guide",
+          "Britton committed to contacting Product Marketing on October 21; completion not yet recorded.",
+          "Coordinate a resident-facing guide with screenshots and redemption steps."
+        ]
+      ],
+      "note": "Source: October 21 Trinity meeting and October 19 Zack Slack update. Approval Groups are not included in the October 23 commitment. Analytics release scope remains unconfirmed."
     },
     {
       "type": "checklist",
-      "title": "Decisions due",
+      "title": "Confirmed direction and remaining work",
       "items": [
         {
-          "text": "What we do with Trinity.",
-          "status": "open",
+          "text": "Continued Rewards sales in 2027 confirmed.",
+          "status": "done",
           "owner": "Britton Pederson",
-          "source": "AOP, Oct 15"
+          "source": "October 19 confirmation"
         },
         {
-          "text": "Whether Rewards is sold in 2027.",
-          "status": "open",
+          "text": "Trinity confirmed that the proposed property permissions and Approval Groups address its regional approval needs.",
+          "status": "done",
           "owner": "Britton Pederson",
-          "source": "AOP, Oct 15"
+          "source": "October 21 Trinity meeting; design acceptance, not validation of shipped functionality"
         },
         {
-          "text": "Map every Trinity ask to a roadmap key and release, or an explicit no.",
+          "text": "Confirm release readiness and Engineering delivery commitments for the remaining approval workflow.",
           "status": "in_progress",
-          "owner": "Britton Pederson"
+          "owner": "Zack Melton",
+          "source": "October 21 Trinity meeting"
+        },
+        {
+          "text": "Obtain Trinity validation and confirm readiness for tentative November 18 training.",
+          "status": "open",
+          "owner": "Britton Pederson",
+          "source": "October 21 Trinity meeting"
+        },
+        {
+          "text": "Coordinate the resident gift card redemption guide with Product Marketing.",
+          "status": "open",
+          "owner": "Britton Pederson",
+          "source": "October 21 commitment; completion not yet recorded"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Additional requests and outstanding scope",
+      "tone": "neutral",
+      "body": "Employee lease exclusions are on the roadmap after approval functionality; timing is uncommitted. The internal memo field is not in the October 23 release and Trinity described it as lower priority. Confirm current scope, release mapping, and disposition of other requests with Zack and Swapnil, including DEV-347111 and DEV-329237. Historical September roadmap dates are not treated here as current delivery commitments."
+    },
+    {
+      "type": "links",
+      "title": "Sources and related work",
+      "items": [
+        {
+          "label": "October 21 Trinity meeting notes and transcript",
+          "href": "https://docs.google.com/document/d/1xMi9u0enNn0smEdm-tahWPvfI6hrME1EslvVbiUWTzc/edit"
+        },
+        {
+          "label": "DEV-347111: confirm current scope and delivery mapping",
+          "href": "https://entrata.atlassian.net/browse/DEV-347111"
+        },
+        {
+          "label": "DEV-329237: Rewards groups epic",
+          "href": "https://entrata.atlassian.net/browse/DEV-329237"
+        },
+        {
+          "label": "DEV-340258: resident eligibility and exclusion rules",
+          "href": "https://entrata.atlassian.net/browse/DEV-340258"
+        },
+        {
+          "label": "Historical roadmap reference (September 25 snapshot)",
+          "href": "https://github.com/Entrata-Collab/homebody-mission-control/blob/main/src/data/roadmap.json"
         }
       ]
     },

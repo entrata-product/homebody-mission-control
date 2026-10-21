@@ -214,21 +214,39 @@
         "rewards"
       ],
       "lines": [],
-      "outcome": "Trinity direction and Rewards-in-2027 decided; Trinity asks mapped to committed roadmap items",
+      "outcome": "Trinity's required Rewards workflows delivered and validated; continued Rewards sales in 2027 confirmed",
       "owner": "Britton Pederson",
-      "due": "2026-10-15",
-      "measure": "Both decisions recorded in decisions.json (shown under Open action items) with an owner and a date; every Trinity ask has a roadmap key and a release, or an explicit no",
+      "due": null,
+      "measure": "Required property permissions and approval workflows delivered and validated by Trinity; training readiness confirmed; remaining Trinity requests have a documented scope and delivery date or agreed deferral. Continued Rewards sales in 2027 recorded as confirmed.",
       "page": "rewards",
       "clients": [
         "trinity"
       ],
       "status": "in_progress",
       "heat": "active",
-      "summary": "Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing for Rewards is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected this month per Alex, and additional student operators are in the pipeline.",
-      "nextStep": "Confirm whether property-scoped approval permissions satisfy Trinity's regional approval needs. Confirm with Andrew whether DEV-347111 and DEV-329237, currently being scoped, are prerequisites for the broader Trinity Cares bonus-point rollout. Confirm the scope and timing of the planned October 28 training and November 2 rollout, and obtain Trinity's validation of the required workflows. Confirm delivery dates with Zack and Swapnil for any remaining rollout blockers.",
-      "note": "Continued Rewards sales in 2027 confirmed. Trinity delivery remains in progress. October 15 was the original track target; a revised completion date for the remaining Trinity milestones has not been confirmed.",
-      "noteTone": "alert",
+      "summary": "94 clients have contracted for Rewards as of October 21, per Britton. This is a contracted-client count, not a live-client count. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected in October per Alex, and additional student operators are in the pipeline.",
+      "nextStep": "Zack to confirm October 23 release readiness and obtain an Engineering timeline for Approval Groups and approval emails after that release; a rough timeline is expected October 23 or by October 26-27. Britton to coordinate Trinity validation and reconfirm tentative November 18 training with the client team. Britton to coordinate a resident gift card redemption guide with Product Marketing and follow up on employee lease exclusion scope and timing.",
+      "note": "Continued Rewards sales in 2027 confirmed. Trinity delivery remains in progress. October 15 was the original track target; a revised completion date is awaiting Engineering commitments. November 18 is tentative client training, not a committed delivery or launch date.",
+      "noteTone": "neutral",
       "updates": [
+        {
+          "date": "2026-10-21",
+          "text": "94 clients have contracted for Rewards as of October 21, per Britton. This is a contracted-client count, not a live-client count. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected in October per Alex, and additional student operators are in the pipeline.",
+          "source": "Britton Pederson, October 21 contracted-client update; October 19 commercial update and Alex pipeline update",
+          "by": "Britton Pederson"
+        },
+        {
+          "date": "2026-10-21",
+          "text": "Trinity confirmed that Approval Groups with point limits and existing Entrata property permissions address its regional approval needs. This confirms the proposed workflow, not successful client testing. October 23 targets property-scoped bonus-point issuance, property/resident selectors, and portfolio-level bonus reasons and thresholds, subject to final validation. Approval Groups, delegated approval limits, and automated approval emails are a subsequent phase without a committed delivery date. October 28 training and November 2 rollout are delayed. November 18 is tentative internal training, dependent on the required permissions and approval functionality; no replacement launch date is confirmed. Trinity expects ongoing service-recovery incentives rather than another September-sized issuance event.",
+          "source": "Trinity / Entrata Homebody RXP Check-in, October 21, 2026; https://docs.google.com/document/d/1xMi9u0enNn0smEdm-tahWPvfI6hrME1EslvVbiUWTzc/edit",
+          "by": "Britton Pederson"
+        },
+        {
+          "date": "2026-10-21",
+          "text": "Zack to confirm October 23 release readiness and obtain an Engineering timeline for Approval Groups and approval emails after that release; a rough timeline is expected October 23 or by October 26-27. Britton to coordinate Trinity validation and reconfirm tentative November 18 training with the client team. Britton to coordinate a resident gift card redemption guide with Product Marketing and follow up on employee lease exclusion scope and timing. Employee lease exclusions are on the roadmap after approval functionality, with timing uncommitted. The current completion date is unset pending delivery commitments; October 15 remains the original target in the record.",
+          "source": "Trinity / Entrata Homebody RXP Check-in, October 21, 2026; https://docs.google.com/document/d/1xMi9u0enNn0smEdm-tahWPvfI6hrME1EslvVbiUWTzc/edit",
+          "by": "Britton Pederson"
+        },
         {
           "date": "2026-10-19",
           "text": "Continued Rewards sales in 2027 confirmed. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing for Rewards is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected this month per Alex, and additional student operators are in the pipeline.",

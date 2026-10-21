@@ -4,23 +4,23 @@
     {
       "id": "trinity-direction",
       "status": "open",
-      "date": "2026-09-29",
-      "due": "2026-10-15",
-      "title": "What we do with Trinity",
-      "detail": "Trinity ($2M+ annual, 56,000 units) is frustrated with the switched Rewards offering and wants to know where we're headed. Decide the direction with them as part of AOP.",
+      "date": "2026-10-21",
+      "due": null,
+      "title": "Confirm Trinity delivery commitments and training readiness",
+      "detail": "Trinity confirmed on October 21 that the proposed property permissions and Approval Groups address its regional approval needs. The remaining open item is delivery commitments and client validation, not whether to support Trinity. November 18 is tentative training dependent on the required functionality; no replacement launch date is confirmed. Original AOP target: October 15.",
       "owner": "Britton Pederson",
-      "source": "Cal 2026-09-29 Mission Control update",
+      "source": "Trinity / Entrata Homebody RXP Check-in, October 21, 2026; https://docs.google.com/document/d/1xMi9u0enNn0smEdm-tahWPvfI6hrME1EslvVbiUWTzc/edit",
       "track": 4
     },
     {
       "id": "rewards-2027",
-      "status": "open",
-      "date": "2026-09-29",
+      "status": "decided",
+      "date": "2026-10-19",
       "due": "2026-10-15",
-      "title": "Whether Rewards is sold in 2027",
-      "detail": "Client adoption of the new Rewards offering is minimal. Decide whether it stays on the shelf for 2027 as part of AOP.",
+      "title": "Continued Rewards sales in 2027 confirmed",
+      "detail": "Continued Rewards sales in 2027 confirmed. New pricing is available in Salesforce, the Landmark deal was approved with contracting expected in October per Alex, and additional student operators are in the pipeline. The original decision target was October 15.",
       "owner": "Britton Pederson",
-      "source": "Cal 2026-09-29 Mission Control update",
+      "source": "Britton Pederson and Catherine Wong Slack exchange, October 19, 2026",
       "track": 4
     },
     {
