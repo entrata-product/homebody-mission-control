@@ -113,7 +113,7 @@
       ],
       "heat": "burning",
       "owner": "Jody Crockett",
-      "nextStep": "Follow up with Cardinal's accounting team on approval of the proposed payment flow (last update 2026-10-14). Tanner Clegg and Jae Lee: complete the Contents standalone migration by end of October. Tabatha Saldivar: lead the conversation about Legal's recommendation to switch Contents from in-lease to manual enrollment.",
+      "nextStep": "Await Cardinal accounting's response to the payment-flow follow-up email sent 2026-10-21 by Bezait Anbesse (Alyssa CC'd). Tanner Clegg and Jae Lee: complete the Contents standalone migration by end of October. Tabatha Saldivar: lead the conversation about Legal's recommendation to switch Contents from in-lease to manual enrollment.",
       "due": null,
       "source": "Cal 2026-09-28 Mission Control update",
       "tracks": [
@@ -121,6 +121,12 @@
       ],
       "scale": null,
       "updates": [
+        {
+          "date": "2026-10-21",
+          "text": "Followed up with Cardinal to ask what their accounting team says about the proposed payment flows. No response yet. Bezait Anbesse sent the email with Alyssa CC'd.",
+          "source": "Email from Bezait Anbesse, Alyssa CC'd",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-10-19",
           "text": "Cardinal is satisfied with the HBG renewal releases and the help provided to correct edge-case ledgers and manually enroll renewal leases from before auto renewal. Open item 1 — Homebody revenue: Entrata has not paid Cardinal for Master Policy, HBG, or DA. The original payment approach communicated to Cardinal was not possible. Entrata proposed that it collect property and corporate funds, remit the total to Cardinal, and have Cardinal distribute it to properties. No response from Cardinal's accounting team as of 2026-10-14. Open item 2 — Contents standalone migration and enrollment: Cardinal has a mix of Master Policy records without liability amounts and true Contents policies because Contents was used before the policy was ready. Tanner Clegg and Jae Lee are working on the migration; ETA end of October. Entrata Legal recommends switching Contents from in-lease to manual enrollment. This may be unwelcome to Cardinal because in-lease enrollment was a major reason they signed; Tabatha Saldivar owns this conversation.",
