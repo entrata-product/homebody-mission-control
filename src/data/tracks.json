@@ -224,11 +224,17 @@
       ],
       "status": "in_progress",
       "heat": "active",
-      "summary": "94 clients have contracted for Rewards as of October 21, per Britton. This is a contracted-client count, not a live-client count. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected in October per Alex, and additional student operators are in the pipeline.",
-      "nextStep": "Zack to confirm October 23 release readiness and obtain an Engineering timeline for Approval Groups and approval emails after that release; a rough timeline is expected October 23 or by October 26-27. Britton to coordinate Trinity validation and reconfirm tentative November 18 training with the client team. Britton to coordinate a resident gift card redemption guide with Product Marketing and follow up on employee lease exclusion scope and timing.",
+      "summary": "94 clients have contracted for Rewards as of October 21, per Britton. This is a contracted-client count, not a live-client count. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected in October per Alex, and additional student operators are in the pipeline. Open Rewards pipeline totals $801,842.67 in unweighted ACV across 50 opportunities with expected closes in October-December 2026. This includes expansion opportunities and is not a count of new clients or booked revenue.",
+      "nextStep": "Zack to confirm October 23 release readiness, obtain an Engineering timeline for Approval Groups and approval emails, coordinate Trinity validation, reconfirm tentative November 18 training with the client team, and follow up on employee lease exclusion scope and timing. A rough Engineering timeline is expected October 23 or by October 26-27. Britton to coordinate the resident gift card redemption one-pager with Product Marketing.",
       "note": "Continued Rewards sales in 2027 confirmed. Trinity delivery remains in progress. October 15 was the original track target; a revised completion date is awaiting Engineering commitments. November 18 is tentative client training, not a committed delivery or launch date.",
       "noteTone": "neutral",
       "updates": [
+        {
+          "date": "2026-10-21",
+          "text": "Zack owns Trinity delivery follow-ups: release readiness, Engineering commitments, client validation, training coordination, and employee lease exclusion scope and timing. Britton owns the resident gift card redemption one-pager with Product Marketing and remains the Rewards track owner. Added $802K in unweighted Rewards pipeline ACV across 50 open opportunities with expected closes in October-December 2026, replacing the redundant points-issued tile; September points sales remain $1.04M.",
+          "source": "Britton Pederson, October 21 ownership clarification; HBR Pipeline by Deal.csv, provided October 21, 2026; ACV confirmed as Rewards-only by Britton. Filter: Close Month October-December 2026; stages 1-5; 50 distinct opportunities; sum of ACV $801,842.67, unweighted.",
+          "by": "Britton Pederson"
+        },
         {
           "date": "2026-10-21",
           "text": "94 clients have contracted for Rewards as of October 21, per Britton. This is a contracted-client count, not a live-client count. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected in October per Alex, and additional student operators are in the pipeline.",

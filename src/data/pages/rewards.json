@@ -22,10 +22,10 @@
           "source": "Britton Pederson, October 19 update"
         },
         {
-          "label": "Trinity points issued, September",
-          "value": "104M",
-          "sub": "September 2026",
-          "source": "Britton Pederson, October 19 update"
+          "label": "Rewards pipeline ACV",
+          "value": "$802K",
+          "sub": "50 open opportunities · Oct-Dec 2026 expected closes · unweighted",
+          "source": "HBR Pipeline by Deal.csv, provided October 21, 2026; ACV confirmed as Rewards-only by Britton. Filter: Close Month October-December 2026; stages 1-5; 50 distinct opportunities; sum of ACV $801,842.67, unweighted."
         },
         {
           "label": "Rewards sales in 2027",
@@ -38,7 +38,7 @@
       "type": "text",
       "title": "Commercial progress and 2027 direction",
       "tone": "neutral",
-      "body": "94 clients have contracted for Rewards as of October 21, per Britton. This is a contracted-client count, not a live-client count. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected in October per Alex, and additional student operators are in the pipeline. Continued Rewards sales in 2027 confirmed."
+      "body": "94 clients have contracted for Rewards as of October 21, per Britton. This is a contracted-client count, not a live-client count. Trinity issued 104 million points in September, generating $1.04 million in points sales. New pricing is available in Salesforce. Inside Sales received a refresher on October 19. Chase approved the Landmark deal, with contracting expected in October per Alex, and additional student operators are in the pipeline. Continued Rewards sales in 2027 confirmed. Open Rewards pipeline totals $801,842.67 in unweighted ACV across 50 opportunities with expected closes in October-December 2026. This includes expansion opportunities and is not a count of new clients or booked revenue."
     },
     {
       "type": "text",
@@ -73,7 +73,7 @@
         [
           "Trinity validation and training",
           "November 18 tentative training; required permissions and approval functionality are prerequisites.",
-          "Britton to coordinate with the client team to confirm successful testing and training readiness."
+          "Zack to coordinate with the client team to confirm successful testing and training readiness."
         ],
         [
           "Resident gift card redemption guide",
@@ -108,7 +108,7 @@
         {
           "text": "Obtain Trinity validation and confirm readiness for tentative November 18 training.",
           "status": "open",
-          "owner": "Britton Pederson",
+          "owner": "Zack Melton",
           "source": "October 21 Trinity meeting"
         },
         {
@@ -123,7 +123,7 @@
       "type": "text",
       "title": "Additional requests and outstanding scope",
       "tone": "neutral",
-      "body": "Employee lease exclusions are on the roadmap after approval functionality; timing is uncommitted. The internal memo field is not in the October 23 release and Trinity described it as lower priority. Confirm current scope, release mapping, and disposition of other requests with Zack and Swapnil, including DEV-347111 and DEV-329237. Historical September roadmap dates are not treated here as current delivery commitments."
+      "body": "Employee lease exclusions are on the roadmap after approval functionality; timing is uncommitted. The internal memo field is not in the October 23 release and Trinity described it as lower priority. Zack to confirm employee lease exclusion scope and timing, and current scope, release mapping, and disposition of other requests with Engineering, including DEV-347111 and DEV-329237. Historical September roadmap dates are not treated here as current delivery commitments."
     },
     {
       "type": "links",
