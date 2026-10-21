@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-19",
+  "asOf": "2026-10-21",
   "owner": "Alyssa Schroeder",
   "sourceNote": "One row per client thread the war room is carrying, each with one owner: the CSM who drives the outcome, de-escalation. Hot clients are where friction against the revenue goal shows up, not the reason the room exists. Name the client, the property, and the ticket. Keep resident names and resident IDs out of this repo. Rows were lifted from the 2026-09-24 and 2026-09-28 slates; CSM owners were never named there, so most read 'Owner to confirm'.",
   "clients": [
@@ -41,7 +41,7 @@
       ],
       "heat": "burning",
       "owner": "Erika Bronson",
-      "nextStep": "Waiting for the Asset team to review and get back to Entrata with questions.",
+      "nextStep": "Alyssa to provide Asset the data needed for its pre-release renewal plan no later than 2026-10-26. Track DEV-350007 and DEV-331326, both targeted for completion by EOD India on Wednesday.",
       "due": null,
       "source": "Homebody product leadership DM, 2026-09-24",
       "tracks": [
@@ -49,6 +49,12 @@
       ],
       "scale": null,
       "updates": [
+        {
+          "date": "2026-10-21",
+          "text": "Asset leadership (Stacey) remains escalated but confirmed the only current issue is incorrect amounts in lease-document merge fields: DEV-350007 (https://entrata.atlassian.net/browse/DEV-350007) and DEV-331326 (https://entrata.atlassian.net/browse/DEV-331326). Both are expected to be completed by EOD India on Wednesday. Asset has an internal plan for handling renewals from before release and needs additional data to execute it. Alyssa owns providing that data no later than Monday, 2026-10-26.",
+          "source": "Alyssa 2026-10-21",
+          "by": "Alyssa Schroeder"
+        },
         {
           "date": "2026-10-19",
           "text": "Asset Living has been live on auto renewal since 2026-10-14. The launch was communicated to Asset's systems team, with the expectation that they would update Stacey Lecocke (Division President - Student Housing); that update did not happen, and Asset escalated again. Waiting for the Asset team to review and get back to Entrata with questions.",
