@@ -314,13 +314,19 @@
       "measure": "October Homebody Insurance conversion rate at or above the pre-drop baseline, with the root cause written down",
       "page": "insurance-funnel",
       "clients": [],
-      "status": "in_progress",
-      "heat": "active",
-      "summary": "Incident #1547 (opened and closed 2026-09-28) caused the conversion drop in the lease checkout flow. Product's RCA is written and Engineering held a separate post-mortem. What remains is showing October conversion back at the pre-drop baseline.",
-      "nextStep": "Levi: link the Engineering post-mortem for #1547. Conversion still below the pre-drop baseline (30% MTD vs 37.4% 12-mo avg pre-drop); watch whether it closes the gap before the Oct 31 due date.",
-      "note": "Incident #1547 closed 2026-09-28; RCA linked. MTD conversion 30%, up from 26% last month but below the 37.4% pre-drop baseline.",
+      "status": "complete",
+      "heat": "idle",
+      "summary": "Incident #1547 (opened and closed 2026-09-28) caused the conversion drop in the lease checkout flow. Product's RCA is written and Engineering held a separate post-mortem. Track closed 2026-10-22: conversion recovered from 26% to 30% MTD; last recorded MTD figure remains below the 37.4% pre-drop 12-month average, and ongoing funnel monitoring continues on the Insurance Funnel page.",
+      "nextStep": "None - track complete. Ongoing conversion monitoring lives on the Insurance Funnel page; Levi still owes the link to the Engineering post-mortem for #1547.",
+      "note": "Complete. #1547 root-caused and RCA linked; conversion trending up (30% MTD from 26%).",
       "noteTone": "neutral",
       "updates": [
+        {
+          "date": "2026-10-22",
+          "text": "Track marked complete by Cal Harris. Incident #1547 is root-caused with the Product RCA linked, and conversion is trending up: 30% MTD vs 26% last month. The last recorded MTD figure (2026-10-20) is below the 37.4% pre-drop 12-month average; continued recovery is tracked as routine funnel monitoring on the Insurance Funnel page rather than as a war-room track. Levi Howa still owes the Engineering post-mortem link.",
+          "source": "Cal 2026-10-22",
+          "by": "Cal Harris"
+        },
         {
           "date": "2026-10-20",
           "text": "MTD Homebody Insurance conversion rate is 30% (lease checkout), up from 26% last month. March was 35%. The 12-month average prior to the drop was 37.4%. October is trending up but still below the pre-drop baseline; posted to the Insurance Funnel page.",
