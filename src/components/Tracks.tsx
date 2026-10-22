@@ -68,7 +68,12 @@ export function Tracks({ navigate, focusTrack }: { navigate: (r: Route) => void;
       )}
 
       {areas.map((area, i) => {
-        const areaTracks = tracks.filter((t) => t.area === area.id)
+        // Completed tracks sink to the bottom of their surface and render dimmed, matching the done
+        // treatment action items get. They stay visible as a record; they just stop reading as live work.
+        const areaTracks = tracks
+          .filter((t) => t.area === area.id)
+          .slice()
+          .sort((a, b) => Number(a.status === "complete") - Number(b.status === "complete"))
         const arm = armForArea(area.id)
         const firstOfArm = arm != null && areas.findIndex((a) => armForArea(a.id)?.id === arm.id) === i
         return [
@@ -85,7 +90,7 @@ export function Tracks({ navigate, focusTrack }: { navigate: (r: Route) => void;
             </div>
           ) : null,
           <section key={area.id} id={`area-${area.id}`} className={`space-y-3 rounded-2xl border-l-4 ${surfaceTone(area.id).border} ${surfaceTone(area.id).soft} p-4`}>
-            <AreaRow area={area} count={areaTracks.length} navigate={navigate} />
+            <AreaRow area={area} count={areaTracks.filter((t) => t.status !== "complete").length} doneCount={areaTracks.filter((t) => t.status === "complete").length} navigate={navigate} />
             {areaTracks.length === 0 ? (
               <div className="rounded-xl border border-dashed border-[#CCCCCC] bg-[#F7F7F7] px-4 py-3 text-xs text-[#474747]">
                 <span className="font-semibold text-[#161616]">No track yet.</span> Claim one in <code className="text-[#004B37]">src/data/tracks.json</code> with{" "}
@@ -118,7 +123,7 @@ function KeyNumber({ m }: { m: Metric }) {
   )
 }
 
-function AreaRow({ area, count, navigate }: { area: Area; count: number; navigate: (r: Route) => void }) {
+function AreaRow({ area, count, doneCount, navigate }: { area: Area; count: number; doneCount: number; navigate: (r: Route) => void }) {
   const tone = surfaceTone(area.id)
   return (
     <div className={`flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b pb-2 ${tone.border} border-opacity-30`}>
@@ -135,6 +140,7 @@ function AreaRow({ area, count, navigate }: { area: Area; count: number; navigat
         <span className="text-[#B8B8B8]">·</span>
         <span className="text-[#7A7A7A]">
           {count} track{count === 1 ? "" : "s"}
+          {doneCount > 0 ? ` · ${doneCount} done` : ""}
         </span>
       </div>
     </div>
@@ -148,6 +154,7 @@ function TrackCard({ track, navigate, highlighted }: { track: Track; navigate: (
   const pastDue = isPastDue(track.due, track.status)
   const linkedClients = track.clients.map(clientById).filter((c): c is NonNullable<typeof c> => !!c)
   const burning = track.heat === "burning"
+  const complete = track.status === "complete"
   const tone = surfaceTone(track.area)
 
   return (
@@ -164,8 +171,8 @@ function TrackCard({ track, navigate, highlighted }: { track: Track; navigate: (
         }
       }}
       className={`scroll-mt-32 rounded-xl border border-t-4 bg-white px-4 pb-3 pt-3 transition-all ${
-        highlighted ? `${tone.border} shadow-md` : burning ? "border-x-[#FFCCD5] border-b-[#FFCCD5]" : "border-x-[#E0E0E0] border-b-[#E0E0E0]"
-      } ${dest ? "cursor-pointer hover:shadow-sm" : ""}`}
+        highlighted ? `${tone.border} shadow-md` : burning && !complete ? "border-x-[#FFCCD5] border-b-[#FFCCD5]" : "border-x-[#E0E0E0] border-b-[#E0E0E0]"
+      } ${complete && !highlighted ? "opacity-60 hover:opacity-100" : ""} ${dest ? "cursor-pointer hover:shadow-sm" : ""}`}
     >
       <div className="mb-1 flex flex-wrap items-center gap-2">
         <TrackNumber n={track.number} />

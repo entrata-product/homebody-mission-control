@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-21",
+  "asOf": "2026-10-22",
   "sourceNote": "A track is a finite outcome with exactly one named owner, a date, a measure of done, and a page where the work lives. Function names are not owners; write 'Owner to confirm' until a person is named. Reshaped 2026-10-15 from the 2026-09-28 area-based slate.",
   "tracks": [
     {
@@ -81,13 +81,19 @@
         "cardinal",
         "yugo"
       ],
-      "status": "validation",
-      "heat": "burning",
-      "summary": "Renewals are shipped and turned on for Asset, Cardinal, Yugo, and Landmark (Priess planned to turn on 2026-10-20 per the Clients board). The remaining work is validating renewal behavior with clients, including a merge field conflict found during rollout (resolution ETA Wed Oct 21), before the five escalated HBG clients can be de-escalated. Transfers are explicitly off this path.",
-      "nextStep": "Resolve the merge field conflict (ETA Wed Oct 21). Dan: validate renewal behavior with clients, confirm Priess has turned auto-renewal on, and record results toward de-escalating the five clients.",
-      "note": "Shipped, validating with clients. On for 4 of 5 escalated clients; merge field conflict fix due Oct 21.",
+      "status": "complete",
+      "heat": "idle",
+      "summary": "Renewals shipped and live for all five escalated HBG clients: Asset, Cardinal, Yugo, Landmark, and Preiss (Preiss enabled 2026-10-20 and watched the first policy complete the flow successfully). Remaining merge-field fixes (DEV-350007, DEV-331326) are tracked on the Asset client thread. Transfers are explicitly off this path.",
+      "nextStep": "None - track complete. Merge-field fixes continue on the Asset client thread (DEV-350007, DEV-331326); renewal documentation and transfers continue on tracks 6 and 8.",
+      "note": "Complete. Auto renewals live for all five escalated clients.",
       "noteTone": "neutral",
       "updates": [
+        {
+          "date": "2026-10-22",
+          "text": "Track marked complete by Cal Harris. HBG auto renewals are shipped and live for all five escalated clients (Asset, Cardinal, Yugo, Landmark, Preiss). Preiss confirmed the first policy went through the flow successfully on 2026-10-21. Remaining lease-document merge-field fixes (DEV-350007, DEV-331326) carry on under the Asset client thread; documentation and transfers continue on tracks 6 and 8.",
+          "source": "Cal 2026-10-22; Alyssa 2026-10-21 client updates",
+          "by": "Cal Harris"
+        },
         {
           "date": "2026-10-20",
           "text": "Auto-renewal shipped; turned on for Asset, Cardinal, Yugo, and Landmark. Identified a merge field conflict issue; resolution ETA Wed Oct 21.",

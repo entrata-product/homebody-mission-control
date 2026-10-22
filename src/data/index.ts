@@ -83,15 +83,18 @@ export const clientById = (id: string): ClientRow | undefined => clients.find((c
 
 /**
  * Attention share: how much of the room a line or offering is consuming, counted as the tracks that move it
- * plus the live client threads tagged with it, over everything the room is carrying. The revenue share next to
- * it is blank until the owner supplies the number; the comparison is the point.
+ * plus the live client threads tagged with it, over everything the room is carrying. Completed tracks are
+ * retired work and do not consume attention, so they are excluded on both sides of the ratio. The revenue
+ * share next to it is blank until the owner supplies the number; the comparison is the point.
  */
 const liveClients = () => clients.filter((c) => c.heat !== "idle")
+const liveTracks = () => tracks.filter((t) => t.status !== "complete")
 export function attentionFor(opts: { tracks: Track[]; tags: string[] }): Attention {
   const tagSet = new Set(opts.tags)
+  const live = opts.tracks.filter((t) => t.status !== "complete")
   const cs = liveClients().filter((c) => c.products.some((p) => tagSet.has(p)))
-  const denom = tracks.length + liveClients().length
-  return { tracks: opts.tracks, clients: cs, share: denom === 0 ? 0 : (opts.tracks.length + cs.length) / denom }
+  const denom = liveTracks().length + liveClients().length
+  return { tracks: live, clients: cs, share: denom === 0 ? 0 : (live.length + cs.length) / denom }
 }
 export const attentionForLine = (l: Line): Attention =>
   attentionFor({ tracks: tracks.filter((t) => t.lines.includes(l.id)), tags: l.tags })
