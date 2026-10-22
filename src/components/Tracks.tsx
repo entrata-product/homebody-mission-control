@@ -68,12 +68,10 @@ export function Tracks({ navigate, focusTrack }: { navigate: (r: Route) => void;
       )}
 
       {areas.map((area, i) => {
-        // Completed tracks sink to the bottom of their surface and render dimmed, matching the done
-        // treatment action items get. They stay visible as a record; they just stop reading as live work.
-        const areaTracks = tracks
-          .filter((t) => t.area === area.id)
-          .slice()
-          .sort((a, b) => Number(a.status === "complete") - Number(b.status === "complete"))
+        // Surfaces carry live work only. Completed tracks keep their record in the Completed tracks
+        // section at the bottom of the page, so the board reads as "what we're working on".
+        const areaTracks = tracks.filter((t) => t.area === area.id && t.status !== "complete")
+        const areaDone = tracks.filter((t) => t.area === area.id && t.status === "complete").length
         const arm = armForArea(area.id)
         const firstOfArm = arm != null && areas.findIndex((a) => armForArea(a.id)?.id === arm.id) === i
         return [
@@ -90,11 +88,19 @@ export function Tracks({ navigate, focusTrack }: { navigate: (r: Route) => void;
             </div>
           ) : null,
           <section key={area.id} id={`area-${area.id}`} className={`space-y-3 rounded-2xl border-l-4 ${surfaceTone(area.id).border} ${surfaceTone(area.id).soft} p-4`}>
-            <AreaRow area={area} count={areaTracks.filter((t) => t.status !== "complete").length} doneCount={areaTracks.filter((t) => t.status === "complete").length} navigate={navigate} />
+            <AreaRow area={area} count={areaTracks.length} doneCount={areaDone} navigate={navigate} />
             {areaTracks.length === 0 ? (
               <div className="rounded-xl border border-dashed border-[#CCCCCC] bg-[#F7F7F7] px-4 py-3 text-xs text-[#474747]">
-                <span className="font-semibold text-[#161616]">No track yet.</span> Claim one in <code className="text-[#004B37]">src/data/tracks.json</code> with{" "}
-                <code className="text-[#004B37]">"area": "{area.id}"</code>.
+                {areaDone > 0 ? (
+                  <>
+                    <span className="font-semibold text-[#161616]">No live track.</span> {areaDone} completed — see Completed tracks below.
+                  </>
+                ) : (
+                  <>
+                    <span className="font-semibold text-[#161616]">No track yet.</span> Claim one in <code className="text-[#004B37]">src/data/tracks.json</code> with{" "}
+                    <code className="text-[#004B37]">"area": "{area.id}"</code>.
+                  </>
+                )}
               </div>
             ) : (
               <div className="grid gap-3 md:grid-cols-2">
@@ -107,8 +113,37 @@ export function Tracks({ navigate, focusTrack }: { navigate: (r: Route) => void;
         ]
       })}
 
+      <CompletedTracks navigate={navigate} focusTrack={focusTrack} />
+
       <ActionItems navigate={navigate} />
     </div>
+  )
+}
+
+/**
+ * Retired outcomes the room has shipped. Collapsed by default so the board above reads as live work only;
+ * the record (updates, owner, measure) stays one click away. Deep links to a completed track open it.
+ */
+function CompletedTracks({ navigate, focusTrack }: { navigate: (r: Route) => void; focusTrack?: number }) {
+  const done = tracks.filter((t) => t.status === "complete")
+  const [open, setOpen] = useState(() => focusTrack != null && done.some((t) => t.number === focusTrack))
+  if (done.length === 0) return null
+  return (
+    <section className="rounded-xl border border-[#E0E0E0] bg-[#F7F7F7] px-4 py-3">
+      <button type="button" onClick={() => setOpen((v) => !v)} className="flex w-full flex-wrap items-center gap-2 text-left">
+        <h3 className="text-sm font-semibold text-[#474747]">Completed tracks</h3>
+        <span className="rounded-full bg-[#E0E0E0] px-1.5 py-0.5 text-[9px] font-semibold text-[#474747]">{done.length}</span>
+        <span className="text-[10px] text-[#7A7A7A]">Outcomes the room has shipped. The record stays; it just stays off the live board.</span>
+        <span className="ml-auto shrink-0 text-[10px] text-[#7A7A7A] underline underline-offset-2">{open ? "hide ▴" : "show ▾"}</span>
+      </button>
+      {open ? (
+        <div className="mt-3 grid gap-3 md:grid-cols-2">
+          {done.map((t) => (
+            <TrackCard key={t.id} track={t} navigate={navigate} highlighted={focusTrack === t.number} />
+          ))}
+        </div>
+      ) : null}
+    </section>
   )
 }
 
